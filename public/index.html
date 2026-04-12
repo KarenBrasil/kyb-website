@@ -3,61 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KyB - Autoridade Digital para Profissionais Autônomos</title>
+    <title>KyB - Estratégia, Conteúdo e Tráfego para Marcas</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- LANGUAGE SWITCHER -->
-    <div class="lang-switcher">
-        <button class="lang-btn active" id="btn-pt" onclick="setLanguage('pt')">PT</button>
-        <button class="lang-btn" id="btn-en" onclick="setLanguage('en')">EN</button>
+    <!-- LOADER -->
+    <div id="loader" class="loader">
+        <div class="loader-content">
+            <div class="logo-spin">KyB</div>
+            <div class="progress-bar">
+                <div class="progress-fill"></div>
+            </div>
+        </div>
     </div>
 
-    <!-- LOADER -->
-    <div class="loader">
-        <div class="loader-logo">
-            <div class="logo-spin">KyB</div>
-        </div>
-        <div class="loader-bar-container">
-            <div class="loader-bar"></div>
-        </div>
-        <div class="loader-text" data-i18n="loader-text">Carregando...</div>
-    </div>
+    <!-- HEADER COM LANG SELECTOR -->
+    <header class="header">
+        <nav class="lang-selector">
+            <button class="lang-btn active" data-lang="pt">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    <path d="M2 12h20"></path>
+                </svg>
+                PT
+            </button>
+            <button class="lang-btn" data-lang="en">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    <path d="M2 12h20"></path>
+                </svg>
+                EN
+            </button>
+        </nav>
+    </header>
 
     <!-- BOTÃO WHATSAPP FLUTUANTE -->
     <a href="https://wa.me/5585998370928" class="whatsapp-float" target="_blank" title="Enviar mensagem no WhatsApp">
-        <i class="fab fa-whatsapp"></i>
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.206-.368-.056c-1.26-.193-2.427-.588-3.465-1.186L2.67 6.438c.405.26.873.438 1.371.512.4.06.795.062 1.188-.024l.335-.056A9.9 9.9 0 0112 2c5.493 0 9.96 4.467 9.96 9.96 0 .766-.084 1.514-.25 2.238l-.017.105-.137.001a9.88 9.88 0 01-1.96-.196l-.335-.056c-.393-.087-.79-.086-1.188.024-.498.074-.966.252-1.371.512l.355.206a9.87 9.87 0 014.946 1.347 10 10 0 010 0z"/>
+        </svg>
     </a>
 
     <!-- ===== SEÇÃO 1: HERO ===== -->
     <section id="hero" class="hero">
-        <div class="hero-bg-slideshow">
-            <div class="hero-bg-slide"></div>
-            <div class="hero-bg-slide"></div>
-            <div class="hero-bg-slide active"></div>
-            <div class="hero-bg-slide"></div>
-            <div class="hero-bg-slide"></div>
+        <div class="hero-slideshow">
+            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%);"></div>
+            <div class="slide" style="background: linear-gradient(135deg, #EB6027 0%, #0D0D0D 100%);"></div>
+            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);"></div>
         </div>
 
         <div class="hero-content">
-            <h1 class="hero-title animate-on-scroll" data-i18n="hero-h1">
+            <h1 class="hero-title animate-on-scroll" style="animation-delay: 0.3s;">
                 Você é bom no que faz.<br>
                 <span class="gradient-text">Mas ninguém sabe.</span>
             </h1>
 
-            <p class="hero-subtitle animate-on-scroll" data-i18n="hero-subtitle">
+            <p class="hero-subtitle animate-on-scroll" style="animation-delay: 0.6s;">
                 Profissional autônomo que vende serviço ou produto precisa de autoridade.<br>
                 A gente faz você sair do invisível e ganhar mais. Ponto.
             </p>
 
-            <a href="https://wa.me/5585998370928" class="btn btn-primary animate-on-scroll" data-i18n="hero-cta" target="_blank">
+            <a href="https://wa.me/5585998370928" class="btn btn-primary animate-on-scroll" style="animation-delay: 0.9s;" target="_blank">
                 Vamos conversar
             </a>
 
             <div class="scroll-indicator">
-                <span data-i18n="hero-scroll">Role</span>
-                <div class="scroll-line"></div>
+                <div class="scroll-dot"></div>
             </div>
         </div>
     </section>
@@ -85,74 +98,70 @@
 
     <!-- ===== SEÇÃO 3: SERVIÇOS ===== -->
     <section id="servicos" class="servicos">
-        <div class="section-header animate-on-scroll">
-            <h2 data-i18n="services-h2">Como criamos sua <span class="gradient-text">autoridade</span></h2>
-            <div class="section-divider"></div>
-            <p data-i18n="services-p">Conheça todos os serviços que estruturam o digital do seu negócio</p>
-        </div>
+        <h2 class="section-title animate-on-scroll">Como criamos sua autoridade</h2>
 
         <div class="servicos-grid">
-            <div class="servico-card animate-on-scroll animate-delay-1">
-                <div class="servico-icon"><i class="fas fa-bullseye"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.1s;">
+                <div class="servico-icon">🎯</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc1-h3">Diagnóstico de Autoridade</h3>
-                    <p data-i18n="svc1-p">Analisamos seu perfil, seu histórico, seu posicionamento. Descobre exatamente onde tá vazando cliente e onde você tá invisível.</p>
+                    <h3>Diagnóstico de Autoridade</h3>
+                    <p>Analisamos seu perfil, seu histórico, seu posicionamento. Descobre exatamente onde tá vazando client e onde você tá invisível.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-2">
-                <div class="servico-icon"><i class="fas fa-star"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.15s;">
+                <div class="servico-icon">🗣️</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc2-h3">Posicionamento (A coisa que vende)</h3>
-                    <p data-i18n="svc2-p">Sai de "mais um" pra "aquela pessoa que eu confio pra isso". Sua expertise vira moeda. Seu ticket sobe.</p>
+                    <h3>Posicionamento (A coisa que vende)</h3>
+                    <p>Sai de "mais um" pra "aquela pessoa que eu confio pra isso". Sua expertise vira moeda. Seu ticket sobe.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-3">
-                <div class="servico-icon"><i class="fas fa-file-alt"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.2s;">
+                <div class="servico-icon">📱</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc3-h3">Estratégia de Conteúdo que Vende</h3>
-                    <p data-i18n="svc3-p">Conteúdo sem direção é barulho. A gente cria um roteiro onde cada post educa, posiciona e leva pro sua oferta.</p>
+                    <h3>Estratégia de Conteúdo que Vende</h3>
+                    <p>Conteúdo sem direção é barulho. A gente cria um roteiro onde cada post educa, posiciona e leva pro seu oferta.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-4">
-                <div class="servico-icon"><i class="fas fa-video"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.25s;">
+                <div class="servico-icon">🎥</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc4-h3">Vídeo que Posiciona</h3>
-                    <p data-i18n="svc4-p">Vídeo é autoridade em movimento. A gente produz você falando sobre sua expertise. Cliente vê, confia, compra.</p>
+                    <h3>Vídeo que Posiciona</h3>
+                    <p>Vídeo é autoridade em movimento. A gente produz você falando sobre sua expertise. Cliente vê, confia, compra.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-5">
-                <div class="servico-icon"><i class="fas fa-rocket"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.3s;">
+                <div class="servico-icon">👁️</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc5-h3">Tráfego Pago (Só Pro Cliente Certo)</h3>
-                    <p data-i18n="svc5-p">Ter autoridade é pouco se ninguém vê. A gente leva seu conteúdo pro pessoa que REALMENTE quer ouvir você.</p>
+                    <h3>Tráfego Pago (Só Pro Cliente Certo)</h3>
+                    <p>Ter autoridade é pouco se ninguém vê. A gente leva seu conteúdo pro pessoa que REALMENTE quer ouvir você.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-1">
-                <div class="servico-icon"><i class="fas fa-laptop-code"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.35s;">
+                <div class="servico-icon">🌐</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc6-h3">Landing Page + Presença Digital</h3>
-                    <p data-i18n="svc6-p">Primeira impressão fecha venda. A gente cria uma presença que diz "confio em você" em 3 segundos.</p>
+                    <h3>Landing Page + Presença Digital</h3>
+                    <p>Primeira impressão fecha venda. A gente cria uma presença que diz "confio em você" em 3 segundos.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-2">
-                <div class="servico-icon"><i class="fas fa-chart-line"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.4s;">
+                <div class="servico-icon">📊</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc7-h3">Análise de Desempenho</h3>
-                    <p data-i18n="svc7-p">Não é adivinhação. A gente mede tudo: quem vê, quem engaja, quem vira cliente. Ajusta semana a semana.</p>
+                    <h3>Análise de Desempenho</h3>
+                    <p>Não é adivinhação. A gente mede tudo: quem vê, quem engaja, quem vira cliente. Ajusta semana a semana.</p>
                 </div>
             </div>
 
-            <div class="servico-card animate-on-scroll animate-delay-3">
-                <div class="servico-icon"><i class="fas fa-users"></i></div>
+            <div class="servico-card animate-on-scroll" style="animation-delay: 0.45s;">
+                <div class="servico-icon">🤝</div>
                 <div class="servico-content">
-                    <h3 data-i18n="svc8-h3">Mentoria Contínua</h3>
-                    <p data-i18n="svc8-p">Você aprende enquanto executa. Não deixa você sozinho. Acompanhamos até seu negócio rodar autonomamente.</p>
+                    <h3>Mentoria Contínua</h3>
+                    <p>Você aprende enquanto executa. Não deixa você sozinho. Acompanhamos até seu negócio rodar autonomamente.</p>
                 </div>
             </div>
         </div>
@@ -161,82 +170,71 @@
 
     <!-- ===== SEÇÃO 4: TEAM ===== -->
     <section id="team" class="team">
-        <div class="section-header animate-on-scroll">
-            <h2 data-i18n="team-h2"><span class="gradient-text">Quem tá do seu lado</span></h2>
-            <div class="section-divider"></div>
-            <p data-i18n="team-p">A gente só pensa em autoridade pra você</p>
-        </div>
+        <h2 class="section-title animate-on-scroll">Quem tá do seu lado</h2>
 
         <div class="team-grid">
-            <div class="team-card animate-on-scroll animate-delay-1">
+            <div class="team-card animate-on-scroll" style="animation-delay: 0.2s;">
                 <div class="team-image" style="background: linear-gradient(135deg, #EB6027 0%, #FF8C42 100%);">
                     <span>K</span>
                 </div>
-                <div class="team-info">
-                    <h3>Karen</h3>
-                    <div class="team-role" data-i18n="karen-role">Fundadora & Estrategista</div>
-                    <p data-i18n="karen-bio">Trabalhei por 8 anos ajudando profissionais autônomos a sair do invisível. Criei a metodologia KyB porque sabia que tinha que existir um jeito simples de criar autoridade de verdade.</p>
-                </div>
+                <h3>Karen</h3>
+                <p class="team-role">Fundadora & Estrategista</p>
+                <p class="team-bio">Trabalhei por 8 anos ajudando profissionais autônomos a sair do invisível. Criei a metodologia KyB porque sabia que tinha que existir um jeito simples de criar autoridade de verdade.</p>
             </div>
 
-            <div class="team-card animate-on-scroll animate-delay-2">
+            <div class="team-card animate-on-scroll" style="animation-delay: 0.3s;">
                 <div class="team-image" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);">
-                    <span><i class="fas fa-users" style="font-size: 2.5rem;"></i></span>
+                    <span>👥</span>
                 </div>
-                <div class="team-info">
-                    <h3 data-i18n="team-equipe">Equipe KyB</h3>
-                    <div class="team-role" data-i18n="equipe-role">Videomakers, Designers, Copywriters</div>
-                    <p data-i18n="equipe-bio">Profissionais que SABEM o que funciona. Não entrega desculpa. Entrega resultado mensurável ou não cobra. Seu sucesso é nosso sucesso.</p>
-                </div>
+                <h3>Equipe KyB</h3>
+                <p class="team-role">Videomakers, Designers, Copywriters</p>
+                <p class="team-bio">Profissionais que SABEM o que funciona. Não entrega desculpa. Entrega resultado mensurável ou não cobra. Seu sucesso é nosso sucesso.</p>
             </div>
         </div>
     </section>
 
     <!-- ===== SEÇÃO 5: FAQ ===== -->
     <section id="faq" class="faq">
-        <div class="section-header animate-on-scroll">
-            <h2 data-i18n="faq-h2">Dúvidas <span class="gradient-text">frequentes</span></h2>
-            <div class="section-divider"></div>
-        </div>
+        <h2 class="section-title animate-on-scroll">Dúvidas frequentes</h2>
 
         <div class="faq-container">
-            <div class="faq-item animate-on-scroll">
-                <div class="faq-question">
-                    <h3 data-i18n="faq1-q">Preciso estar no Instagram pra isso funcionar?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
+                <button class="faq-question">
+                    <span>Preciso estar no Instagram pra isso funcionar?</span>
+                    <span class="faq-icon">+</span>
+                </button>
                 <div class="faq-answer">
-                    <p data-i18n="faq1-a">Instagram é o principal, mas trabalhamos com LinkedIn, TikTok e até presença em website. Depende onde seus clientes estão.</p>
+                    <p>Instagram é o principal, mas trabalhamos com LinkedIn, TikTok e até presença em website. Depende onde seus clientes estão.</p>
                 </div>
             </div>
 
-            <div class="faq-item animate-on-scroll">
-                <div class="faq-question">
-                    <h3 data-i18n="faq2-q">Quanto custa?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="faq-item animate-on-scroll" style="animation-delay: 0.15s;">
+                <button class="faq-question">
+                    <span>Quanto custa?</span>
+                    <span class="faq-icon">+</span>
+                </button>
                 <div class="faq-answer">
-                    <p data-i18n="faq2-a">Depende do que você precisa. Tem desde diagnóstico de R$297 até mentoria contínua de R$8k+/mês. Conversa que a gente acha o que encaixa no seu orçamento.</p>
+                    <p>Depende do que você precisa. Tem desde diagnóstico de R$297 até mentoria contínua de R$8k+/mês. Conversa que a gente acha o que encaixa no seu orçamento.</p>
                 </div>
             </div>
 
-            <div class="faq-item animate-on-scroll">
-                <div class="faq-question">
-                    <h3 data-i18n="faq3-q">Quanto tempo leva pra ver resultado?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
+                <button class="faq-question">
+                    <span>Quanto tempo leva pra ver resultado?</span>
+                    <span class="faq-icon">+</span>
+                </button>
                 <div class="faq-answer">
-                    <p data-i18n="faq3-a">Autoridade é construção. Mas primeiros resultados (mais visualizações, mais engajamento qualificado) a gente vê em 30 dias. Vendas de fato? 60-90 dias.</p>
+                    <p>Autoridade é construção. Mas primeiros resultados (mais visualizações, mais engajamento qualificado) a gente vê em 30 dias. Vendas de fato? 60-90 dias.</p>
                 </div>
             </div>
 
-            <div class="faq-item animate-on-scroll">
-                <div class="faq-question">
-                    <h3 data-i18n="faq4-q">Como começar?</h3>
-                    <i class="fas fa-chevron-down"></i>
-                </div>
+            <div class="faq-item animate-on-scroll" style="animation-delay: 0.25s;">
+                <button class="faq-question">
+                    <span>Como começar?</span>
+                    <span class="faq-icon">+</span>
+                </button>
                 <div class="faq-answer">
-                    <p data-i18n="faq4-a">Manda uma mensagem no WhatsApp falando um pouco sobre seu negócio. A gente responde em até 24h com uma proposta de como ajudar você.</p>
+                    <p>Manda uma mensagem no WhatsApp falando um pouco sobre seu negócio. A gente responde em até 24h com uma proposta de como ajudar você.</p>
                 </div>
             </div>
         </div>
@@ -245,10 +243,10 @@
     <!-- ===== SEÇÃO 6: CTA FINAL ===== -->
     <section id="cta-final" class="cta-final">
         <div class="cta-content animate-on-scroll">
-            <h2 data-i18n="cta-h2">Sua história merece ser bem contada.</h2>
-            <p data-i18n="cta-p">E a gente sabe como fazer isso. Entre em contato e descubra como podemos potencializar sua marca.</p>
-            <a href="https://wa.me/5585998370928" class="cta-btn" data-i18n="cta-btn" target="_blank">
-                <i class="fab fa-whatsapp"></i> QUERO MAIS INFORMAÇÕES
+            <h2>Quanto tá deixando de ganhar?</h2>
+            <p>Cada mês que passa invisível é grana indo pro seu concorrente que TEM presença digital.<br>A diferença é autoridade. E a gente sabe criar isso.</p>
+            <a href="https://wa.me/5585998370928" class="btn btn-primary btn-large" target="_blank">
+                Vamos conversar
             </a>
         </div>
     </section>
@@ -256,42 +254,40 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <div class="footer-brand">
-                <div class="footer-logo">KyB</div>
-                <p data-i18n="footer-tagline">Autoridade digital para profissionais autônomos. Você é bom no que faz. A gente faz você ser visto e vender.</p>
-                <div class="footer-social">
-                    <a href="https://wa.me/5585998370928" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
             <div class="footer-column">
-                <h4 data-i18n="footer-nav-h4">Navegação</h4>
+                <h4>KyB</h4>
+                <p>Estratégia, Conteúdo e Tráfego para Marcas que vendem.</p>
+            </div>
+
+            <div class="footer-column">
+                <h4>Navegação</h4>
                 <ul>
-                    <li><a href="#servicos" data-i18n="footer-nav-servicos">Serviços</a></li>
-                    <li><a href="#team" data-i18n="footer-nav-team">Time</a></li>
-                    <li><a href="#faq" data-i18n="footer-nav-faq">FAQ</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#processo">Processo</a></li>
+                    <li><a href="#faq">FAQ</a></li>
                 </ul>
             </div>
+
             <div class="footer-column">
-                <h4 data-i18n="footer-svc-h4">Serviços</h4>
+                <h4>Serviços</h4>
                 <ul>
-                    <li><a href="#servicos" data-i18n="footer-svc1">Posicionamento</a></li>
-                    <li><a href="#servicos" data-i18n="footer-svc2">Conteúdo Estratégico</a></li>
-                    <li><a href="#servicos" data-i18n="footer-svc3">Vídeo</a></li>
-                    <li><a href="#servicos" data-i18n="footer-svc4">Tráfego Pago</a></li>
+                    <li><a href="#servicos">Estratégia de Conteúdo</a></li>
+                    <li><a href="#servicos">Tráfego Pago</a></li>
+                    <li><a href="#servicos">Vídeo UGC</a></li>
+                    <li><a href="#servicos">Site + Portfolio</a></li>
                 </ul>
             </div>
+
             <div class="footer-column">
-                <h4 data-i18n="footer-contact-h4">Contato</h4>
-                <ul>
-                    <li><a href="https://wa.me/5585998370928" target="_blank">WhatsApp</a></li>
-                    <li><a href="https://instagram.com" target="_blank">Instagram</a></li>
-                </ul>
+                <h4>Contato</h4>
+                <p><a href="https://wa.me/5585998370928" target="_blank">💬 WhatsApp</a></p>
+                <p><a href="https://instagram.com" target="_blank">📸 Instagram</a></p>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <p data-i18n="footer-copyright">&copy; 2026 KyB. Todos os direitos reservados.</p>
+            <p>&copy; 2026 KyB. Todos os direitos reservados.</p>
         </div>
     </footer>
 
