@@ -133,12 +133,12 @@ body {
 .lang-selector {
     display: flex;
     gap: 0.25rem;
-    background: rgba(255, 255, 255, 0.85);
-    backdrop-filter: blur(20px);
+    background: transparent;
+    backdrop-filter: none;
     padding: 0.5rem;
     border-radius: 50px;
-    border: 1px solid rgba(0, 0, 0, 0.08);
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: none;
 }
 
 .lang-btn {
@@ -148,21 +148,31 @@ body {
     cursor: pointer;
     font-weight: 600;
     font-size: 0.8rem;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.6);
     transition: all var(--transition);
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.lang-btn svg {
+    stroke: currentColor;
+    transition: stroke var(--transition);
 }
 
 .lang-btn:hover {
-    color: var(--primary);
+    color: var(--white);
 }
 
 .lang-btn.active {
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    background: transparent;
     color: var(--white);
-    box-shadow: 0 6px 20px rgba(235, 96, 39, 0.25);
+    box-shadow: none;
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: calc(0.7rem - 2px);
 }
 
 /* ===== WHATSAPP FLOAT ===== */
@@ -170,24 +180,29 @@ body {
     position: fixed;
     bottom: 2.5rem;
     right: 2.5rem;
-    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    background: #25D366;
     color: var(--white);
-    padding: 1.1rem 2rem;
-    border-radius: 8px;
+    padding: 1rem 1rem;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.95rem;
+    font-size: 1.8rem;
     z-index: 100;
-    box-shadow: 0 12px 30px rgba(235, 96, 39, 0.2);
+    box-shadow: 0 12px 30px rgba(37, 211, 102, 0.3);
     transition: all var(--transition);
     cursor: pointer;
     border: none;
     letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .whatsapp-float:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 16px 40px rgba(235, 96, 39, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 16px 40px rgba(37, 211, 102, 0.4);
 }
 
 /* ===== BOTÕES ===== */
@@ -919,8 +934,9 @@ body {
     .whatsapp-float {
         bottom: 1rem;
         right: 1rem;
-        padding: 0.8rem 1.2rem;
-        font-size: 0.9rem;
+        width: 50px;
+        height: 50px;
+        font-size: 1.5rem;
     }
 
     .hero-title {
