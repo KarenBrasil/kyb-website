@@ -11,8 +11,9 @@
 :root {
     --text-primary: #000;
     --text-secondary: #666;
+    --text-tertiary: #999;
     --bg-primary: #fff;
-    --bg-secondary: #f5f5f5;
+    --bg-secondary: #f9f9f9;
     --border: #e0e0e0;
     --green: #10B981;
     --pink: #EC4899;
@@ -22,15 +23,17 @@
     --space-lg: 24px;
     --space-xl: 32px;
     --space-2xl: 48px;
+    --space-3xl: 64px;
     --transition: 200ms ease;
 }
 
 html[data-theme="dark"] {
     --text-primary: #fff;
-    --text-secondary: #999;
+    --text-secondary: #ccc;
+    --text-tertiary: #999;
     --bg-primary: #0a0a0a;
-    --bg-secondary: #1a1a1a;
-    --border: #333;
+    --bg-secondary: #141414;
+    --border: #2a2a2a;
 }
 
 html {
@@ -68,7 +71,7 @@ body {
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
     cursor: pointer;
@@ -84,12 +87,13 @@ body {
 .nav-links a {
     color: var(--text-secondary);
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
+    font-weight: 500;
     transition: color var(--transition);
 }
 
 .nav-links a:hover {
-    color: var(--text-primary);
+    color: var(--green);
 }
 
 .theme-toggle {
@@ -130,9 +134,9 @@ body {
 }
 
 .hero-content h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 6vw, 3.5rem);
     font-weight: 700;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     line-height: 1.2;
 }
 
@@ -144,10 +148,18 @@ body {
     color: var(--pink);
 }
 
-.hero-content p {
-    font-size: 1.1rem;
+.hero-subtitle {
+    font-size: 1.25rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.5;
+}
+
+.hero-ctas {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -169,8 +181,8 @@ body {
 .btn-secondary {
     background: transparent;
     color: var(--text-primary);
-    border: 1px solid var(--text-primary);
-    padding: 0.9rem 2rem;
+    border: 2px solid var(--text-primary);
+    padding: 0.85rem 2rem;
     border-radius: 6px;
     font-weight: 600;
     font-size: 0.95rem;
@@ -180,6 +192,178 @@ body {
 
 .btn-secondary:hover {
     background: var(--bg-secondary);
+}
+
+/* =================================
+   TRUST / SOCIAL PROOF
+   ================================= */
+
+.trust {
+    padding: 4rem 2rem;
+    background: var(--bg-secondary);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.trust-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat {
+    padding: 2rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+/* =================================
+   PROBLEM
+   ================================= */
+
+.problem {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.problem-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.section-intro {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.problem-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.problem-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    transition: all var(--transition);
+}
+
+.problem-card:hover {
+    border-color: var(--green);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.problem-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.problem-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.problem-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* =================================
+   ESSENCE / METODOLOGIA
+   ================================= */
+
+.essence {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.essence-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.essence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.essence-card {
+    padding: 2.5rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: all var(--transition);
+}
+
+.essence-card:hover {
+    border-color: var(--pink);
+}
+
+.essence-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--pink);
+    margin-bottom: 1rem;
+}
+
+.essence-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.essence-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.essence-checklist {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+
+.essence-checklist li {
+    padding: 0.5rem 0;
+    padding-left: 1.5rem;
+    color: var(--text-secondary);
+    position: relative;
+}
+
+.essence-checklist li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: bold;
 }
 
 /* =================================
@@ -195,18 +379,19 @@ body {
 .services h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
+    margin-top: 3rem;
 }
 
 .service-card {
-    padding: 2rem;
+    padding: 2.5rem;
     border: 1px solid var(--border);
     border-radius: 8px;
     background: var(--bg-secondary);
@@ -214,7 +399,7 @@ body {
 }
 
 .service-card:hover {
-    border-color: var(--text-primary);
+    border-color: var(--green);
 }
 
 .service-number {
@@ -236,11 +421,204 @@ body {
     line-height: 1.6;
 }
 
+.service-details {
+    background: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 6px;
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.service-details p {
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.service-details ul {
+    list-style: none;
+    margin-left: 1rem;
+}
+
+.service-details li {
+    padding: 0.3rem 0;
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: 1.5rem;
+}
+
+.service-details li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--green);
+    font-weight: bold;
+}
+
 .service-price {
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     color: var(--green);
     margin-bottom: 1.5rem;
+}
+
+/* =================================
+   RESULTS
+   ================================= */
+
+.results {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.results h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.result-card {
+    padding: 2rem;
+    background: var(--bg-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    border-left: 4px solid var(--green);
+}
+
+.result-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.result-author {
+    font-weight: 600;
+    color: var(--pink);
+    font-size: 0.95rem;
+}
+
+/* =================================
+   PATHS
+   ================================= */
+
+.paths {
+    padding: 6rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.paths-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.paths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.path-card {
+    padding: 2rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-secondary);
+    transition: all var(--transition);
+}
+
+.path-card:hover {
+    border-color: var(--pink);
+    transform: translateY(-2px);
+}
+
+.path-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-primary);
+}
+
+.path-subtitle {
+    font-size: 0.95rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.path-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.path-action {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* =================================
+   ABOUT
+   ================================= */
+
+.about {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.about-text {
+    margin-top: 3rem;
+}
+
+.about-text p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-creds {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bg-primary);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+}
+
+.cred-item {
+    text-align: center;
+    padding: 1rem;
+}
+
+.cred-item strong {
+    font-size: 1.5rem;
+    color: var(--green);
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 /* =================================
@@ -249,14 +627,14 @@ body {
 
 .faq {
     padding: 6rem 2rem;
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .faq h2 {
     font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
     text-align: center;
 }
 
@@ -282,6 +660,10 @@ body {
     background: var(--border);
 }
 
+.faq-question strong {
+    font-weight: 600;
+}
+
 .faq-icon {
     color: var(--pink);
     font-weight: bold;
@@ -298,10 +680,11 @@ body {
     transition: max-height var(--transition);
     padding: 0 1.5rem;
     color: var(--text-secondary);
+    line-height: 1.6;
 }
 
 .faq-item.active .faq-answer {
-    max-height: 300px;
+    max-height: 500px;
     padding: 0 1.5rem 1.5rem;
 }
 
@@ -316,14 +699,27 @@ body {
 }
 
 .cta-final-content {
-    max-width: 600px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
-.cta-final h2 {
-    font-size: 2rem;
+.cta-final-content h2 {
+    font-size: 2.5rem;
     font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.cta-final-content p {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
     margin-bottom: 2rem;
+}
+
+.cta-final-buttons {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* =================================
@@ -331,11 +727,11 @@ body {
    ================================= */
 
 .footer {
-    padding: 2rem;
+    padding: 2.5rem;
     text-align: center;
     color: var(--text-secondary);
     border-top: 1px solid var(--border);
-    font-size: 0.9rem;
+    font-size: 0.95rem;
 }
 
 .footer a {
@@ -364,7 +760,7 @@ a:focus-visible {
     }
 
     .nav {
-        gap: 1rem;
+        gap: 0.5rem;
     }
 
     .nav-links {
@@ -380,19 +776,53 @@ a:focus-visible {
         font-size: 1.75rem;
     }
 
-    .services,
-    .faq,
-    .cta-final {
-        padding: 4rem 1.5rem;
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
-    .services h2,
-    .faq h2 {
-        font-size: 1.75rem;
+    .hero-ctas {
+        flex-direction: column;
     }
 
     .btn-primary,
     .btn-secondary {
         width: 100%;
+    }
+
+    .trust-content,
+    .problem-grid,
+    .essence-grid,
+    .services-grid,
+    .results-grid,
+    .paths-grid,
+    .about-creds {
+        grid-template-columns: 1fr;
+    }
+
+    .trust,
+    .problem,
+    .essence,
+    .services,
+    .results,
+    .paths,
+    .about,
+    .faq,
+    .cta-final {
+        padding: 4rem 1.5rem;
+    }
+
+    .problem-content h2,
+    .essence-content h2,
+    .services h2,
+    .results h2,
+    .paths-content h2,
+    .about-content h2,
+    .faq h2,
+    .cta-final-content h2 {
+        font-size: 1.75rem;
+    }
+
+    .section-intro {
+        font-size: 1rem;
     }
 }
