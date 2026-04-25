@@ -1,29 +1,16 @@
-/* ========================================
-   KyB SITE - MAIN JAVASCRIPT
-   ======================================== */
-
 const CONFIG = {
     whatsappNumber: '5585998370928',
     whatsappMessage: 'Oi Karen, gostaria de saber mais sobre KyB'
 };
 
-/* ========================================
-   INITIALIZATION
-   ======================================== */
-
 document.addEventListener('DOMContentLoaded', () => {
     initializeNavigation();
     initializeButtons();
     initializeFAQ();
-    initializeStaggeredAnimations();
-    initializeAccessibility();
-    initializeScrollAnimations();
+    initializeTheme();
 });
 
-/* ========================================
-   NAVIGATION & SMOOTH SCROLL
-   ======================================== */
-
+/* NAVIGATION */
 function initializeNavigation() {
     const navLinks = document.querySelectorAll('.nav-links a');
     const logo = document.querySelector('.logo');
@@ -32,7 +19,7 @@ function initializeNavigation() {
         link.addEventListener('click', handleNavClick);
     });
 
-    logo.addEventListener('click', () => scrollToSection('home'));
+    logo?.addEventListener('click', () => scrollToSection('home'));
 }
 
 function handleNavClick(e) {
@@ -48,20 +35,12 @@ function scrollToSection(sectionId) {
     }
 }
 
-/* ========================================
-   BUTTONS & INTERACTIONS
-   ======================================== */
-
+/* BUTTONS */
 function initializeButtons() {
     const contactButtons = document.querySelectorAll('[data-action="contact"]');
-    const scrollButtons = document.querySelectorAll('[data-scroll]');
 
     contactButtons.forEach(btn => {
         btn.addEventListener('click', handleContactClick);
-    });
-
-    scrollButtons.forEach(btn => {
-        btn.addEventListener('click', handleScrollClick);
     });
 }
 
@@ -70,16 +49,11 @@ function handleContactClick(e) {
     openWhatsApp(source);
 }
 
-function handleScrollClick(e) {
-    const sectionId = e.target.getAttribute('data-scroll');
-    scrollToSection(sectionId);
-}
-
 function openWhatsApp(source) {
     let message = CONFIG.whatsappMessage;
 
     if (source) {
-        message = `${CONFIG.whatsappMessage} ${source}`;
+        message = `${CONFIG.whatsappMessage} - ${source}`;
     }
 
     const encoded = encodeURIComponent(message);
@@ -87,10 +61,7 @@ function openWhatsApp(source) {
     window.open(whatsappUrl, '_blank');
 }
 
-/* ========================================
-   FAQ ACCORDION
-   ======================================== */
-
+/* FAQ */
 function initializeFAQ() {
     const faqItems = document.querySelectorAll('.faq-item');
 
@@ -112,139 +83,30 @@ function toggleFAQ(faqItem) {
     }
 }
 
-/* ========================================
-   UTILITY FUNCTIONS
-   ======================================== */
+/* DARK MODE */
+function initializeTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme') || 'light';
 
-function debounce(func, delay) {
-    let timeoutId;
-    return function(...args) {
-        clearTimeout(timeoutId);
-        timeoutId = setTimeout(() => func(...args), delay);
-    };
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    themeToggle?.addEventListener('click', toggleTheme);
 }
 
-/* ========================================
-   SCROLL ANIMATIONS
-   ======================================== */
+function toggleTheme() {
+    const html = document.documentElement;
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
 
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.6s ease forwards';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-document.addEventListener('DOMContentLoaded', () => {
-    const animatedElements = document.querySelectorAll('.why-item, .solution-card');
-    animatedElements.forEach(el => observer.observe(el));
-});
-
-/* ========================================
-   STAGGERED ANIMATIONS
-   ======================================== */
-
-function initializeStaggeredAnimations() {
-    const cardElements = document.querySelectorAll('.solution-card, .why-item, .credentials li');
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-    if (prefersReducedMotion) return;
-
-    cardElements.forEach((el, index) => {
-        el.style.animation = `fadeInUp 0.6s ease forwards`;
-        el.style.animationDelay = `${index * 0.1}s`;
-    });
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateThemeIcon(newTheme);
 }
 
-/* ========================================
-   ACCESSIBILITY ENHANCEMENTS
-   ======================================== */
-
-function initializeAccessibility() {
-    addSkipLink();
-    enhanceFormAccessibility();
-    addAriaLabels();
-    manageFocusTrap();
-}
-
-function addSkipLink() {
-    const skipLink = document.createElement('a');
-    skipLink.href = '#main-content';
-    skipLink.className = 'skip-link';
-    skipLink.textContent = 'Skip to main content';
-    skipLink.setAttribute('aria-label', 'Skip to main content');
-    document.body.insertBefore(skipLink, document.body.firstChild);
-}
-
-function enhanceFormAccessibility() {
-    const buttons = document.querySelectorAll('button');
-    buttons.forEach(btn => {
-        if (!btn.getAttribute('aria-label') && btn.textContent.trim()) {
-            btn.setAttribute('aria-label', btn.textContent.trim());
-        }
-    });
-}
-
-function addAriaLabels() {
-    const expandables = document.querySelectorAll('.faq-item');
-    expandables.forEach((item, index) => {
-        item.setAttribute('aria-expanded', 'false');
-        item.setAttribute('role', 'region');
-    });
-}
-
-function manageFocusTrap() {
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const activeFaq = document.querySelector('.faq-item.active');
-            if (activeFaq) {
-                toggleFAQ(activeFaq);
-            }
-        }
-    });
-}
-
-/* ========================================
-   SCROLL-TRIGGERED ANIMATIONS
-   ======================================== */
-
-function initializeScrollAnimations() {
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
-            if (entry.isIntersecting) {
-                const delay = index * 0.05;
-                entry.target.style.animation = `fadeInUp 0.6s ease forwards ${delay}s`;
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    document.querySelectorAll('.why-item, .solution-card, .credentials li').forEach(el => {
-        observer.observe(el);
-    });
-}
-
-/* ========================================
-   MOTION PREFERENCES
-   ======================================== */
-
-function respectMotionPreferences() {
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (prefersReducedMotion) {
-        document.documentElement.style.setProperty('--transition-normal', '0ms ease');
-        document.documentElement.style.setProperty('--transition-fast', '0ms ease');
-        document.documentElement.style.setProperty('--transition-slow', '0ms ease');
+function updateThemeIcon(theme) {
+    const toggle = document.getElementById('theme-toggle');
+    if (toggle) {
+        toggle.textContent = theme === 'dark' ? '☀️' : '🌙';
     }
 }
