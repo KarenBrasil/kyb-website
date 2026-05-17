@@ -1,0 +1,150 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  password  String
+  createdAt DateTime @default(now())
+}
+
+model SubNiche {
+  id         Int          @id @default(autoincrement())
+  name       String       @unique
+  color      String       @default("#8b5cf6")
+  parentId   Int?
+  parent     SubNiche?    @relation("SubNicheHierarchy", fields: [parentId], references: [id])
+  children   SubNiche[]   @relation("SubNicheHierarchy")
+  references Reference[]
+  ideas      Idea[]
+  assets     Asset[]
+  createdAt  DateTime     @default(now())
+}
+
+model Reference {
+  id               Int       @id @default(autoincrement())
+  url              String
+  customTitle      String
+  originalTitle    String?
+  thumbnail        String?
+  summary          String?
+  adaptation       String?
+  score            Int       @default(3)
+  subNicheId       Int?
+  subNiche         SubNiche? @relation(fields: [subNicheId], references: [id])
+  ideas            Idea[]
+  createdAt        DateTime  @default(now())
+  updatedAt        DateTime  @updatedAt
+}
+
+model Idea {
+  id          Int         @id @default(autoincrement())
+  title       String
+  format      String      @default("Vídeo curto")
+  status      String      @default("Ideia")
+  context     String?
+  subNicheId  Int?
+  subNiche    SubNiche?   @relation(fields: [subNicheId], references: [id])
+  referenceId Int?
+  reference   Reference?  @relation(fields: [referenceId], references: [id])
+  scripts     Script[]
+  checklists  Checklist[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+}
+
+model Asset {
+  id         Int       @id @default(autoincrement())
+  type       String
+  content    String
+  subNicheId Int?
+  subNiche   SubNiche? @relation(fields: [subNicheId], references: [id])
+  usageCount Int       @default(0)
+  createdAt  DateTime  @default(now())
+}
+
+model Script {
+  id        Int      @id @default(autoincrement())
+  title     String
+  content   String
+  structure String   @default("Problema-Solução")
+  duration  String   @default("60s")
+  version   String   @default("v1")
+  ideaId    Int?
+  idea      Idea?    @relation(fields: [ideaId], references: [id])
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Prompt {
+  id        Int      @id @default(autoincrement())
+  title     String
+  useCase   String
+  content   String
+  createdAt DateTime @default(now())
+}
+
+model Checklist {
+  id         Int             @id @default(autoincrement())
+  name       String
+  ideaTitle  String?
+  ideaId     Int?
+  idea       Idea?           @relation(fields: [ideaId], references: [id])
+  items      ChecklistItem[]
+  createdAt  DateTime        @default(now())
+}
+
+model ChecklistItem {
+  id          Int       @id @default(autoincrement())
+  label       String
+  done        Boolean   @default(false)
+  order       Int       @default(0)
+  checklistId Int
+  checklist   Checklist @relation(fields: [checklistId], references: [id], onDelete: Cascade)
+}
+
+model UgcVideo {
+  id        Int      @id @default(autoincrement())
+  title     String
+  brand     String
+  type      String   @default("Portfólio")
+  status    String   @default("Ideia")
+  format    String   @default("60s vertical")
+  notes     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model LibraryItem {
+  id        Int      @id @default(autoincrement())
+  title     String
+  category  String
+  content   String
+  tags      String   @default("")
+  createdAt DateTime @default(now())
+}
+
+model AcervoItem {
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String
+  type        String   @default("link")
+  url         String?
+  description String?
+  createdAt   DateTime @default(now())
+}
+
+model Tool {
+  id       Int    @id @default(autoincrement())
+  name     String
+  url      String
+  category String
+  icon     String @default("🔧")
+}
