@@ -8,16 +8,17 @@ import {
 import { Plus, ExternalLink, Trash2, ChevronLeft, ChevronRight, Search } from 'lucide-react';
 
 // ─── CONSTANTS ────────────────────────────────────────────────────────────────
-const PIPELINE  = ['Ideia','Aprovado','Roteiro','Gravação','Publicado'];
-const S_COLORS  = { Ideia:'#5a5a70',Aprovado:'#60b4ff',Roteiro:'#8b5cf6',Gravação:'#ffd060',Publicado:'#00e5a0' };
-const A_LABELS  = { hook:'Gancho',cta:'CTA',phrase:'Frase',title:'Título',question:'Pergunta' };
-const A_COLORS  = { hook:'#f135a0',cta:'#c8f135',phrase:'#8b5cf6',title:'#60b4ff',question:'#ffd060' };
-const UGC_ORDER = ['Ideia','A gravar','Gravado','Publicado'];
-const UGC_COLS  = { Ideia:'#5a5a70','A gravar':'#ffd060',Gravado:'#60b4ff',Publicado:'#00e5a0' };
-const CAT_COLS  = { Dica:'#60b4ff',Mindset:'#8b5cf6',UGC:'#f135a0',Produção:'#ffd060',Marketing:'#00e5a0' };
-const STRUCTURES = ['Problema-Solução','Lista','Storytelling','Tutorial','Opinião','UGC','GRWM'];
-const FORMATS    = ['Vídeo curto','Vídeo longo','Carrossel','UGC','Vlog','Tutorial','Reels'];
-const SUBNICHES  = ['UGC','Roteiro','Marketing','Mindset','Bastidores','Produto','Geral'];
+const PIPELINE   = ['Ideia','Aprovado','Roteiro','Gravação','Publicado'];
+const S_COLORS   = { Ideia:'#5a5a70',Aprovado:'#60b4ff',Roteiro:'#8b5cf6',Gravação:'#ffd060',Publicado:'#00e5a0' };
+const A_LABELS   = { hook:'Gancho',cta:'CTA',phrase:'Frase',title:'Título',question:'Pergunta' };
+const A_COLORS   = { hook:'#f135a0',cta:'#c8f135',phrase:'#8b5cf6',title:'#60b4ff',question:'#ffd060' };
+const UGC_ORDER  = ['Ideia','A gravar','Gravado','Publicado'];
+const UGC_COLS   = { Ideia:'#5a5a70','A gravar':'#ffd060',Gravado:'#60b4ff',Publicado:'#00e5a0' };
+const CAT_COLS   = { Estratégia:'#60b4ff','BI / Power BI':'#60b4ff','IA / ChatGPT':'#8b5cf6',UGC:'#f135a0',Roteiro:'#c8f135',Produção:'#ffd060' };
+const STRUCTURES = ['HIDC','Problema-Solução','Lista','Tutorial','Storytelling','UGC','Carrossel'];
+const FORMATS    = ['Screencast Dinâmico','Face to Camera','Cinematográfico / Bastidores','Carrossel','Reels Rápido','Tutorial Passo a Passo'];
+const SUBNICHES  = ['BI / Power BI','IA / ChatGPT','UGC','Tech Tools','Roteiro & Estratégia','Bastidores & Setup','Python & Dados'];
+const HOOK_NAMES = ['Segredo Revelado','Transformação (Se eu fosse...)','Prova Social / Técnica','Corte de Tempo','Lista de Valor','Medo de Ficar para Trás'];
 
 function PageHeader({ title, sub, action }) {
   return (
@@ -264,7 +265,11 @@ export function References() {
 export function Ideas() {
   const { ideas, fetchIdeas, addIdea, moveIdea, deleteIdea, subNiches, fetchSubNiches } = useStore();
   const [modal, setModal] = useState(false);
-  const [form, setForm] = useState({ title:'',format:'Vídeo curto',subNicheId:'',status:'Ideia',context:'' });
+  const [form, setForm] = useState({ title:'',format:'Screencast Dinâmico',subNicheId:'',status:'Ideia',context:'' });
+  const [aiPanel, setAiPanel] = useState(false);
+  const [aiIdea, setAiIdea] = useState(null);
+  const [aiLoading, setAiLoading] = useState(false);
+  const [aiSubniche, setAiSubniche] = useState('');
 
   useEffect(() => { fetchIdeas(); fetchSubNiches(); }, []);
 
@@ -272,13 +277,90 @@ export function Ideas() {
     const sn = subNiches.find(s => s.name === form.subNicheId);
     await addIdea({ ...form, subNicheId: sn?.id || null });
     setModal(false);
-    setForm({ title:'',format:'Vídeo curto',subNicheId:'',status:'Ideia',context:'' });
+    setForm({ title:'',format:'Screencast Dinâmico',subNicheId:'',status:'Ideia',context:'' });
   }
+
+  async function generateAiIdea() {
+    setAiLoading(true);
+    try {
+      const params = aiSubniche ? `?subniche=${encodeURIComponent(aiSubniche)}` : '';
+      const { data } = await api.get(`/intelligence/generate-idea${params}`);
+      setAiIdea(data);
+    } catch (e) { console.error(e); }
+    setAiLoading(false);
+  }
+
+  async function saveAiIdea() {
+    if (!aiIdea) return;
+    const sn = subNiches.find(s => s.name === aiIdea.subniche);
+    const context = `Fórmula: ${aiIdea.formula} | Gatilho: ${aiIdea.gatilho}\n\nH: ${aiIdea.estrutura.h}\n\nI: ${aiIdea.estrutura.i}\n\nD: ${aiIdea.estrutura.d}\n\nC: ${aiIdea.estrutura.c}`;
+    await addIdea({ title: aiIdea.titulo, format: aiIdea.formato, subNicheId: sn?.id || null, status: 'Ideia', context });
+    setAiPanel(false);
+    setAiIdea(null);
+  }
+
 
   return (
     <div className="fade-in">
       <PageHeader title="Banco de Ideias" sub="Pipeline visual de produção de conteúdo"
-        action={<Btn onClick={() => setModal(true)}><Plus size={15}/>Nova ideia</Btn>} />
+        action={
+          <div className="flex gap-2">
+            <Btn variant="ghost" onClick={() => setAiPanel(p => !p)}>🧠 Gerar Ideia</Btn>
+            <Btn onClick={() => setModal(true)}><Plus size={15}/>Nova ideia</Btn>
+          </div>
+        } />
+
+      {/* Painel de Inteligência KyB */}
+      {aiPanel && (
+        <div className="mb-6 rounded-xl border border-accent/40 p-5" style={{background:'linear-gradient(135deg,rgba(248,55,160,0.05),rgba(139,92,246,0.05))'}}>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="font-display font-bold text-base">🧠 Gerador de Ideias KyB</span>
+            <span className="text-xs text-text3 ml-2">Baseado nas suas fórmulas de gancho e posicionamento</span>
+          </div>
+          <div className="flex gap-3 mb-4 flex-wrap">
+            <select className="kyb-input flex-1 min-w-40" value={aiSubniche} onChange={e => setAiSubniche(e.target.value)}>
+              <option value="">Sub-nicho aleatório</option>
+              {SUBNICHES.map(s => <option key={s} value={s}>{s}</option>)}
+            </select>
+            <Btn onClick={generateAiIdea} disabled={aiLoading}>
+              {aiLoading ? 'Gerando...' : '⚡ Gerar Ideia'}
+            </Btn>
+          </div>
+
+          {aiIdea && (
+            <div className="bg-surface2 rounded-xl p-4 border border-border">
+              <div className="flex gap-2 mb-2 flex-wrap">
+                <span className="kyb-chip text-xs">{aiIdea.subniche}</span>
+                <span className="kyb-chip text-xs">{aiIdea.formato}</span>
+                <span className="text-xs px-2 py-0.5 rounded-full font-semibold" style={{background:'#f135a022',color:'#f135a0'}}>{aiIdea.formula}</span>
+              </div>
+              <h3 className="font-display font-bold text-base leading-snug mb-1">{aiIdea.titulo}</h3>
+              <p className="text-xs text-text3 mb-3">⚡ Gatilho: {aiIdea.gatilho}</p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mb-3">
+                {[{k:'h',label:'H — Hook'},{k:'i',label:'I — Introdução'},{k:'d',label:'D — Desenvolvimento'},{k:'c',label:'C — CTA'}].map(({k,label}) => (
+                  <div key={k} className="bg-surface3 rounded-lg p-3">
+                    <div className="text-xs font-bold text-accent mb-1">{label}</div>
+                    <p className="text-xs text-text2 leading-relaxed">{aiIdea.estrutura[k]}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="mb-3 p-3 bg-surface3 rounded-lg">
+                <div className="text-xs font-bold text-text3 mb-2">✅ Checklist de Viralidade</div>
+                {aiIdea.checklist_viralidade.map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 mb-1">
+                    <span className="text-xs text-accent mt-0.5">•</span>
+                    <p className="text-xs text-text2">{item}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="flex gap-2">
+                <Btn onClick={saveAiIdea} className="flex-1 justify-center">✅ Salvar no Pipeline</Btn>
+                <Btn variant="ghost" onClick={generateAiIdea} disabled={aiLoading}>🔄 Gerar outra</Btn>
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       <div className="flex gap-4 overflow-x-auto pb-4">
         {PIPELINE.map(status => {

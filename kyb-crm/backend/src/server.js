@@ -1,11 +1,21 @@
 require('dotenv').config();
 const express = require('express');
+
 const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:5173', credentials: true }));
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || origin.includes('vercel.app') || origin.includes('localhost')) {
+      callback(null, true);
+    } else {
+      callback(null, process.env.FRONTEND_URL || 'http://localhost:5173');
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 // ─── ROTAS ────────────────────────────────────────────────────────────────────
@@ -21,8 +31,9 @@ app.use('/api/ugc',         require('./routes/ugc'));
 app.use('/api/library',     require('./routes/library'));
 app.use('/api/acervo',      require('./routes/acervo'));
 app.use('/api/tools',       require('./routes/tools'));
-app.use('/api/subniches',   require('./routes/subniches'));
-app.use('/api/metadata',    require('./routes/metadata'));
+app.use('/api/subniches',     require('./routes/subniches'));
+app.use('/api/metadata',      require('./routes/metadata'));
+app.use('/api/intelligence',  require('./routes/intelligence'));
 
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok', system: 'KyB CRM', version: '1.0.0' }));
@@ -31,3 +42,5 @@ app.listen(PORT, () => {
   console.log(`\n🟢 KyB CRM Backend rodando em http://localhost:${PORT}`);
   console.log(`📊 Dashboard: http://localhost:5173\n`);
 });
+
+module.exports = app;

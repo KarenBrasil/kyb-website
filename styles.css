@@ -622,6 +622,152 @@ body {
 }
 
 /* =================================
+   SERVICE CARD FEATURED
+   ================================= */
+
+.service-card--featured {
+    border: 2px solid var(--green);
+    position: relative;
+    background: var(--bg-primary);
+}
+
+.service-card--featured::before {
+    content: '⭐ Destaque';
+    position: absolute;
+    top: -14px;
+    left: 2rem;
+    background: var(--green);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.service-subtitle {
+    font-size: 1rem;
+    color: var(--green);
+    font-weight: 600;
+    margin-top: -0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+/* =================================
+   ABOUT — SPLIT LAYOUT
+   ================================= */
+
+.about {
+    padding: 6rem 2rem;
+    background: var(--bg-secondary);
+    margin: 0 auto;
+}
+
+.about-content--split {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.about-photo-placeholder {
+    width: 100%;
+    max-width: 340px;
+    aspect-ratio: 3/4;
+    border-radius: 16px;
+    border: 2px dashed var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--bg-primary);
+}
+
+.photo-frame {
+    text-align: center;
+}
+
+.photo-initials {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+}
+
+.photo-hint {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+.about-eyebrow {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--pink);
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.about-text h2 {
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.75rem;
+}
+
+.about-text p {
+    font-size: 1.05rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+    line-height: 1.8;
+}
+
+.btn-primary--large {
+    margin-top: 2rem;
+    padding: 1.1rem 2.5rem;
+    font-size: 1.05rem;
+    background: var(--green);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all var(--transition);
+}
+
+.btn-primary--large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16,185,129,0.35);
+}
+
+.footer-portfolio-link {
+    margin-top: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+    .about-content--split {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .about-photo-placeholder {
+        max-width: 200px;
+        aspect-ratio: 1;
+        margin: 0 auto;
+    }
+}
+
+
+/* =================================
    FAQ
    ================================= */
 
