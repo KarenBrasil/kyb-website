@@ -1,296 +1,440 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KyB - Estratégia, Conteúdo e Tráfego para Marcas</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Se não for .com, será .fora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+[data-theme="light"]{--bg:#faf9f7;--bg2:#f2f0ec;--surf:#ffffff;--ink:#0d0c0a;--ink2:#3e3c36;--ink3:#8a8276;--ac:#d82b50;--acl:#ff5f7e;--bd:rgba(13,12,10,0.08);--bd2:rgba(13,12,10,0.04);--tc:#d82b50;--shadow-sm:0 2px 8px rgba(13,12,10,0.06);--shadow-md:0 12px 32px rgba(13,12,10,0.08);--shadow-lg:0 20px 48px rgba(216,43,80,0.15);}
+[data-theme="dark"]{--bg:#0a0908;--bg2:#131110;--surf:#1a1815;--ink:#f2ede6;--ink2:#a89f96;--ink3:#6a6258;--ac:#f0354d;--acl:#ff6b85;--bd:rgba(242,237,230,0.12);--bd2:rgba(242,237,230,0.06);--tc:#ff6b85;--shadow-sm:0 2px 8px rgba(0,0,0,0.3);--shadow-md:0 12px 32px rgba(0,0,0,0.4);--shadow-lg:0 20px 48px rgba(240,53,77,0.25);}
+html{scroll-behavior:smooth;}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;transition:background .35s cubic-bezier(.4,.0,.2,1),color .35s cubic-bezier(.4,.0,.2,1);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);} ::-webkit-scrollbar-thumb{background:var(--ac);border-radius:3px;}::-webkit-scrollbar-thumb:hover{background:var(--acl);}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--bd2);transition:background .3s cubic-bezier(.4,.0,.2,1),border-color .3s cubic-bezier(.4,.0,.2,1),box-shadow .3s ease;box-shadow:0 0 0 transparent;}
+header.sc{backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:var(--shadow-sm);background:rgba(250,249,247,.85);border-bottom-color:var(--bd);}
+[data-theme="dark"] header.sc{background:rgba(10,9,8,.9);}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.6px;color:var(--ink);display:flex;align-items:center;gap:8px;transition:color .3s;text-decoration:none;}
+.logo:hover{color:var(--ac);}
+.ldot{width:8px;height:8px;border-radius:50%;background:var(--ac);margin-bottom:2px;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.logo:hover .ldot{transform:scale(1.2) rotate(180deg);}
+nav{display:flex;gap:40px;}
+nav a{font-size:13px;font-weight:600;color:var(--ink3);text-decoration:none;transition:color .2s;letter-spacing:.02em;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--ac);transition:width .3s cubic-bezier(.34,1.56,.64,1);}
+nav a:hover::after{width:100%;}
+nav a:hover{color:var(--ac);}
+.hr{display:flex;align-items:center;gap:16px;}
+.mbtn{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:100px;padding:8px 16px 8px 10px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:11px;font-weight:700;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;font-family:'Geist Mono',monospace;}
+.mbtn:hover{border-color:var(--ac);color:var(--ac);background:rgba(216,43,80,.06);}
+.bh{font-size:13px;font-weight:700;padding:11px 26px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);letter-spacing:.02em;}
+.bh:hover{opacity:.92;transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:52% 48%;max-width:1300px;margin:0 auto;}
+.hl{padding:56px 40px 56px 56px;display:flex;flex-direction:column;justify-content:center;}
+.etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:var(--tc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px;}
+.etag::before{content:'';width:16px;height:1.5px;background:var(--ac);border-radius:1px;}
+.h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,3.5vw,52px);line-height:1;letter-spacing:-.04em;color:var(--ink);word-spacing:.1em;}
+.h1-com{color:var(--ac);transition:color .3s;}
+.h1-fora{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--ink3);transition:color .3s;}
+.rule{width:40px;height:2px;background:linear-gradient(90deg,var(--ac),var(--ac) 60%,transparent);margin:24px 0;border-radius:1px;}
+.hsub{font-size:15px;font-weight:500;color:var(--ink2);max-width:420px;line-height:1.65;margin-bottom:20px;letter-spacing:-.01em;}
+.hsub strong{color:var(--ink);font-weight:700;}
+.reas{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+.rea{display:flex;align-items:flex-start;gap:12px;font-size:13px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.5;}
+.rd{width:6px;height:6px;border-radius:50%;background:var(--ac);margin-top:5px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.rea:hover .rd{transform:scale(1.3);}
+.rea strong{color:var(--ink);}
+.btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
+.bp{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:12px 28px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;}
+.bp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
+.bp:hover::before{transform:translateX(100%);}
+.bp:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(216,43,80,.28);opacity:.98;}
+.bp:active{transform:translateY(0);}
+.bp .ar{transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block;}
+.bp:hover .ar{transform:translateX(4px);}
+.bg{display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:11px 24px;background:transparent;color:var(--ink);border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.bg:hover{border-color:var(--ac);background:rgba(216,43,80,.05);color:var(--ac);}
+.stats{padding-top:32px;border-top:1px solid var(--bd);display:flex;gap:32px;flex-wrap:wrap;}
+.sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:4px;transition:transform .3s;}
+.sn:hover{transform:translateY(-2px);}
+.sn em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:.7em;color:var(--ac);}
+.sl{font-size:11px;font-weight:600;color:var(--ink3);line-height:1.4;letter-spacing:.02em;}
+
+/* HERO RIGHT */
+.hr2{background:#0d0c0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 48px;}
+.hr2::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4.5s ease-in-out infinite;pointer-events:none;}
+@keyframes pglow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}}
+.vis{position:relative;width:340px;height:340px;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);}
+.r1{inset:0;animation:rs 24s linear infinite;}
+.r2{inset:24px;border-style:dashed;border-color:rgba(240,53,77,.15);animation:rs 16s linear infinite reverse;}
+.r3{inset:48px;border-color:rgba(255,255,255,.04);animation:rs 34s linear infinite;}
+@keyframes rs{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;}
+.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 64px rgba(240,53,77,.6),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.2s ease-in-out infinite;z-index:4;}
+@keyframes cp{0%,100%{box-shadow:0 0 48px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 96px rgba(240,53,77,.8),inset 0 1px 2px rgba(255,255,255,.4);}}
+.vcl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.04em;line-height:1;}
+.vcs{font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(240,53,77,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
+.on:hover{background:rgba(240,53,77,.15);border-color:rgba(240,53,77,.4);transform:scale(1.15) !important;}
+.ni{font-size:22px;margin-bottom:3px;line-height:1;}
+.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.7);line-height:1.3;letter-spacing:.02em;}
+.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3s ease-in-out infinite;}
+.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 3.4s ease-in-out infinite .4s;}
+.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 2.8s ease-in-out infinite .8s;}
+.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3.6s ease-in-out infinite 1.2s;}
+.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 3.2s ease-in-out infinite 1.6s;}
+.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 2.6s ease-in-out infinite 2s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.vb{position:absolute;background:rgba(255,255,255,.06);border:1.5px solid rgba(240,53,77,.2);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.vb:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.4);transform:translateY(-2px);}
+.vbn{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;}
+.vbn em{font-family:'Cormorant Garamond',serif;font-size:.75em;color:#ff6b85;font-style:italic;}
+.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.02em;}
+.vb1{top:16px;right:18px;animation:bob 4s ease-in-out infinite;}
+.vb2{bottom:20px;left:14px;animation:bob 3.5s ease-in-out infinite .7s;}
+.vb3{bottom:60px;right:12px;animation:bob 5s ease-in-out infinite 1.4s;}
+
+/* TICKER */
+.ticker{background:var(--ac);padding:11px 0;overflow:hidden;display:flex;}
+.tt{display:flex;animation:tk 28s linear infinite;white-space:nowrap;}
+.tt span{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;color:#fff;padding:0 28px;display:flex;align-items:center;gap:18px;letter-spacing:.01em;}
+.tt span::after{content:'◆';font-size:5px;opacity:.5;}
+@keyframes tk{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SECTIONS */
+.sec{padding:96px 48px;transition:background .35s cubic-bezier(.4,.0,.2,1);max-width:1300px;margin:0 auto;}
+.sa{background:var(--bg2);}
+.stop{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px;}
+.ey{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:var(--tc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
+.ey::before{content:'';width:14px;height:1.5px;background:var(--ac);border-radius:1px;}
+.sh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(28px,2.8vw,44px);line-height:1.08;color:var(--ink);}
+.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;}
+.sd{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.65;letter-spacing:-.01em;}
+.sd strong{color:var(--ink);font-weight:700;}
+
+/* CVF */
+.cvf{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--bd);border-radius:20px;overflow:hidden;}
+.cc{padding:40px;}
+.cc.com{background:#0d0c0a;border-right:1px solid rgba(255,255,255,.07);}
+.cc.fora{background:var(--surf);color:var(--ink);}
+.ct{font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.com .ct{color:#ff7a92;}.com .ct::before{content:'';width:14px;height:1.5px;background:#ff7a92;border-radius:1px;}
+.fora .ct{color:var(--ink3);}.fora .ct::before{content:'';width:14px;height:1.5px;background:var(--ink3);border-radius:1px;}
+.ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3vw,42px);letter-spacing:-.04em;line-height:1.05;margin-bottom:6px;}
+.com .ch{color:#fff;}.fora .ch{color:var(--ink);}
+.ch .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;display:block;font-size:1.04em;}
+.com .ch .em{color:#ff7a92;}.fora .ch .em{color:var(--ink3);}
+.csub{font-size:13px;font-weight:500;line-height:1.6;margin-bottom:24px;}
+.com .csub{color:rgba(255,255,255,.48);}.fora .csub{color:var(--ink2);}
+.clist{display:flex;flex-direction:column;gap:10px;}
+.ci{display:flex;align-items:flex-start;gap:12px;padding-bottom:10px;border-bottom:1px solid;font-size:13px;font-weight:600;line-height:1.5;}
+.ci:last-child{border-bottom:none;padding-bottom:0;}
+.com .ci{border-color:rgba(255,255,255,.07);color:rgba(255,255,255,.74);}
+.fora .ci{border-color:var(--bd);color:var(--ink2);}
+.cdot{width:6px;height:6px;border-radius:50%;margin-top:4px;flex-shrink:0;}
+.com .cdot{background:#ff7a92;}.fora .cdot{background:var(--ink3);}
+
+/* PROBLEMS */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--bd);background:var(--bd);border-radius:16px;overflow:hidden;}
+.pc{background:var(--bg);padding:32px 28px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+[data-theme="dark"] .pc{background:var(--bg2);}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pc:hover{background:var(--surf);transform:translateY(-2px);}
+.pc:hover::after{transform:scaleX(1);}
+.pnum{font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:18px;display:flex;justify-content:space-between;text-transform:uppercase;}
+.pio{font-size:20px;}
+.pti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.03em;color:var(--ink);margin-bottom:10px;line-height:1.1;}
+.pde{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.6;}
+.pal{margin-top:32px;background:#0d0c0a;border-radius:16px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.palq{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(17px,2vw,26px);color:#fff;line-height:1.35;max-width:500px;}
+.palq strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-style:normal;font-size:.88em;color:#ff7a92;}
+.palb{flex-shrink:0;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid rgba(255,107,133,.35);border-radius:100px;padding:9px 16px;white-space:nowrap;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.palb:hover{background:rgba(255,107,133,.1);transform:scale(1.05);}
+
+/* METHOD */
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:transparent;border:none;border-radius:0;overflow:visible;margin-bottom:0;}
+.mc{background:transparent;padding:32px 24px;position:relative;transition:all .3s cubic-bezier(.34,1.56,.64,1);border:none;display:flex;flex-direction:column;align-items:center;text-align:center;}
+[data-theme="dark"] .mc{background:transparent;}.mc:hover{background:transparent;transform:translateY(-2px);}
+.mle{position:relative;display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:1;color:var(--ac);opacity:1;pointer-events:none;user-select:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:16px;}
+.mc:hover .mle{transform:scale(1.08);}
+.mtg{font-family:'Geist Mono',monospace;font-size:0;font-weight:700;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:0;display:none;}
+.mti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.03em;color:var(--ink);margin-bottom:8px;line-height:1.2;}
+.msu{font-size:12px;font-weight:600;color:var(--ac);margin-bottom:14px;letter-spacing:.03em;text-transform:uppercase;}
+.mde{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.65;}
+
+/* SERVICES */
+.svg{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:56px;}
+.sv{border:1.5px solid var(--bd);border-radius:20px;overflow:hidden;background:var(--surf);transition:all .4s cubic-bezier(.34,1.56,.64,1);}
+.sv:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--shadow-lg);}
+.svh{background:#0d0c0a;padding:32px;position:relative;overflow:hidden;}
+.svhg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:80px;color:rgba(255,255,255,.03);bottom:-8px;right:-8px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+.svbd{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,107,133,.35);border-radius:100px;padding:6px 12px;margin-bottom:16px;}
+.svt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,32px);color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:6px;}
+.svtg{font-size:12px;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.01em;}
+.svb{padding:28px 32px;}
+.svd{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.65;margin-bottom:20px;letter-spacing:-.01em;}
+.svil{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
+.svit{display:flex;align-items:flex-start;gap:12px;padding-bottom:8px;border-bottom:1px solid var(--bd2);font-size:13px;font-weight:600;color:var(--ink2);}
+.svit:last-child{border-bottom:none;padding-bottom:0;}
+.svdt{width:6px;height:6px;border-radius:50%;background:var(--ac);margin-top:4px;flex-shrink:0;}
+.svf{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--bd);}
+.svpr{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--ink);}
+.svpr small{font-size:12px;color:var(--ink3);font-weight:600;}
+.bsv{display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:-.01em;padding:10px 18px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.bsv:hover{background:var(--ink);color:var(--surf);transform:translateY(-2px);}
+
+/* COMP */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.cp2{padding:32px;border:1.5px solid var(--bd);border-radius:16px;background:var(--surf);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.cp2:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.cico{font-size:28px;margin-bottom:18px;display:block;}
+.cti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.03em;color:var(--ink);margin-bottom:4px;}
+.csu{font-size:12px;font-weight:700;color:var(--ac);margin-bottom:10px;letter-spacing:.02em;}
+.cde{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.65;}
+
+/* SOBRE */
+.sobre{padding:100px 80px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
+.sob-img{width:100%;aspect-ratio:1;background:linear-gradient(135deg,rgba(240,53,77,.12),rgba(240,53,77,.06));border-radius:18px;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:70px;color:var(--ink3);}
+.sob-tx{display:flex;flex-direction:column;gap:16px;}
+.sob-tt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.03em;color:var(--ink);line-height:1.15;margin-bottom:4px;}
+.sob-sub{font-size:12px;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
+.sob-main{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.7;letter-spacing:-.005em;}
+.sob-main strong{color:var(--ink);font-weight:700;}
+
+/* CTA */
+.ctas{padding:100px 48px;background:#0d0c0a;position:relative;overflow:hidden;text-align:center;max-width:100%;}
+.ctas::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(240,53,77,.14) 0%,transparent 65%);pointer-events:none;}
+.ctabg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:240px;color:rgba(255,255,255,.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;}
+.ctai{position:relative;z-index:1;max-width:650px;margin:0 auto;}
+.ctae{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;}
+.ctae::before,.ctae::after{content:'';width:18px;height:1.5px;background:#ff7a92;opacity:.4;border-radius:1px;}
+.ctah{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(32px,4vw,56px);line-height:1.1;color:#fff;margin-bottom:8px;}
+.ctah .em{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.05em;color:#ff7a92;}
+.ctasub{font-size:14px;font-weight:500;color:rgba(255,255,255,.38);line-height:1.6;margin:24px 0 40px;letter-spacing:-.005em;}
+.bctam{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;padding:14px 36px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:20px;letter-spacing:.01em;}
+.bctam:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(240,53,77,.4);opacity:.94;}
+.ctarl{display:flex;align-items:center;gap:16px;margin:24px 0;}
+.ctarl::before,.ctarl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
+.ctarl span{font-family:'Geist Mono',monospace;font-size:9px;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
+.ctalk{font-size:13px;font-weight:500;color:rgba(255,255,255,.3);}
+.ctalk a{color:rgba(255,255,255,.54);text-decoration:underline;text-underline-offset:3px;transition:color .2s;font-weight:600;}
+.ctalk a:hover{color:#ff7a92;}
+
+/* FOOTER */
+footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1300px;margin:0 auto;}
+.fl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:rgba(255,255,255,.35);letter-spacing:-.02em;}
+.fln{display:flex;gap:24px;flex-wrap:wrap;}
+.fln a{font-size:12px;font-weight:600;color:rgba(255,255,255,.24);text-decoration:none;transition:color .2s;letter-spacing:.005em;}
+.fln a:hover{color:rgba(255,255,255,.65);}
+.fcp{font-family:'Geist Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.01em;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.34,1.56,.64,1),transform .8s cubic-bezier(.34,1.56,.64,1);}
+.rv.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.hero{grid-template-columns:1fr;}.hr2{min-height:420px;}.sec{padding:96px 48px;}.stop{grid-template-columns:1fr;gap:48px;}.pg{grid-template-columns:1fr 1fr;}.mg{grid-template-columns:repeat(3,1fr);gap:12px;}.cvf{grid-template-columns:1fr;}.svg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr 1fr;}.ctas{padding:120px 48px;}.pal{flex-direction:column;text-align:center;padding:40px 36px;}.sobre{grid-template-columns:1fr;gap:48px;}}
+@media(max-width:700px){header{padding:0 20px;height:64px;}nav{display:none;}.hl{padding:48px 24px;}.hr2{min-height:360px;}.stats{gap:28px;}.sec{padding:72px 24px;}.stop{gap:32px;margin-bottom:56px;}.pg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.cc{padding:40px 28px;}.ctas{padding:96px 24px;}footer{padding:28px 24px;flex-direction:column;text-align:center;}.btns{flex-direction:column;align-items:flex-start;width:100%;}.bp,.bg{width:100%;}.vis{width:280px;height:280px;}.sobre{padding:72px 24px;}}
+</style>
 </head>
 <body>
-    <!-- LOADER -->
-    <div id="loader" class="loader">
-        <div class="loader-content">
-            <div class="logo-spin">KyB</div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-        </div>
+
+<header id="hdr">
+  <a href="#" class="logo"><div class="ldot"></div>KyB</a>
+  <nav><a href="#">Método</a><a href="#">Serviços</a><a href="#">Sobre</a></nav>
+  <div class="hr">
+    <button class="mbtn" id="mb"><span id="mico">☀️</span><span id="mlbl">PIM</span></button>
+    <button class="bh">Conversa gratuita →</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hl">
+    <div class="etag">Para quem quer vender mais no digital</div>
+    <h1 class="h1">Se não for<br><span class="h1-com">.com</span><br>será <span class="h1-fora">.fora.</span></h1>
+    <div class="rule"></div>
+    <p class="hsub">Vender mais, fechar mais clientes, ganhar mais dinheiro — tudo isso acontece quando você sabe <strong>o que postar, quando postar e por quê.</strong> O que falta não é esforço. É estratégia de conteúdo.</p>
+    <div class="reas">
+      <div class="rea"><div class="rd"></div>Sem presença digital, você depende só de indicação — e indicação acaba.</div>
+      <div class="rea"><div class="rd"></div>Quem não é autoridade aceita qualquer preço. Quem é <strong>dita o preço.</strong></div>
+      <div class="rea"><div class="rd"></div>Seu concorrente com metade do talento fecha o dobro — porque aparece.</div>
     </div>
+    <div class="btns">
+      <button class="bp">Quero ser .com agora <span class="ar">→</span></button>
+      <button class="bg">Ver como funciona</button>
+    </div>
+    <div class="stats">
+      <div><div class="sn">3<em>×</em></div><div class="sl">mais clientes<br>fechados</div></div>
+      <div><div class="sn">30<em>d</em></div><div class="sl">do invisível ao<br>reconhecido</div></div>
+      <div><div class="sn">100<em>%</em></div><div class="sl">foco em<br>venda real</div></div>
+    </div>
+  </div>
+  <div class="hr2">
+    <div class="vis">
+      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <svg class="vsvg" viewBox="0 0 320 320" fill="none">
+        <line x1="160" y1="160" x2="160" y2="5"   stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="295" y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="295" y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="160" y2="315" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="25"  y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="25"  y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="vc"><div class="vcl">KyB</div><div class="vcs">.com</div></div>
+      <div class="on n1"><div class="ni">💰</div><div class="nl">Venda<br>Mais</div></div>
+      <div class="on n2"><div class="ni">🎯</div><div class="nl">Cliente<br>Certo</div></div>
+      <div class="on n3"><div class="ni">📈</div><div class="nl">Preço<br>Justo</div></div>
+      <div class="on n4"><div class="ni">🔥</div><div class="nl">Feche<br>Contratos</div></div>
+      <div class="on n5"><div class="ni">🌐</div><div class="nl">Seja<br>Achado</div></div>
+      <div class="on n6"><div class="ni">⚡</div><div class="nl">Cresça<br>Rápido</div></div>
+    </div>
+    <div class="vb vb1"><div class="vbn">3<em>×</em></div><div class="vbl">mais contratos</div></div>
+    <div class="vb vb2"><div class="vbn">+R$<em>k</em></div><div class="vbl">ticket médio</div></div>
+    <div class="vb vb3"><div class="vbn">30<em>d</em></div><div class="vbl">resultado</div></div>
+  </div>
+</section>
 
-    <!-- HEADER COM LANG SELECTOR -->
-    <header class="header">
-        <nav class="lang-selector">
-            <button class="lang-btn active" data-lang="pt" title="Português">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M12 2a10 10 0 0 1 0 20a10 10 0 0 1 0-20z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                PT
-            </button>
-            <button class="lang-btn" data-lang="en" title="English">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <path d="M12 2a10 10 0 0 1 0 20a10 10 0 0 1 0-20z" fill="none" stroke="currentColor" stroke-width="1.5"/>
-                    <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.5"/>
-                </svg>
-                EN
-            </button>
-        </nav>
-    </header>
+<div class="ticker">
+  <div class="tt">
+    <span>Seja .COM</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado primeiro</span><span>Cobre o que vale</span><span>Pare de ser .FORA</span><span>Estratégia de conteúdo</span><span>UGC que converte</span><span>Resultado concreto</span>
+    <span>Seja .COM</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado primeiro</span><span>Cobre o que vale</span><span>Pare de ser .FORA</span><span>Estratégia de conteúdo</span><span>UGC que converte</span><span>Resultado concreto</span>
+  </div>
+</div>
 
-    <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5585998370928" class="whatsapp-float" target="_blank" title="Enviar mensagem no WhatsApp">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.076 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421-7.403h-.004a9.87 9.87 0 00-4.946 1.347l-.355.206-.368-.056c-1.26-.193-2.427-.588-3.465-1.186L2.67 6.438c.405.26.873.438 1.371.512.4.06.795.062 1.188-.024l.335-.056A9.9 9.9 0 0112 2c5.493 0 9.96 4.467 9.96 9.96 0 .766-.084 1.514-.25 2.238l-.017.105-.137.001a9.88 9.88 0 01-1.96-.196l-.335-.056c-.393-.087-.79-.086-1.188.024-.498.074-.966.252-1.371.512l.355.206a9.87 9.87 0 014.946 1.347 10 10 0 010 0z"/>
-        </svg>
-    </a>
+<section class="sec rv">
+  <div class="cvf">
+    <div class="cc com">
+      <div class="ct">.com — quem domina o jogo</div>
+      <div class="ch">.com<span class="em">Aparece. Vende. Escala.</span></div>
+      <p class="csub">Quem tem posicionamento digital não compete por preço — compete por autoridade. E autoridade não tem concorrente direto.</p>
+      <div class="clist">
+        <div class="ci"><div class="cdot"></div>Cliente chega pronto pra comprar — sem negociação</div>
+        <div class="ci"><div class="cdot"></div>Cobra o preço que merece sem ser questionado</div>
+        <div class="ci"><div class="cdot"></div>Conteúdo vende enquanto você dorme</div>
+        <div class="ci"><div class="cdot"></div>Referência no nicho — sem precisar convencer ninguém</div>
+        <div class="ci"><div class="cdot"></div>Fecha contratos com marcas todo mês</div>
+      </div>
+    </div>
+    <div class="cc fora">
+      <div class="ct">.fora — perdendo mercado agora</div>
+      <div class="ch">.fora<span class="em">Invisível. Substituído. Esquecido.</span></div>
+      <p class="csub">Sem estratégia digital, você depende de indicação, abaixa o preço para fechar, e assiste a concorrência crescer com metade do seu talento.</p>
+      <div class="clist">
+        <div class="ci"><div class="cdot"></div>Ninguém te encontra quando está pronto para comprar</div>
+        <div class="ci"><div class="cdot"></div>Aceita qualquer preço porque precisa fechar</div>
+        <div class="ci"><div class="cdot"></div>100% dependente de indicação para sobreviver</div>
+        <div class="ci"><div class="cdot"></div>Concorrente medíocre fecha seus clientes todo dia</div>
+        <div class="ci"><div class="cdot"></div>Trabalha mais, ganha menos — todo mês igual</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SEÇÃO 1: HERO ===== -->
-    <section id="hero" class="hero">
-        <div class="hero-slideshow">
-            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%);"></div>
-            <div class="slide" style="background: linear-gradient(135deg, #EB6027 0%, #0D0D0D 100%);"></div>
-            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);"></div>
-        </div>
+<section class="sec sa">
+  <div class="stop rv">
+    <div><div class="ey">O diagnóstico sem filtro</div><h2 class="sh">Por que o conteúdo<br>não está vendendo</h2></div>
+    <p class="sd">A maioria posta. Poucos têm estratégia. <strong>Essa é a única diferença</strong> entre quem cresce e quem fica no lugar.</p>
+  </div>
+  <div class="pg rv">
+    <div class="pc"><div class="pnum"><span>01</span><span class="pio">👻</span></div><div class="pti">Ninguém sabe o que você faz</div><div class="pde">Você tem talento, entrega bem — mas no digital, ninguém te encontra. Alguém com metade do seu nível mas com estratégia clara está faturando o que é seu.</div></div>
+    <div class="pc"><div class="pnum"><span>02</span><span class="pio">🌫️</span></div><div class="pti">Posta, posta e nada acontece</div><div class="pde">Conteúdo sem objetivo não converte. Sem saber o que postar, para quem e com qual intenção, cada publicação é esforço jogado fora.</div></div>
+    <div class="pc"><div class="pnum"><span>03</span><span class="pio">💸</span></div><div class="pti">Cobra menos do que deveria</div><div class="pde">Quando o cliente não te enxerga como referência, ele negocia. Posicionamento certo muda isso — e o cliente para de questionar o preço.</div></div>
+    <div class="pc"><div class="pnum"><span>04</span><span class="pio">🔄</span></div><div class="pti">Todo mês começa do zero</div><div class="pde">Sem audiência construída, sem conteúdo estratégico, cada mês é uma caça ao cliente do zero. O digital quebra esse ciclo — mas só com estratégia.</div></div>
+  </div>
+  <div class="pal rv">
+    <p class="palq">Enquanto você decide, alguém com a <strong>mesma profissão e menos talento</strong> está fechando o cliente que deveria ser seu. Só porque aparece mais.</p>
+    <div class="palb">Realidade sem filtro</div>
+  </div>
+</section>
 
-        <div class="hero-content">
-            <h1 class="hero-title animate-on-scroll" style="animation-delay: 0.3s;">
-                Você é bom no que faz.<br>
-                <span class="gradient-text">Mas ninguém sabe.</span>
-            </h1>
+<section class="sec">
+  <div class="stop rv"><div><div class="ey">Como funciona</div><h2 class="sh">O método <span class="em">SER.COM</span></h2></div><p class="sd">Três pilares. Cada um existe para uma coisa só: <strong>fazer o conteúdo virar dinheiro.</strong></p></div>
+  <div class="mg rv">
+    <div class="mc"><div class="mle">S</div><div class="mti">Sincero</div><div class="msu">Sem template, sem papo genérico</div><div class="mde">Ponto de partida é entender o que você vende, para quem vende e o que está travando a venda agora. Nada é copiado de outro caso.</div></div>
+    <div class="mc"><div class="mle">E</div><div class="mti">Estratégico</div><div class="msu">Plano que cabe na sua realidade</div><div class="mde">Um plano de conteúdo que funciona para o seu negócio, não para uma empresa inventada num slide de consultoria. Concreto. Executável. Agora.</div></div>
+    <div class="mc"><div class="mle">R</div><div class="mti">Rentável</div><div class="msu">Conteúdo que existe para vender</div><div class="mde">Cada publicação tem um objetivo: atrair, posicionar ou converter. Nada é postado por obrigação ou por seguir tendência. O conteúdo trabalha.</div></div>
+  </div>
+</section>
 
-            <p class="hero-subtitle animate-on-scroll" style="animation-delay: 0.6s;">
-                Profissional autônomo que vende serviço ou produto precisa de autoridade.<br>
-                A gente faz você sair do invisível e ganhar mais. Ponto.
-            </p>
+<section class="sec sa">
+  <div class="stop rv"><div><div class="ey">Como podemos te ajudar</div><h2 class="sh">Dois caminhos para<br><span class="em">vender mais.</span></h2></div><p class="sd">Escolha onde você está agora. Os dois levam ao mesmo lugar: <strong>mais clientes, mais contratos, mais receita.</strong></p></div>
+  <div class="svg">
+    <div class="sv rv d1">
+      <div class="svh"><div class="svhg">Estratégia</div><div class="svbd">Posicionamento · SER.com</div><div class="svt">Estratégia de<br>Conteúdo</div><div class="svtg">Saber o que postar, para quem e com qual objetivo</div></div>
+      <div class="svb">
+        <p class="svd">Saber o que postar não é sorte. É um plano. Você sai com o posicionamento claro, a linha editorial definida e as próximas semanas de conteúdo estruturadas. Só executar.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>O que postar, quando postar e com qual objetivo em cada publicação</div><div class="svit"><div class="svdt"></div>Posicionamento: como aparecer diferente de todo mundo no seu nicho</div><div class="svit"><div class="svdt"></div>30 ideias de conteúdo prontas para as próximas 8 semanas</div><div class="svit"><div class="svdt"></div>3 roteiros prontos para gravar agora</div><div class="svit"><div class="svdt"></div>1 sessão ao vivo para alinhar e tirar dúvidas</div></div>
+        <div class="svf"><div class="svpr">R$ 997 <small>/ único</small></div><button class="bsv">Quero fechar mais →</button></div>
+      </div>
+    </div>
+    <div class="sv rv d2">
+      <div class="svh" style="background:linear-gradient(145deg,#180810,#260f1c);"><div class="svhg">UGC</div><div class="svbd">UGC Manager · SER.com</div><div class="svt">UGC<br>Manager</div><div class="svtg">Criadores de conteúdo gerenciados para a sua marca</div></div>
+      <div class="svb">
+        <p class="svd">Conteúdo de influência feito do jeito certo — com o creator certo, o roteiro certo e o objetivo certo. Cada vídeo publicado existe para gerar cliente, venda ou autoridade para a marca.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>Seleção e gestão dos creators ideais para o seu público</div><div class="svit"><div class="svdt"></div>Roteiros alinhados com a identidade e objetivo da marca</div><div class="svit"><div class="svdt"></div>Supervisão de cada entrega — do briefing à publicação</div><div class="svit"><div class="svdt"></div>Análise de resultado e ajuste contínuo</div><div class="svit"><div class="svdt"></div>Relatório mensal com o que funcionou e o próximo passo</div></div>
+        <div class="svf"><div class="svpr">R$ 1.997 <small>/ mês</small></div><button class="bsv">Quero contratos com marcas →</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="ey rv" style="margin-bottom:24px;">Amplie ainda mais seus resultados</div>
+  <div class="cg">
+    <div class="cp2 rv d1"><span class="cico">🎥</span><div class="cti">Audiovisual</div><div class="csu">Conteúdo que posiciona</div><div class="cde">Produção profissional que eleva sua marca — roteiro, gravação e edição com identidade.</div></div>
+    <div class="cp2 rv d2"><span class="cico">💰</span><div class="cti">Tráfego Pago</div><div class="csu">Mais clientes todo dia</div><div class="cde">Meta Ads e Google Ads que trazem o cliente certo — não só cliques que não convertem.</div></div>
+    <div class="cp2 rv d3"><span class="cico">🌐</span><div class="cti">Sites</div><div class="csu">Que fecham contratos</div><div class="cde">Sites que transformam visitantes em clientes pagantes — design a serviço da venda.</div></div>
+    <div class="cp2 rv d4"><span class="cico">✉️</span><div class="cti">Email Marketing</div><div class="csu">Base que vira receita</div><div class="cde">Sua lista se transforma em faturamento — estratégias que fidelizam e vendem.</div></div>
+  </div>
+</section>
 
-            <a href="https://wa.me/5585998370928" class="btn btn-primary animate-on-scroll" style="animation-delay: 0.9s;" target="_blank">
-                Vamos conversar
-            </a>
+<section class="sobre rv">
+  <div class="sob-img">📸</div>
+  <div class="sob-tx">
+    <div>
+      <div class="sob-sub">Quem está por trás</div>
+      <h2 class="sob-tt">Karen Brasil</h2>
+    </div>
+    <div class="sob-main">
+      <p style="margin-bottom:12px;">Meu trabalho começou entendo números. Dados, padrões, estatística — é como eu penso.</p>
+      <p style="margin-bottom:12px;">Mas também criei conteúdo. Entendo o que faz uma pessoa parar de scrollar. Entendo tendência, tom de voz, o que gruda nas redes.</p>
+      <p style="margin-bottom:12px;">Aí juntei as duas coisas na KyB. Inteligência de dados + criatividade. Sem fake, sem estratégia desconectada da realidade.</p>
+      <p><strong>Seu negócio cresce quando alguém consegue te encontrar. A gente faz isso acontecer.</strong></p>
+    </div>
+  </div>
+</section>
 
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-        </div>
-    </section>
+<section class="ctas">
+  <div class="ctabg">.com</div>
+  <div class="ctai rv">
+    <div class="ctae">Próximo passo</div>
+    <h2 class="ctah">Chega de ser<span class="em">.fora do mercado.</span></h2>
+    <p class="ctasub">30 minutos. Gratuito. Sem enrolação.<br>A gente mostra exatamente o que fazer para você começar a fechar mais agora.</p>
+    <button class="bctam">Agendar conversa gratuita →</button>
+    <div class="ctarl"><span>ou fale direto</span></div>
+    <div class="ctalk"><a href="#">WhatsApp</a> &nbsp;·&nbsp; <a href="#">E-mail</a><br><br>Respondo em até 2 horas em dias úteis.</div>
+  </div>
+</section>
 
-    <!-- ===== SEÇÃO 2: MARQUEE (Social Proof) ===== -->
-    <section class="marquee-section">
-        <div class="marquee">
-            <div class="marquee-content">
-                <span>Ecommerce</span>
-                <span>Consultoria</span>
-                <span>Coaching</span>
-                <span>Serviços</span>
-                <span>Digital</span>
-                <span>Educação</span>
-                <span>SaaS</span>
-                <span>Ecommerce</span>
-                <span>Consultoria</span>
-                <span>Coaching</span>
-                <span>Serviços</span>
-                <span>Digital</span>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="fl">KyB</div>
+  <div class="fln"><a href="#">Sobre</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">WhatsApp</a></div>
+  <div class="fcp">© 2026 KyB · Todos os direitos reservados</div>
+</footer>
 
-
-    <!-- ===== SEÇÃO 3: SERVIÇOS ===== -->
-    <section id="servicos" class="servicos">
-        <h2 class="section-title animate-on-scroll">Como criamos sua autoridade</h2>
-
-        <div class="servicos-grid">
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.1s;">
-                <div class="servico-icon">🎯</div>
-                <div class="servico-content">
-                    <h3>Diagnóstico de Autoridade</h3>
-                    <p>Analisamos seu perfil, seu histórico, seu posicionamento. Descobre exatamente onde tá vazando client e onde você tá invisível.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.15s;">
-                <div class="servico-icon">🗣️</div>
-                <div class="servico-content">
-                    <h3>Posicionamento (A coisa que vende)</h3>
-                    <p>Sai de "mais um" pra "aquela pessoa que eu confio pra isso". Sua expertise vira moeda. Seu ticket sobe.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.2s;">
-                <div class="servico-icon">📱</div>
-                <div class="servico-content">
-                    <h3>Estratégia de Conteúdo que Vende</h3>
-                    <p>Conteúdo sem direção é barulho. A gente cria um roteiro onde cada post educa, posiciona e leva pro seu oferta.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.25s;">
-                <div class="servico-icon">🎥</div>
-                <div class="servico-content">
-                    <h3>Vídeo que Posiciona</h3>
-                    <p>Vídeo é autoridade em movimento. A gente produz você falando sobre sua expertise. Cliente vê, confia, compra.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.3s;">
-                <div class="servico-icon">👁️</div>
-                <div class="servico-content">
-                    <h3>Tráfego Pago (Só Pro Cliente Certo)</h3>
-                    <p>Ter autoridade é pouco se ninguém vê. A gente leva seu conteúdo pro pessoa que REALMENTE quer ouvir você.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.35s;">
-                <div class="servico-icon">🌐</div>
-                <div class="servico-content">
-                    <h3>Landing Page + Presença Digital</h3>
-                    <p>Primeira impressão fecha venda. A gente cria uma presença que diz "confio em você" em 3 segundos.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.4s;">
-                <div class="servico-icon">📊</div>
-                <div class="servico-content">
-                    <h3>Análise de Desempenho</h3>
-                    <p>Não é adivinhação. A gente mede tudo: quem vê, quem engaja, quem vira cliente. Ajusta semana a semana.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.45s;">
-                <div class="servico-icon">🤝</div>
-                <div class="servico-content">
-                    <h3>Mentoria Contínua</h3>
-                    <p>Você aprende enquanto executa. Não deixa você sozinho. Acompanhamos até seu negócio rodar autonomamente.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== SEÇÃO 4: TEAM ===== -->
-    <section id="team" class="team">
-        <h2 class="section-title animate-on-scroll">Quem tá do seu lado</h2>
-
-        <div class="team-grid">
-            <div class="team-card animate-on-scroll" style="animation-delay: 0.2s;">
-                <div class="team-image" style="background: linear-gradient(135deg, #EB6027 0%, #FF8C42 100%);">
-                    <span>K</span>
-                </div>
-                <h3>Karen</h3>
-                <p class="team-role">Fundadora & Estrategista</p>
-                <p class="team-bio">Trabalhei por 8 anos ajudando profissionais autônomos a sair do invisível. Criei a metodologia KyB porque sabia que tinha que existir um jeito simples de criar autoridade de verdade.</p>
-            </div>
-
-            <div class="team-card animate-on-scroll" style="animation-delay: 0.3s;">
-                <div class="team-image" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);">
-                    <span>👥</span>
-                </div>
-                <h3>Equipe KyB</h3>
-                <p class="team-role">Videomakers, Designers, Copywriters</p>
-                <p class="team-bio">Profissionais que SABEM o que funciona. Não entrega desculpa. Entrega resultado mensurável ou não cobra. Seu sucesso é nosso sucesso.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SEÇÃO 5: FAQ ===== -->
-    <section id="faq" class="faq">
-        <h2 class="section-title animate-on-scroll">Dúvidas frequentes</h2>
-
-        <div class="faq-container">
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
-                <button class="faq-question">
-                    <span>Preciso estar no Instagram pra isso funcionar?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Instagram é o principal, mas trabalhamos com LinkedIn, TikTok e até presença em website. Depende onde seus clientes estão.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.15s;">
-                <button class="faq-question">
-                    <span>Quanto custa?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Depende do que você precisa. Tem desde diagnóstico de R$297 até mentoria contínua de R$8k+/mês. Conversa que a gente acha o que encaixa no seu orçamento.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
-                <button class="faq-question">
-                    <span>Quanto tempo leva pra ver resultado?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Autoridade é construção. Mas primeiros resultados (mais visualizações, mais engajamento qualificado) a gente vê em 30 dias. Vendas de fato? 60-90 dias.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.25s;">
-                <button class="faq-question">
-                    <span>Como começar?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Manda uma mensagem no WhatsApp falando um pouco sobre seu negócio. A gente responde em até 24h com uma proposta de como ajudar você.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SEÇÃO 6: CTA FINAL ===== -->
-    <section id="cta-final" class="cta-final">
-        <div class="cta-content animate-on-scroll">
-            <h2>Quanto tá deixando de ganhar?</h2>
-            <p>Cada mês que passa invisível é grana indo pro seu concorrente que TEM presença digital.<br>A diferença é autoridade. E a gente sabe criar isso.</p>
-            <a href="https://wa.me/5585998370928" class="btn btn-primary btn-large" target="_blank">
-                Vamos conversar
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>KyB</h4>
-                <p>Estratégia, Conteúdo e Tráfego para Marcas que vendem.</p>
-            </div>
-
-            <div class="footer-column">
-                <h4>Navegação</h4>
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#processo">Processo</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Serviços</h4>
-                <ul>
-                    <li><a href="#servicos">Estratégia de Conteúdo</a></li>
-                    <li><a href="#servicos">Tráfego Pago</a></li>
-                    <li><a href="#servicos">Vídeo UGC</a></li>
-                    <li><a href="#servicos">Site + Portfolio</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Contato</h4>
-                <p><a href="https://wa.me/5585998370928" target="_blank">💬 WhatsApp</a></p>
-                <p><a href="https://instagram.com" target="_blank">📸 Instagram</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 KyB. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script>
+const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico'),ml=document.getElementById('mlbl');
+function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';ml.textContent=d?'LUZ':'PIM';localStorage.setItem('kyb-t',d?'dark':'light');}
+if(localStorage.getItem('kyb-t')==='dark')st(true);
+mb.addEventListener('click',()=>st(html.getAttribute('data-theme')!=='dark'));
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>20),{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
