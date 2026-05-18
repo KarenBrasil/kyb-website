@@ -1,280 +1,441 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" data-theme="light">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KyB - Estratégia, Conteúdo e Tráfego para Marcas</title>
-    <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Se não for .com, será .fora</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+[data-theme="light"]{--bg:#faf9f7;--bg2:#f2f0ec;--surf:#ffffff;--ink:#0d0c0a;--ink2:#3e3c36;--ink3:#8a8276;--ac:#d82b50;--acl:#ff5f7e;--bd:rgba(13,12,10,0.08);--bd2:rgba(13,12,10,0.04);--tc:#d82b50;--shadow-sm:0 2px 8px rgba(13,12,10,0.06);--shadow-md:0 12px 32px rgba(13,12,10,0.08);--shadow-lg:0 20px 48px rgba(216,43,80,0.15);}
+[data-theme="dark"]{--bg:#0a0908;--bg2:#131110;--surf:#1a1815;--ink:#f2ede6;--ink2:#a89f96;--ink3:#6a6258;--ac:#f0354d;--acl:#ff6b85;--bd:rgba(242,237,230,0.12);--bd2:rgba(242,237,230,0.06);--tc:#ff6b85;--shadow-sm:0 2px 8px rgba(0,0,0,0.3);--shadow-md:0 12px 32px rgba(0,0,0,0.4);--shadow-lg:0 20px 48px rgba(240,53,77,0.25);}
+html{scroll-behavior:smooth;}
+body{font-family:'Bricolage Grotesque',system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;transition:background .35s cubic-bezier(.4,.0,.2,1),color .35s cubic-bezier(.4,.0,.2,1);}
+::-webkit-scrollbar{width:6px;}::-webkit-scrollbar-track{background:var(--bg2);} ::-webkit-scrollbar-thumb{background:var(--ac);border-radius:3px;}::-webkit-scrollbar-thumb:hover{background:var(--acl);}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:200;height:72px;padding:0 56px;display:flex;align-items:center;justify-content:space-between;background:var(--bg);border-bottom:1px solid var(--bd2);transition:background .3s cubic-bezier(.4,.0,.2,1),border-color .3s cubic-bezier(.4,.0,.2,1),box-shadow .3s ease;box-shadow:0 0 0 transparent;}
+header.sc{backdrop-filter:blur(32px);-webkit-backdrop-filter:blur(32px);box-shadow:var(--shadow-sm);background:rgba(250,249,247,.85);border-bottom-color:var(--bd);}
+[data-theme="dark"] header.sc{background:rgba(10,9,8,.9);}
+.logo{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:21px;letter-spacing:-.6px;color:var(--ink);display:flex;align-items:center;gap:8px;transition:color .3s;text-decoration:none;}
+.logo:hover{color:var(--ac);}
+.ldot{width:8px;height:8px;border-radius:50%;background:var(--ac);margin-bottom:2px;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.logo:hover .ldot{transform:scale(1.2) rotate(180deg);}
+nav{display:flex;gap:40px;}
+nav a{font-size:13px;font-weight:600;color:var(--ink3);text-decoration:none;transition:color .2s;letter-spacing:.02em;position:relative;}
+nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5px;background:var(--ac);transition:width .3s cubic-bezier(.34,1.56,.64,1);}
+nav a:hover::after{width:100%;}
+nav a:hover{color:var(--ac);}
+.hr{display:flex;align-items:center;gap:16px;}
+.mbtn{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:100px;padding:8px 16px 8px 10px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:11px;font-weight:700;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;font-family:'Geist Mono',monospace;}
+.mbtn:hover{border-color:var(--ac);color:var(--ac);background:rgba(216,43,80,.06);}
+.bh{font-size:13px;font-weight:700;padding:11px 26px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);letter-spacing:.02em;}
+.bh:hover{opacity:.92;transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:52% 48%;}
+.hl{padding:72px 56px 72px 80px;display:flex;flex-direction:column;justify-content:center;}
+.etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:36px;}
+.etag::before{content:'';width:20px;height:1.5px;background:var(--ac);border-radius:1px;}
+.h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,5.2vw,72px);line-height:1;letter-spacing:-.04em;color:var(--ink);word-spacing:.1em;}
+.h1-com{color:var(--ac);transition:color .3s;}
+.h1-fora{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--ink3);transition:color .3s;}
+.rule{width:48px;height:2.5px;background:linear-gradient(90deg,var(--ac),var(--ac) 60%,transparent);margin:32px 0;border-radius:1px;}
+.hsub{font-size:17px;font-weight:500;color:var(--ink2);max-width:490px;line-height:1.75;margin-bottom:24px;letter-spacing:-.01em;}
+.hsub strong{color:var(--ink);font-weight:700;}
+.reas{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;}
+.rea{display:flex;align-items:flex-start;gap:14px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.6;}
+.rd{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:6px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.rea:hover .rd{transform:scale(1.3);}
+.rea strong{color:var(--ink);}
+.btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+.bp{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:15px 34px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;}
+.bp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
+.bp:hover::before{transform:translateX(100%);}
+.bp:hover{transform:translateY(-2px);box-shadow:0 20px 48px rgba(216,43,80,.35);opacity:.98;}
+.bp:active{transform:translateY(0);}
+.bp .ar{transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block;}
+.bp:hover .ar{transform:translateX(5px);}
+.bg{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:14px 28px;background:transparent;color:var(--ink);border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.bg:hover{border-color:var(--ac);background:rgba(216,43,80,.05);color:var(--ac);}
+.stats{padding-top:48px;border-top:1px solid var(--bd);display:flex;gap:48px;flex-wrap:wrap;}
+.sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:40px;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:6px;transition:transform .3s;}
+.sn:hover{transform:translateY(-2px);}
+.sn em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:.7em;color:var(--ac);}
+.sl{font-size:12px;font-weight:600;color:var(--ink3);line-height:1.5;letter-spacing:.02em;}
+
+/* HERO RIGHT */
+.hr2{background:#0d0c0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 48px;}
+.hr2::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4.5s ease-in-out infinite;pointer-events:none;}
+@keyframes pglow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}}
+.vis{position:relative;width:340px;height:340px;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);}
+.r1{inset:0;animation:rs 24s linear infinite;}
+.r2{inset:24px;border-style:dashed;border-color:rgba(240,53,77,.15);animation:rs 16s linear infinite reverse;}
+.r3{inset:48px;border-color:rgba(255,255,255,.04);animation:rs 34s linear infinite;}
+@keyframes rs{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;}
+.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 64px rgba(240,53,77,.6),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.2s ease-in-out infinite;z-index:4;}
+@keyframes cp{0%,100%{box-shadow:0 0 48px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 96px rgba(240,53,77,.8),inset 0 1px 2px rgba(255,255,255,.4);}}
+.vcl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.04em;line-height:1;}
+.vcs{font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
+.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(240,53,77,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
+.on:hover{background:rgba(240,53,77,.15);border-color:rgba(240,53,77,.4);transform:scale(1.15) !important;}
+.ni{font-size:22px;margin-bottom:3px;line-height:1;}
+.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.7);line-height:1.3;letter-spacing:.02em;}
+.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3s ease-in-out infinite;}
+.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 3.4s ease-in-out infinite .4s;}
+.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 2.8s ease-in-out infinite .8s;}
+.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3.6s ease-in-out infinite 1.2s;}
+.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 3.2s ease-in-out infinite 1.6s;}
+.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 2.6s ease-in-out infinite 2s;}
+@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+.vb{position:absolute;background:rgba(255,255,255,.06);border:1.5px solid rgba(240,53,77,.2);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.vb:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.4);transform:translateY(-2px);}
+.vbn{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;}
+.vbn em{font-family:'Cormorant Garamond',serif;font-size:.75em;color:#ff6b85;font-style:italic;}
+.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.02em;}
+.vb1{top:16px;right:18px;animation:bob 4s ease-in-out infinite;}
+.vb2{bottom:20px;left:14px;animation:bob 3.5s ease-in-out infinite .7s;}
+.vb3{bottom:60px;right:12px;animation:bob 5s ease-in-out infinite 1.4s;}
+
+/* TICKER */
+.ticker{background:var(--ac);padding:14px 0;overflow:hidden;display:flex;}
+.tt{display:flex;animation:tk 28s linear infinite;white-space:nowrap;}
+.tt span{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#fff;padding:0 32px;display:flex;align-items:center;gap:20px;letter-spacing:.02em;}
+.tt span::after{content:'◆';font-size:6px;opacity:.5;}
+@keyframes tk{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* SECTIONS */
+.sec{padding:128px 80px;transition:background .35s cubic-bezier(.4,.0,.2,1);}
+.sa{background:var(--bg2);}
+.stop{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:80px;}
+.ey{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;}
+.ey::before{content:'';width:18px;height:1.5px;background:var(--ac);border-radius:1px;}
+.sh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(34px,3.8vw,54px);line-height:1.05;color:var(--ink);}
+.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;}
+.sd{font-size:16px;font-weight:500;color:var(--ink2);line-height:1.75;letter-spacing:-.01em;}
+.sd strong{color:var(--ink);font-weight:700;}
+
+/* CVF */
+.cvf{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--bd);border-radius:24px;overflow:hidden;}
+.cc{padding:56px;}
+.cc.com{background:#0d0c0a;border-right:1px solid rgba(255,255,255,.07);}
+.cc.fora{background:var(--surf);color:var(--ink);}
+.ct{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.com .ct{color:#ff7a92;}.com .ct::before{content:'';width:16px;height:1.5px;background:#ff7a92;border-radius:1px;}
+.fora .ct{color:var(--ink3);}.fora .ct::before{content:'';width:16px;height:1.5px;background:var(--ink3);border-radius:1px;}
+.ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,4.2vw,56px);letter-spacing:-.04em;line-height:1;margin-bottom:8px;}
+.com .ch{color:#fff;}.fora .ch{color:var(--ink);}
+.ch .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;display:block;font-size:1.04em;}
+.com .ch .em{color:#ff7a92;}.fora .ch .em{color:var(--ink3);}
+.csub{font-size:15px;font-weight:500;line-height:1.7;margin-bottom:32px;}
+.com .csub{color:rgba(255,255,255,.48);}.fora .csub{color:var(--ink2);}
+.clist{display:flex;flex-direction:column;gap:12px;}
+.ci{display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid;font-size:14px;font-weight:600;line-height:1.6;}
+.ci:last-child{border-bottom:none;padding-bottom:0;}
+.com .ci{border-color:rgba(255,255,255,.07);color:rgba(255,255,255,.74);}
+.fora .ci{border-color:var(--bd);color:var(--ink2);}
+.cdot{width:7px;height:7px;border-radius:50%;margin-top:5px;flex-shrink:0;}
+.com .cdot{background:#ff7a92;}.fora .cdot{background:var(--ink3);}
+
+/* PROBLEMS */
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--bd);background:var(--bd);border-radius:20px;overflow:hidden;}
+.pc{background:var(--bg);padding:44px 36px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+[data-theme="dark"] .pc{background:var(--bg2);}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pc:hover{background:var(--surf);transform:translateY(-2px);}
+.pc:hover::after{transform:scaleX(1);}
+.pnum{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.1em;margin-bottom:26px;display:flex;justify-content:space-between;text-transform:uppercase;}
+.pio{font-size:24px;}
+.pti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;line-height:1.15;}
+.pde{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.7;}
+.pal{margin-top:40px;background:#0d0c0a;border-radius:20px;padding:44px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.palq{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(21px,2.6vw,32px);color:#fff;line-height:1.4;max-width:580px;}
+.palq strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-style:normal;font-size:.86em;color:#ff7a92;}
+.palb{flex-shrink:0;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid rgba(255,107,133,.35);border-radius:100px;padding:11px 20px;white-space:nowrap;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.palb:hover{background:rgba(255,107,133,.1);transform:scale(1.05);}
+
+/* METHOD */
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:20px;overflow:hidden;}
+.mc{background:var(--bg);padding:52px 44px;position:relative;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+[data-theme="dark"] .mc{background:var(--bg2);}.mc:hover{background:var(--surf);transform:translateY(-3px);}
+.mle{position:absolute;top:36px;right:36px;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:96px;line-height:1;color:var(--ac);opacity:.08;pointer-events:none;user-select:none;transition:opacity .3s;}
+.mc:hover .mle{opacity:.12;}
+.mtg{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;}
+.mti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:var(--ink);margin-bottom:10px;}
+.msu{font-size:13px;font-weight:700;color:var(--ac);margin-bottom:18px;letter-spacing:.02em;}
+.mde{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.75;}
+
+/* SERVICES */
+.svg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px;}
+.sv{border:1.5px solid var(--bd);border-radius:24px;overflow:hidden;background:var(--surf);transition:all .4s cubic-bezier(.34,1.56,.64,1);}
+.sv:hover{border-color:var(--ac);transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.svh{background:#0d0c0a;padding:48px;position:relative;overflow:hidden;}
+.svhg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:120px;color:rgba(255,255,255,.04);bottom:-12px;right:-12px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+.svbd{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,107,133,.35);border-radius:100px;padding:7px 16px;margin-bottom:24px;}
+.svt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3vw,40px);color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:10px;}
+.svtg{font-size:14px;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.01em;}
+.svb{padding:44px;}
+.svd{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.75;margin-bottom:28px;letter-spacing:-.01em;}
+.svil{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+.svit{display:flex;align-items:flex-start;gap:14px;padding-bottom:10px;border-bottom:1px solid var(--bd2);font-size:14px;font-weight:600;color:var(--ink2);}
+.svit:last-child{border-bottom:none;padding-bottom:0;}
+.svdt{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:5px;flex-shrink:0;}
+.svf{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--bd);}
+.svpr{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--ink);}
+.svpr small{font-size:13px;color:var(--ink3);font-weight:600;}
+.bsv{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:12px 22px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.bsv:hover{background:var(--ink);color:var(--surf);transform:translateY(-2px);}
+
+/* COMP */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.cp2{padding:32px;border:1.5px solid var(--bd);border-radius:16px;background:var(--surf);transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.cp2:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--shadow-md);}
+.cico{font-size:28px;margin-bottom:18px;display:block;}
+.cti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:18px;letter-spacing:-.03em;color:var(--ink);margin-bottom:4px;}
+.csu{font-size:12px;font-weight:700;color:var(--ac);margin-bottom:10px;letter-spacing:.02em;}
+.cde{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.65;}
+
+/* SOBRE */
+.sobre{padding:128px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.sob-img{width:100%;aspect-ratio:1;background:linear-gradient(135deg,rgba(240,53,77,.12),rgba(240,53,77,.06));border-radius:20px;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:80px;color:var(--ink3);}
+.sob-tx{display:flex;flex-direction:column;gap:20px;}
+.sob-tt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,3.6vw,48px);letter-spacing:-.04em;color:var(--ink);line-height:1.1;margin-bottom:8px;}
+.sob-sub{font-size:13px;font-weight:700;color:var(--ac);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.sob-main{font-size:16px;font-weight:500;color:var(--ink2);line-height:1.8;letter-spacing:-.01em;}
+.sob-main strong{color:var(--ink);font-weight:700;}
+
+/* CTA */
+.ctas{padding:140px 80px;background:#0d0c0a;position:relative;overflow:hidden;text-align:center;}
+.ctas::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(240,53,77,.14) 0%,transparent 65%);pointer-events:none;}
+.ctabg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:320px;color:rgba(255,255,255,.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;}
+.ctai{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.ctae{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px;}
+.ctae::before,.ctae::after{content:'';width:24px;height:1.5px;background:#ff7a92;opacity:.4;border-radius:1px;}
+.ctah{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(40px,5.8vw,72px);line-height:1;color:#fff;margin-bottom:12px;}
+.ctah .em{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.05em;color:#ff7a92;}
+.ctasub{font-size:17px;font-weight:500;color:rgba(255,255,255,.38);line-height:1.7;margin:30px 0 52px;letter-spacing:-.01em;}
+.bctam{display:inline-flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;padding:18px 44px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:24px;letter-spacing:.01em;}
+.bctam:hover{transform:translateY(-3px);box-shadow:0 24px 56px rgba(240,53,77,.45);opacity:.94;}
+.ctarl{display:flex;align-items:center;gap:20px;margin:32px 0;}
+.ctarl::before,.ctarl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
+.ctarl span{font-family:'Geist Mono',monospace;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+.ctalk{font-size:14px;font-weight:500;color:rgba(255,255,255,.3);}
+.ctalk a{color:rgba(255,255,255,.54);text-decoration:underline;text-underline-offset:4px;transition:color .2s;font-weight:600;}
+.ctalk a:hover{color:#ff7a92;}
+
+/* FOOTER */
+footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.fl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:rgba(255,255,255,.35);letter-spacing:-.02em;}
+.fln{display:flex;gap:28px;flex-wrap:wrap;}
+.fln a{font-size:13px;font-weight:600;color:rgba(255,255,255,.24);text-decoration:none;transition:color .2s;letter-spacing:.01em;}
+.fln a:hover{color:rgba(255,255,255,.65);}
+.fcp{font-family:'Geist Mono',monospace;font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.02em;}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.34,1.56,.64,1),transform .8s cubic-bezier(.34,1.56,.64,1);}
+.rv.in{opacity:1;transform:translateY(0);}
+.d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
+
+/* RESPONSIVE */
+@media(max-width:1100px){.hero{grid-template-columns:1fr;}.hr2{min-height:420px;}.sec{padding:96px 48px;}.stop{grid-template-columns:1fr;gap:48px;}.pg{grid-template-columns:1fr 1fr;}.mg{grid-template-columns:1fr;}.cvf{grid-template-columns:1fr;}.svg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr 1fr;}.ctas{padding:120px 48px;}.pal{flex-direction:column;text-align:center;padding:40px 36px;}.sobre{grid-template-columns:1fr;gap:48px;}}
+@media(max-width:700px){header{padding:0 20px;height:64px;}nav{display:none;}.hl{padding:48px 24px;}.hr2{min-height:360px;}.stats{gap:28px;}.sec{padding:72px 24px;}.stop{gap:32px;margin-bottom:56px;}.pg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.cc{padding:40px 28px;}.ctas{padding:96px 24px;}footer{padding:28px 24px;flex-direction:column;text-align:center;}.btns{flex-direction:column;align-items:flex-start;width:100%;}.bp,.bg{width:100%;}.vis{width:280px;height:280px;}.sobre{padding:72px 24px;}}
+</style>
 </head>
 <body>
-    <!-- LOADER -->
-    <div id="loader" class="loader">
-        <div class="loader-content">
-            <div class="logo-spin">KyB</div>
-            <div class="progress-bar">
-                <div class="progress-fill"></div>
-            </div>
-        </div>
+
+<header id="hdr">
+  <a href="#" class="logo"><div class="ldot"></div>KyB</a>
+  <nav><a href="#">Método</a><a href="#">Serviços</a><a href="#">Sobre</a></nav>
+  <div class="hr">
+    <button class="mbtn" id="mb"><span id="mico">☀️</span><span id="mlbl">PIM</span></button>
+    <button class="bh">Conversa gratuita →</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hl">
+    <div class="etag">Para quem quer vender mais no digital</div>
+    <h1 class="h1">Se não for<br><span class="h1-com">.com</span><br>será <span class="h1-fora">.fora.</span></h1>
+    <div class="rule"></div>
+    <p class="hsub">No digital, quem não aparece <strong>não vende.</strong> Seu cliente está online agora — a questão é se vai te encontrar ou ao seu concorrente.</p>
+    <div class="reas">
+      <div class="rea"><div class="rd"></div>Sem presença digital, você depende só de indicação — e indicação acaba.</div>
+      <div class="rea"><div class="rd"></div>Quem não é autoridade aceita qualquer preço. Quem é <strong>dita o preço.</strong></div>
+      <div class="rea"><div class="rd"></div>Seu concorrente com metade do talento fecha o dobro — porque aparece.</div>
     </div>
+    <div class="btns">
+      <button class="bp">Quero ser .com agora <span class="ar">→</span></button>
+      <button class="bg">Ver como funciona</button>
+    </div>
+    <div class="stats">
+      <div><div class="sn">3<em>×</em></div><div class="sl">mais clientes<br>fechados</div></div>
+      <div><div class="sn">30<em>d</em></div><div class="sl">do invisível ao<br>reconhecido</div></div>
+      <div><div class="sn">100<em>%</em></div><div class="sl">foco em<br>venda real</div></div>
+    </div>
+  </div>
+  <div class="hr2">
+    <div class="vis">
+      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+      <svg class="vsvg" viewBox="0 0 320 320" fill="none">
+        <line x1="160" y1="160" x2="160" y2="5"   stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="295" y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="295" y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="160" y2="315" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="25"  y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+        <line x1="160" y1="160" x2="25"  y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
+      </svg>
+      <div class="vc"><div class="vcl">KyB</div><div class="vcs">.com</div></div>
+      <div class="on n1"><div class="ni">💰</div><div class="nl">Venda<br>Mais</div></div>
+      <div class="on n2"><div class="ni">🎯</div><div class="nl">Cliente<br>Certo</div></div>
+      <div class="on n3"><div class="ni">📈</div><div class="nl">Preço<br>Justo</div></div>
+      <div class="on n4"><div class="ni">🔥</div><div class="nl">Feche<br>Contratos</div></div>
+      <div class="on n5"><div class="ni">🌐</div><div class="nl">Seja<br>Achado</div></div>
+      <div class="on n6"><div class="ni">⚡</div><div class="nl">Cresça<br>Rápido</div></div>
+    </div>
+    <div class="vb vb1"><div class="vbn">3<em>×</em></div><div class="vbl">mais contratos</div></div>
+    <div class="vb vb2"><div class="vbn">+R$<em>k</em></div><div class="vbl">ticket médio</div></div>
+    <div class="vb vb3"><div class="vbn">30<em>d</em></div><div class="vbl">resultado</div></div>
+  </div>
+</section>
 
-    <!-- HEADER COM LANG SELECTOR -->
-    <header class="header">
-        <nav class="lang-selector">
-            <button class="lang-btn active" data-lang="pt">PT</button>
-            <button class="lang-btn" data-lang="en">EN</button>
-        </nav>
-    </header>
+<div class="ticker">
+  <div class="tt">
+    <span>Seja .com</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado</span><span>Cobre o que vale</span><span>Pare de ser .fora</span><span>Posicionamento real</span><span>Estratégia que vende</span><span>Resultado concreto</span>
+    <span>Seja .com</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado</span><span>Cobre o que vale</span><span>Pare de ser .fora</span><span>Posicionamento real</span><span>Estratégia que vende</span><span>Resultado concreto</span>
+  </div>
+</div>
 
-    <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5585998370928" class="whatsapp-float" target="_blank">
-        💬 WhatsApp
-    </a>
+<section class="sec rv">
+  <div class="cvf">
+    <div class="cc com">
+      <div class="ct">.com — quem domina o jogo</div>
+      <div class="ch">.com<span class="em">Aparece. Vende. Escala.</span></div>
+      <p class="csub">Quem tem posicionamento digital não compete por preço — compete por autoridade. E autoridade não tem concorrente direto.</p>
+      <div class="clist">
+        <div class="ci"><div class="cdot"></div>Cliente chega pronto pra comprar — sem negociação</div>
+        <div class="ci"><div class="cdot"></div>Cobra o preço que merece sem ser questionado</div>
+        <div class="ci"><div class="cdot"></div>Conteúdo vende enquanto você dorme</div>
+        <div class="ci"><div class="cdot"></div>Referência no nicho — sem precisar convencer ninguém</div>
+        <div class="ci"><div class="cdot"></div>Fecha contratos com marcas todo mês</div>
+      </div>
+    </div>
+    <div class="cc fora">
+      <div class="ct">.fora — perdendo mercado agora</div>
+      <div class="ch">.fora<span class="em">Invisível. Substituído. Esquecido.</span></div>
+      <p class="csub">Sem estratégia digital, você depende de indicação, abaixa o preço para fechar, e assiste a concorrência crescer com metade do seu talento.</p>
+      <div class="clist">
+        <div class="ci"><div class="cdot"></div>Ninguém te encontra quando está pronto para comprar</div>
+        <div class="ci"><div class="cdot"></div>Aceita qualquer preço porque precisa fechar</div>
+        <div class="ci"><div class="cdot"></div>100% dependente de indicação para sobreviver</div>
+        <div class="ci"><div class="cdot"></div>Concorrente medíocre fecha seus clientes todo dia</div>
+        <div class="ci"><div class="cdot"></div>Trabalha mais, ganha menos — todo mês igual</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===== SEÇÃO 1: HERO ===== -->
-    <section id="hero" class="hero">
-        <div class="hero-slideshow">
-            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #1a1a1a 100%);"></div>
-            <div class="slide" style="background: linear-gradient(135deg, #EB6027 0%, #0D0D0D 100%);"></div>
-            <div class="slide" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);"></div>
-        </div>
+<section class="sec sa">
+  <div class="stop rv">
+    <div><div class="ey">O diagnóstico sem filtro</div><h2 class="sh">Você está pagando caro<br>por <span class="em">não aparecer.</span></h2></div>
+    <p class="sd">Não é falta de talento. A diferença entre quem cobra R$500 e quem cobra R$5.000 <strong>raramente é técnica.</strong></p>
+  </div>
+  <div class="pg rv">
+    <div class="pc"><div class="pnum"><span>01</span><span class="pio">👻</span></div><div class="pti">Ninguém sabe que você existe</div><div class="pde">Você faz trabalho excelente, mas o cliente que precisa não te encontra. Alguém medíocre com posicionamento claro está faturando o que é seu.</div></div>
+    <div class="pc"><div class="pnum"><span>02</span><span class="pio">🌫️</span></div><div class="pti">Posta mas não vende nada</div><div class="pde">Você cria conteúdo, posta, espera — e nada acontece. Sem estratégia editorial, conteúdo é só barulho. Não gera cliente, não gera venda.</div></div>
+    <div class="pc"><div class="pnum"><span>03</span><span class="pio">💸</span></div><div class="pti">Cobrando metade do que vale</div><div class="pde">Você entrega R$5.000 e cobra R$1.500 — porque o cliente não enxerga o valor. Posicionamento certo resolve isso em 30 dias.</div></div>
+    <div class="pc"><div class="pnum"><span>04</span><span class="pio">⏳</span></div><div class="pti">Travado no ponto zero</div><div class="pde">Sabe que precisa mudar mas trava em "por onde começo?". Essa paralisia custa contratos e dinheiro — todo dia que passa.</div></div>
+  </div>
+  <div class="pal rv">
+    <p class="palq">Enquanto você lê isso, seu concorrente está fechando <strong>o cliente que deveria ser seu.</strong> Não amanhã. Agora.</p>
+    <div class="palb">Realidade sem filtro</div>
+  </div>
+</section>
 
-        <div class="hero-content">
-            <h1 class="hero-title animate-on-scroll" style="animation-delay: 0.3s;">
-                Sua marca tá invisível.<br>
-                <span class="gradient-text">A gente tira isso.</span>
-            </h1>
+<section class="sec">
+  <div class="stop rv"><div><div class="ey">Como fazemos</div><h2 class="sh">O método <span class="em">SER.com</span></h2></div><p class="sd">Três pilares que transformam quem você é no digital em <strong>clientes, contratos e receita real.</strong></p></div>
+  <div class="mg rv">
+    <div class="mc"><div class="mle">S</div><div class="mtg">Pilar 01</div><div class="mti">Sincero</div><div class="msu">Sem template, sem papo genérico</div><div class="mde">Entendemos de verdade o que você faz, quem é o cliente que te gera mais dinheiro e onde você está perdendo venda por falta de posicionamento.</div></div>
+    <div class="mc"><div class="mle">E</div><div class="mtg">Pilar 02</div><div class="mti">Estratégico</div><div class="msu">Plano real, não consultoria cara</div><div class="mde">Construímos uma estratégia que cabe na sua realidade — conteúdo que posiciona, atrai o cliente certo e converte sem depender de sorte.</div></div>
+    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Venda mais, feche mais, cresça</div><div class="mde">Tudo que fazemos aponta para um número: sua receita crescendo. Cliente certo, preço justo, contratos fechados. Esse é o único resultado que importa.</div></div>
+  </div>
+</section>
 
-            <p class="hero-subtitle animate-on-scroll" style="animation-delay: 0.6s;">
-                Estratégia pesada + Conteúdo que vende + Tráfego inteligente.<br>
-                Resultado: crescimento real, não vanity metrics.
-            </p>
+<section class="sec sa">
+  <div class="stop rv"><div><div class="ey">Como podemos te ajudar</div><h2 class="sh">Dois caminhos para<br><span class="em">vender mais.</span></h2></div><p class="sd">Escolha onde você está agora. Os dois levam ao mesmo lugar: <strong>mais clientes, mais contratos, mais receita.</strong></p></div>
+  <div class="svg">
+    <div class="sv rv d1">
+      <div class="svh"><div class="svhg">Estratégia</div><div class="svbd">Posicionamento · SER.com</div><div class="svt">Estratégia +<br>Posicionamento</div><div class="svtg">Do invisível ao cliente fechando em 30 dias</div></div>
+      <div class="svb">
+        <p class="svd">Entendemos sua situação sem filtro. Você sai com posicionamento único, calendário editorial completo e conteúdo pronto para atrair o cliente certo amanhã.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>Diagnóstico: onde você está perdendo venda agora</div><div class="svit"><div class="svdt"></div>Posicionamento único — você vira referência no nicho</div><div class="svit"><div class="svdt"></div>Calendário 8 semanas — 30 ideias prontas para publicar</div><div class="svit"><div class="svdt"></div>3 roteiros prontos para gravar e publicar agora</div><div class="svit"><div class="svdt"></div>1 mentoria ao vivo para alinhar tudo</div></div>
+        <div class="svf"><div class="svpr">R$ 997 <small>/ único</small></div><button class="bsv">Quero fechar mais →</button></div>
+      </div>
+    </div>
+    <div class="sv rv d2">
+      <div class="svh" style="background:linear-gradient(145deg,#180810,#260f1c);"><div class="svhg">UGC</div><div class="svbd">Gestão Mensal · SER.com</div><div class="svt">Gestão de Criadores<br>e Estratégia UGC</div><div class="svtg">Crescimento guiado por influência e análise de dados</div></div>
+      <div class="svb">
+        <p class="svd">Não entregamos apenas vídeos, construímos o ecossistema de influência da sua marca. Analisamos o histórico e a identidade da sua empresa para criar a estratégia perfeita de conteúdo. A KyB gerencia toda a comunicação, roteirização e curadoria dos criadores ideais para falar com o seu público, garantindo que cada vídeo postado tenha um objetivo claro de conversão.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>Auditoria de marca e análise de dados de campanhas anteriores</div><div class="svit"><div class="svdt"></div>Desenvolvimento da estratégia narrativa para formato UGC</div><div class="svit"><div class="svdt"></div>Curadoria, recrutamento e gestão completa dos influenciadores/creators</div><div class="svit"><div class="svdt"></div>Supervisão de roteiros para garantir alinhamento com a marca</div><div class="svit"><div class="svdt"></div>Análise de métricas contínua para otimização do conteúdo</div></div>
+        <div class="svf"><div class="svpr">R$ 1.997 <small>/ mês</small></div><button class="bsv">Quero contratos com marcas →</button></div>
+      </div>
+    </div>
+  </div>
+  <div class="ey rv" style="margin-bottom:24px;">Amplie ainda mais seus resultados</div>
+  <div class="cg">
+    <div class="cp2 rv d1"><span class="cico">🎥</span><div class="cti">Audiovisual</div><div class="csu">Conteúdo que posiciona</div><div class="cde">Produção profissional que eleva sua marca — roteiro, gravação e edição com identidade.</div></div>
+    <div class="cp2 rv d2"><span class="cico">💰</span><div class="cti">Tráfego Pago</div><div class="csu">Mais clientes todo dia</div><div class="cde">Meta Ads e Google Ads que trazem o cliente certo — não só cliques que não convertem.</div></div>
+    <div class="cp2 rv d3"><span class="cico">🌐</span><div class="cti">Sites</div><div class="csu">Que fecham contratos</div><div class="cde">Sites que transformam visitantes em clientes pagantes — design a serviço da venda.</div></div>
+    <div class="cp2 rv d4"><span class="cico">✉️</span><div class="cti">Email Marketing</div><div class="csu">Base que vira receita</div><div class="cde">Sua lista se transforma em faturamento — estratégias que fidelizam e vendem.</div></div>
+  </div>
+</section>
 
-            <a href="https://wa.me/5585998370928" class="btn btn-primary animate-on-scroll" style="animation-delay: 0.9s;" target="_blank">
-                Vamos conversar
-            </a>
+<section class="sobre rv">
+  <div class="sob-img">📸</div>
+  <div class="sob-tx">
+    <div>
+      <div class="sob-sub">Quem está por trás</div>
+      <h2 class="sob-tt">A mente por trás<br>da estratégia</h2>
+    </div>
+    <div class="sob-main">
+      <p style="margin-bottom:16px;"><strong>Muito prazer, sou a Karen Brasil.</strong></p>
+      <p style="margin-bottom:16px;">A KyB nasceu da união de dois mundos que, para a maioria das agências, andam separados: a precisão dos números e a criatividade da comunicação humana.</p>
+      <p style="margin-bottom:16px;">Minha base profissional é a <strong>Análise de Dados e Business Intelligence (BI)</strong>. Isso significa que eu não olho para o marketing da sua empresa apenas imaginando o que "pode ficar bonito". Eu olho para o histórico, entendo o que os dados dizem sobre o seu cliente e crio estratégias baseadas no que realmente funciona e converte.</p>
+      <p style="margin-bottom:16px;">Ao mesmo tempo, atuo nos bastidores da criação de conteúdo como <strong>UGC Creator</strong>, respirando as tendências e entendendo exatamente o que prende a atenção das pessoas nas redes.</p>
+      <p>Na KyB, meu papel é traduzir toda essa inteligência técnica em campanhas de marketing de influência que sejam fáceis de aplicar, impossíveis de ignorar e totalmente focadas em fazer o seu negócio crescer de forma estruturada. <strong>Sem achismos, apenas estratégia validada.</strong></p>
+    </div>
+  </div>
+</section>
 
-            <div class="scroll-indicator">
-                <div class="scroll-dot"></div>
-            </div>
-        </div>
-    </section>
+<section class="ctas">
+  <div class="ctabg">.com</div>
+  <div class="ctai rv">
+    <div class="ctae">Próximo passo</div>
+    <h2 class="ctah">Chega de ser<span class="em">.fora do mercado.</span></h2>
+    <p class="ctasub">30 minutos. Gratuito. Sem enrolação.<br>A gente mostra exatamente o que fazer para você começar a fechar mais agora.</p>
+    <button class="bctam">Agendar conversa gratuita →</button>
+    <div class="ctarl"><span>ou fale direto</span></div>
+    <div class="ctalk"><a href="#">WhatsApp</a> &nbsp;·&nbsp; <a href="#">E-mail</a><br><br>Respondo em até 2 horas em dias úteis.</div>
+  </div>
+</section>
 
-    <!-- ===== SEÇÃO 2: MARQUEE (Social Proof) ===== -->
-    <section class="marquee-section">
-        <div class="marquee">
-            <div class="marquee-content">
-                <span>Ecommerce</span>
-                <span>Consultoria</span>
-                <span>Coaching</span>
-                <span>Serviços</span>
-                <span>Digital</span>
-                <span>Educação</span>
-                <span>SaaS</span>
-                <span>Ecommerce</span>
-                <span>Consultoria</span>
-                <span>Coaching</span>
-                <span>Serviços</span>
-                <span>Digital</span>
-            </div>
-        </div>
-    </section>
+<footer>
+  <div class="fl">KyB</div>
+  <div class="fln"><a href="#">Sobre</a><a href="#">Instagram</a><a href="#">LinkedIn</a><a href="#">WhatsApp</a></div>
+  <div class="fcp">© 2026 KyB · Todos os direitos reservados</div>
+</footer>
 
-
-    <!-- ===== SEÇÃO 3: SERVIÇOS ===== -->
-    <section id="servicos" class="servicos">
-        <h2 class="section-title animate-on-scroll">Soluções que vendem</h2>
-
-        <div class="servicos-grid">
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.1s;">
-                <div class="servico-icon">📋</div>
-                <div class="servico-content">
-                    <h3>Estratégia de Conteúdo</h3>
-                    <p>Seu conteúdo tá perdido? A gente dá direção. Qual é o roteiro que vende. Quando postar. O que funciona.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.15s;">
-                <div class="servico-icon">🔍</div>
-                <div class="servico-content">
-                    <h3>Análise de Perfil</h3>
-                    <p>Seu perfil tá invisível. Diagnóstico brutal: o que tá errado, o que você tá deixando passar, como consertar.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.2s;">
-                <div class="servico-icon">🎬</div>
-                <div class="servico-content">
-                    <h3>Vídeo UGC</h3>
-                    <p>Vídeo que vende é raro. A gente cria. Você aparece ou fica só na estratégia. Resultado: conversão real.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.25s;">
-                <div class="servico-icon">👩‍🏫</div>
-                <div class="servico-content">
-                    <h3>Mentoria + Execução UGC</h3>
-                    <p>Quer aprender E vender simultaneamente? A gente ensina enquanto executa. Seu time rodando sozinho depois.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.3s;">
-                <div class="servico-icon">🎥</div>
-                <div class="servico-content">
-                    <h3>Videomaker & Storymaker</h3>
-                    <p>Evento sem conteúdo é evento perdido. Capturamos, editamos, transformamos em máquina de venda.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.35s;">
-                <div class="servico-icon">📘</div>
-                <div class="servico-content">
-                    <h3>Tráfego Meta</h3>
-                    <p>Rodar anúncio errado é jogar dinheiro fora. Meta mal feita não converte. A gente faz rodar de verdade.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.4s;">
-                <div class="servico-icon">🔎</div>
-                <div class="servico-content">
-                    <h3>Tráfego Google</h3>
-                    <p>Quem busca no Google quer comprar. Aparecer lá = cliente quente. A gente faz você aparecer.</p>
-                </div>
-            </div>
-
-            <div class="servico-card animate-on-scroll" style="animation-delay: 0.45s;">
-                <div class="servico-icon">💻</div>
-                <div class="servico-content">
-                    <h3>Site + Portfolio</h3>
-                    <p>Site feio não vende. Portfolio amador perde cliente. A gente cria a primeira impressão que fecha venda.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- ===== SEÇÃO 4: TEAM ===== -->
-    <section id="team" class="team">
-        <h2 class="section-title animate-on-scroll">Quem coloca isso pra rodar</h2>
-
-        <div class="team-grid">
-            <div class="team-card animate-on-scroll" style="animation-delay: 0.2s;">
-                <div class="team-image" style="background: linear-gradient(135deg, #EB6027 0%, #FF8C42 100%);">
-                    <span>K</span>
-                </div>
-                <h3>Karen</h3>
-                <p class="team-role">Fundadora & Estrategista</p>
-                <p class="team-bio">Obsessão: transformar marca invisível em máquina de venda. Dados não mentem. A gente usa isso contra seus concorrentes.</p>
-            </div>
-
-            <div class="team-card animate-on-scroll" style="animation-delay: 0.3s;">
-                <div class="team-image" style="background: linear-gradient(135deg, #0D0D0D 0%, #EB6027 100%);">
-                    <span>👥</span>
-                </div>
-                <h3>Equipe KyB</h3>
-                <p class="team-role">Videomakers, Designers, Especialistas</p>
-                <p class="team-bio">Profissionais que fazem acontecer. Não promete o que não consegue. Entrega resultado ou não cobra.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SEÇÃO 5: FAQ ===== -->
-    <section id="faq" class="faq">
-        <h2 class="section-title animate-on-scroll">Dúvidas? Aqui tem respostas</h2>
-
-        <div class="faq-container">
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.1s;">
-                <button class="faq-question">
-                    <span>Vocês garantem resultado?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>A gente garante execução de qualidade. Resultado depende de vários fatores, mas fazemos tudo pra vender.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.15s;">
-                <button class="faq-question">
-                    <span>Qual é o investimento?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Depende do serviço. Estratégia, UGC, tráfego... cada um tem seu valor. Conversa no WhatsApp que fechamos.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.2s;">
-                <button class="faq-question">
-                    <span>Trabalham com qual tipo de marca?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Marca que quer crescer e vender. Serviço, produto, coaching, consultoria. Se você vende, a gente trabalha.</p>
-                </div>
-            </div>
-
-            <div class="faq-item animate-on-scroll" style="animation-delay: 0.25s;">
-                <button class="faq-question">
-                    <span>Como começar?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Clica no WhatsApp, manda a história da sua marca, a gente vê se consegue ajudar. Simples assim.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SEÇÃO 6: CTA FINAL ===== -->
-    <section id="cta-final" class="cta-final">
-        <div class="cta-content animate-on-scroll">
-            <h2>Sua marca tá invisível enquanto você lê isso</h2>
-            <p>Cada dia que passa sem estratégia é cliente perdido pra concorrência.<br>A gente faz você aparecer. E vender de verdade.</p>
-            <a href="https://wa.me/5585998370928" class="btn btn-primary btn-large" target="_blank">
-                Quero vender mais
-            </a>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-content">
-            <div class="footer-column">
-                <h4>KyB</h4>
-                <p>Estratégia, Conteúdo e Tráfego para Marcas que vendem.</p>
-            </div>
-
-            <div class="footer-column">
-                <h4>Navegação</h4>
-                <ul>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#servicos">Serviços</a></li>
-                    <li><a href="#processo">Processo</a></li>
-                    <li><a href="#faq">FAQ</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Serviços</h4>
-                <ul>
-                    <li><a href="#servicos">Estratégia de Conteúdo</a></li>
-                    <li><a href="#servicos">Tráfego Pago</a></li>
-                    <li><a href="#servicos">Vídeo UGC</a></li>
-                    <li><a href="#servicos">Site + Portfolio</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-column">
-                <h4>Contato</h4>
-                <p><a href="https://wa.me/5585998370928" target="_blank">💬 WhatsApp</a></p>
-                <p><a href="https://instagram.com" target="_blank">📸 Instagram</a></p>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 KyB. Todos os direitos reservados.</p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<script>
+const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico'),ml=document.getElementById('mlbl');
+function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';ml.textContent=d?'LUZ':'PIM';localStorage.setItem('kyb-t',d?'dark':'light');}
+if(localStorage.getItem('kyb-t')==='dark')st(true);
+mb.addEventListener('click',()=>st(html.getAttribute('data-theme')!=='dark'));
+const hdr=document.getElementById('hdr');
+window.addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>20),{passive:true});
+const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
