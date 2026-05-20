@@ -1,0 +1,321 @@
+{
+  "nodes": [
+    {
+      "id": "kyb_brand",
+      "label": "KyB Brand",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "tagline_dot_com",
+      "label": "Tagline: Se n\u00c3\u00a3o for .com, ser\u00c3\u00a1 .fora",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_hero",
+      "label": "Hero Section",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_method",
+      "label": "Method Section: SER.COM",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_problems",
+      "label": "Problems Section: 4 Key Challenges",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_services",
+      "label": "Services Section",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_about",
+      "label": "About Section (Sobre)",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "section_cta",
+      "label": "CTA Section",
+      "file_type": "document",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "service_estrategia",
+      "label": "Estrat\u00c3\u00a9gia de Conte\u00c3\u00bado (R$ 997)",
+      "file_type": "service",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "service_ugc",
+      "label": "UGC Manager (R$ 1.997/month)",
+      "file_type": "service",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "service_audiovisual",
+      "label": "Audiovisual Service",
+      "file_type": "service",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "service_traffic",
+      "label": "Tr\u00c3\u00a1fego Pago (Paid Traffic)",
+      "file_type": "service",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "method_sincero",
+      "label": "SER.COM Pilar 1: Sincero",
+      "file_type": "method",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "method_estrategico",
+      "label": "SER.COM Pilar 2: Estrat\u00c3\u00a9gico",
+      "file_type": "method",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "method_rentavel",
+      "label": "SER.COM Pilar 3: Rent\u00c3\u00a1vel",
+      "file_type": "method",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "design_color_red",
+      "label": "Primary Color: #f0354d (Red/Pink)",
+      "file_type": "design",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "design_dark_mode",
+      "label": "Dark Mode: #0a0908",
+      "file_type": "design",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "font_bricolage",
+      "label": "Bricolage Grotesque (Sans-serif)",
+      "file_type": "design",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "font_cormorant",
+      "label": "Cormorant Garamond (Serif)",
+      "file_type": "design",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "animation_reveal",
+      "label": "Animation: Reveal on scroll",
+      "file_type": "design",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "founder_karen",
+      "label": "Karen Brasil (Founder)",
+      "file_type": "person",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "value_3x_clients",
+      "label": "Value Prop: 3x more clients",
+      "file_type": "value",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "value_30_days",
+      "label": "Value Prop: 30 days to visibility",
+      "file_type": "value",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "positioning_authority",
+      "label": "Positioning: Authority > Price",
+      "file_type": "business",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "problem_invisibility",
+      "label": "Problem 1: Invisibility",
+      "file_type": "problem",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "problem_no_results",
+      "label": "Problem 2: Posts without results",
+      "file_type": "problem",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "problem_low_price",
+      "label": "Problem 3: Low pricing",
+      "file_type": "problem",
+      "source_file": "public/index.html"
+    },
+    {
+      "id": "audience_entrepreneurs",
+      "label": "Audience: Entrepreneurs/Freelancers",
+      "file_type": "business",
+      "source_file": "public/index.html"
+    }
+  ],
+  "edges": [
+    {
+      "source": "kyb_brand",
+      "target": "tagline_dot_com",
+      "relation": "has_tagline",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "kyb_brand",
+      "target": "founder_karen",
+      "relation": "founded_by",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_services",
+      "target": "service_estrategia",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_services",
+      "target": "service_ugc",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_method",
+      "target": "method_sincero",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_method",
+      "target": "method_estrategico",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_method",
+      "target": "method_rentavel",
+      "relation": "defines",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_problems",
+      "target": "problem_invisibility",
+      "relation": "identifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_problems",
+      "target": "problem_no_results",
+      "relation": "identifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "section_problems",
+      "target": "problem_low_price",
+      "relation": "identifies",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "service_estrategia",
+      "target": "method_sincero",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "service_estrategia",
+      "target": "value_3x_clients",
+      "relation": "promises",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "service_ugc",
+      "target": "method_sincero",
+      "relation": "implements",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "service_ugc",
+      "target": "audience_entrepreneurs",
+      "relation": "targets",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "animation_reveal",
+      "target": "section_method",
+      "relation": "animates",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "positioning_authority",
+      "target": "service_estrategia",
+      "relation": "supports",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "problem_invisibility",
+      "target": "value_3x_clients",
+      "relation": "solves",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "public/index.html"
+    },
+    {
+      "source": "problem_low_price",
+      "target": "positioning_authority",
+      "relation": "motivates",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "public/index.html"
+    }
+  ],
+  "hyperedges": [],
+  "input_tokens": 2000,
+  "output_tokens": 1500
+}

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — 5 Animações Minimalistas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Merriweather:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  background: #0a0908;
+  color: #f2ede6;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 60px 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.intro {
+  background: rgba(240, 53, 77, 0.08);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.animacao-container {
+  margin-bottom: 100px;
+}
+
+.anim-titulo {
+  font-size: 18px;
+  font-weight: 800;
+  color: #f2ede6;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(240, 53, 77, 0.2);
+}
+
+.anim-descricao {
+  font-size: 13px;
+  color: #a89f96;
+  margin-bottom: 28px;
+  font-style: italic;
+}
+
+.anim-preview {
+  background: linear-gradient(135deg, rgba(240,53,77,0.04) 0%, rgba(240,53,77,0.01) 100%);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  border-radius: 16px;
+  padding: 60px 40px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* ANIMAÇÃO 1: LINHAS CRESCENTES */
+.anim1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 12px;
+  height: 120px;
+}
+
+.line1 { width: 4px; background: rgba(240, 53, 77, 0.6); animation: grow1 2s ease-in-out infinite; }
+.line2 { width: 4px; background: rgba(240, 53, 77, 0.5); animation: grow2 2s ease-in-out infinite; }
+.line3 { width: 4px; background: rgba(240, 53, 77, 0.7); animation: grow3 2s ease-in-out infinite; }
+.line4 { width: 4px; background: rgba(240, 53, 77, 0.5); animation: grow4 2s ease-in-out infinite; }
+.line5 { width: 4px; background: rgba(240, 53, 77, 0.6); animation: grow5 2s ease-in-out infinite; }
+
+@keyframes grow1 { 0%, 100% { height: 20px; } 50% { height: 100px; } }
+@keyframes grow2 { 0%, 100% { height: 40px; } 50% { height: 80px; } }
+@keyframes grow3 { 0%, 100% { height: 60px; } 50% { height: 120px; } }
+@keyframes grow4 { 0%, 100% { height: 40px; } 50% { height: 80px; } }
+@keyframes grow5 { 0%, 100% { height: 20px; } 50% { height: 100px; } }
+
+/* ANIMAÇÃO 2: PONTOS PULSANTES */
+.anim2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dot { width: 12px; height: 12px; border-radius: 50%; background: rgba(240, 53, 77, 0.6); }
+.dot1 { animation: pulse1 2s ease-in-out infinite; }
+.dot2 { animation: pulse2 2s ease-in-out infinite; }
+.dot3 { animation: pulse3 2s ease-in-out infinite; }
+
+@keyframes pulse1 { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+@keyframes pulse2 { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+@keyframes pulse3 { 0%, 100% { opacity: 0.3; transform: scale(0.8); } 50% { opacity: 1; transform: scale(1.2); } }
+
+/* ANIMAÇÃO 3: SETA/FLUXO */
+.anim3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  font-size: 24px;
+}
+
+.arrow { animation: float 2s ease-in-out infinite; }
+.arrow1 { animation-delay: 0s; }
+.arrow2 { animation-delay: 0.3s; }
+.arrow3 { animation-delay: 0.6s; }
+
+@keyframes float { 0%, 100% { transform: translateX(-10px); opacity: 0.3; } 50% { transform: translateX(10px); opacity: 1; } }
+
+/* ANIMAÇÃO 4: CÍRCULOS CONCÊNTRICOS */
+.anim4 {
+  position: relative;
+  width: 140px;
+  height: 140px;
+}
+
+.ring { position: absolute; border-radius: 50%; border: 2px solid rgba(240, 53, 77, 0.4); }
+.ring1 { width: 100%; height: 100%; animation: expand1 3s ease-out infinite; }
+.ring2 { width: 70%; height: 70%; top: 15%; left: 15%; animation: expand2 3s ease-out infinite 0.4s; }
+.ring3 { width: 40%; height: 40%; top: 30%; left: 30%; animation: expand3 3s ease-out infinite 0.8s; }
+
+@keyframes expand1 { 0% { border-color: rgba(240, 53, 77, 0.8); } 100% { border-color: rgba(240, 53, 77, 0.1); } }
+@keyframes expand2 { 0% { border-color: rgba(240, 53, 77, 0.8); } 100% { border-color: rgba(240, 53, 77, 0.1); } }
+@keyframes expand3 { 0% { border-color: rgba(240, 53, 77, 0.8); } 100% { border-color: rgba(240, 53, 77, 0.1); } }
+
+/* ANIMAÇÃO 5: MOVIMENTO DE TEXTO */
+.anim5 {
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.scrolling-text {
+  display: flex;
+  animation: scroll 15s linear infinite;
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(240, 53, 77, 0.7);
+  white-space: nowrap;
+  gap: 40px;
+}
+
+.scrolling-text span {
+  display: inline-block;
+}
+
+@keyframes scroll { 0% { transform: translateX(100%); } 100% { transform: translateX(-100%); } }
+
+/* SELETOR */
+.select-btn {
+  margin-top: 24px;
+  padding: 12px 24px;
+  border: 1.5px solid rgba(240, 53, 77, 0.3);
+  background: transparent;
+  color: #a89f96;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.select-btn:hover {
+  border-color: #ff6b85;
+  color: #ff6b85;
+  background: rgba(240, 53, 77, 0.1);
+}
+
+.resumo {
+  background: rgba(240, 53, 77, 0.1);
+  border: 1px solid rgba(240, 53, 77, 0.2);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  margin-top: 80px;
+}
+
+.resumo p {
+  font-size: 15px;
+  color: #a89f96;
+}
+
+.resumo strong {
+  color: #ff6b85;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>5 Animações Minimalistas — Escolha a Melhor</h1>
+
+  <div class="intro">
+    👇 Veja as 5 versões animadas. Qual você acha que combina melhor com a landing page?
+  </div>
+
+  <!-- ANIMAÇÃO 1 -->
+  <div class="animacao-container">
+    <div class="anim-titulo">Versão 1: Linhas Crescentes</div>
+    <div class="anim-descricao">Linhas que crescem e diminuem. Bem minimalista, representa crescimento.</div>
+    <div class="anim-preview">
+      <div class="anim1">
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+        <div class="line4"></div>
+        <div class="line5"></div>
+      </div>
+    </div>
+    <button class="select-btn" onclick="alert('Você escolheu: Versão 1 - Linhas Crescentes')">Escolher esta</button>
+  </div>
+
+  <!-- ANIMAÇÃO 2 -->
+  <div class="animacao-container">
+    <div class="anim-titulo">Versão 2: Pontos Pulsantes</div>
+    <div class="anim-descricao">Três pontos que pulsam. Super simples e discreta.</div>
+    <div class="anim-preview">
+      <div class="anim2">
+        <div class="dot dot1"></div>
+        <div class="dot dot2"></div>
+        <div class="dot dot3"></div>
+      </div>
+    </div>
+    <button class="select-btn" onclick="alert('Você escolheu: Versão 2 - Pontos Pulsantes')">Escolher esta</button>
+  </div>
+
+  <!-- ANIMAÇÃO 3 -->
+  <div class="animacao-container">
+    <div class="anim-titulo">Versão 3: Fluxo com Setas</div>
+    <div class="anim-descricao">Setas fluindo. Representa movimento e ação contínua.</div>
+    <div class="anim-preview">
+      <div class="anim3">
+        <span class="arrow arrow1">→</span>
+        <span class="arrow arrow2">→</span>
+        <span class="arrow arrow3">→</span>
+      </div>
+    </div>
+    <button class="select-btn" onclick="alert('Você escolheu: Versão 3 - Fluxo com Setas')">Escolher esta</button>
+  </div>
+
+  <!-- ANIMAÇÃO 4 -->
+  <div class="animacao-container">
+    <div class="anim-titulo">Versão 4: Círculos Concêntricos</div>
+    <div class="anim-descricao">Círculos que expandem. Elegante e minimalista.</div>
+    <div class="anim-preview">
+      <div class="anim4">
+        <div class="ring ring1"></div>
+        <div class="ring ring2"></div>
+        <div class="ring ring3"></div>
+      </div>
+    </div>
+    <button class="select-btn" onclick="alert('Você escolheu: Versão 4 - Círculos Concêntricos')">Escolher esta</button>
+  </div>
+
+  <!-- ANIMAÇÃO 5 -->
+  <div class="animacao-container">
+    <div class="anim-titulo">Versão 5: Texto Passando (Ticker)</div>
+    <div class="anim-descricao">Palavras-chave passando. Mostra os benefícios em movimento.</div>
+    <div class="anim-preview">
+      <div class="anim5">
+        <div class="scrolling-text">
+          <span>Apareça · Venda · Fature · Cresça · Domine · Lidere · Autoridade · Visibilidade · Presença Forte · Crescimento · Clientes Sozinhos · Rentável ·</span>
+          <span>Apareça · Venda · Fature · Cresça · Domine · Lidere · Autoridade · Visibilidade · Presença Forte · Crescimento · Clientes Sozinhos · Rentável ·</span>
+        </div>
+      </div>
+    </div>
+    <button class="select-btn" onclick="alert('Você escolheu: Versão 5 - Texto Passando')">Escolher esta</button>
+  </div>
+
+  <div class="resumo">
+    <p>Qual animação você prefere? <strong>Me avisa o número (1-5)!</strong></p>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+---
+source_file: "public/index.html"
+type: "method"
+community: "Business Model"
+tags:
+  - graphify/method
+  - graphify/EXTRACTED
+  - community/Business_Model
+---
+
+# SER.COM Pilar 3: RentÃ¡vel
+
+## Connections
+- [[Method Section SER.COM]] - `defines` [EXTRACTED]
+
+#graphify/method #graphify/EXTRACTED #community/Business_Model

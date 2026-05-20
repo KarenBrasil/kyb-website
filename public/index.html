@@ -5,7 +5,7 @@
 <title>KyB — Se não for .com, será .fora</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 [data-theme="light"]{--bg:#faf9f7;--bg2:#f2f0ec;--surf:#ffffff;--ink:#0d0c0a;--ink2:#3e3c36;--ink3:#8a8276;--ac:#d82b50;--acl:#ff5f7e;--bd:rgba(13,12,10,0.08);--bd2:rgba(13,12,10,0.04);--tc:#d82b50;--shadow-sm:0 2px 8px rgba(13,12,10,0.06);--shadow-md:0 12px 32px rgba(13,12,10,0.08);--shadow-lg:0 20px 48px rgba(216,43,80,0.15);}
@@ -28,165 +28,145 @@ nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5p
 nav a:hover::after{width:100%;}
 nav a:hover{color:var(--ac);}
 .hr{display:flex;align-items:center;gap:16px;}
-.mbtn{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:100px;padding:8px 16px 8px 10px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:11px;font-weight:700;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;font-family:'Geist Mono',monospace;}
-.mbtn:hover{border-color:var(--ac);color:var(--ac);background:rgba(216,43,80,.06);}
-.bh{font-size:13px;font-weight:700;padding:11px 26px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);letter-spacing:.02em;}
-.bh:hover{opacity:.92;transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.mbtn{display:flex;align-items:center;justify-content:center;background:var(--bg2);border:1.5px solid var(--bd);border-radius:50%;width:38px;height:38px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:16px;}
+.mbtn:hover{border-color:var(--ac);background:rgba(216,43,80,.06);transform:scale(1.08);}
+
 
 /* HERO */
-.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:52% 48%;max-width:1300px;margin:0 auto;}
-.hl{padding:56px 40px 56px 56px;display:flex;flex-direction:column;justify-content:center;}
-.etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:var(--tc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:28px;}
-.etag::before{content:'';width:16px;height:1.5px;background:var(--ac);border-radius:1px;}
-.h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,3.5vw,52px);line-height:1;letter-spacing:-.04em;color:var(--ink);word-spacing:.1em;}
-.h1-com{color:var(--ac);transition:color .3s;}
-.h1-fora{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--ink3);transition:color .3s;}
-.rule{width:40px;height:2px;background:linear-gradient(90deg,var(--ac),var(--ac) 60%,transparent);margin:24px 0;border-radius:1px;}
-.hsub{font-size:15px;font-weight:500;color:var(--ink2);max-width:420px;line-height:1.65;margin-bottom:20px;letter-spacing:-.01em;}
-.hsub strong{color:var(--ink);font-weight:700;}
-.reas{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
-.rea{display:flex;align-items:flex-start;gap:12px;font-size:13px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.5;}
-.rd{width:6px;height:6px;border-radius:50%;background:var(--ac);margin-top:5px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
+.hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:52% 48%;}
+.hl{padding:72px 56px 72px 80px;display:flex;flex-direction:column;justify-content:center;}
+.etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:36px;}
+.etag::before{content:'';width:20px;height:1.5px;background:var(--ac);border-radius:1px;}
+.h1{font-family:'Merriweather',serif;font-weight:400;font-size:clamp(32px,4vw,56px);line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin:0 0 24px 0;}
+.hsub{font-family:'Merriweather',serif;font-weight:400;font-size:16px;line-height:1.8;color:var(--ink2);max-width:540px;margin-bottom:32px;}
+.highlight{color:var(--ac);font-weight:700;}
+.rule{display:none;}
+.reas{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;}
+.rea{display:flex;align-items:flex-start;gap:14px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.6;}
+.rd{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:6px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
 .rea:hover .rd{transform:scale(1.3);}
 .rea strong{color:var(--ink);}
-.btns{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:40px;}
-.bp{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:12px 28px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;}
+.btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
+.bp{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:15px 34px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;}
 .bp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
 .bp:hover::before{transform:translateX(100%);}
-.bp:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(216,43,80,.28);opacity:.98;}
+.bp:hover{transform:translateY(-2px);box-shadow:0 20px 48px rgba(216,43,80,.35);opacity:.98;}
 .bp:active{transform:translateY(0);}
 .bp .ar{transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block;}
-.bp:hover .ar{transform:translateX(4px);}
-.bg{display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:11px 24px;background:transparent;color:var(--ink);border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.bp:hover .ar{transform:translateX(5px);}
+.bg{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:14px 28px;background:transparent;color:var(--ink);border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
 .bg:hover{border-color:var(--ac);background:rgba(216,43,80,.05);color:var(--ac);}
-.stats{padding-top:32px;border-top:1px solid var(--bd);display:flex;gap:32px;flex-wrap:wrap;}
-.sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:32px;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:4px;transition:transform .3s;}
+.stats{padding-top:48px;border-top:1px solid var(--bd);display:flex;gap:48px;flex-wrap:wrap;}
+.sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:40px;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:6px;transition:transform .3s;}
 .sn:hover{transform:translateY(-2px);}
 .sn em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:.7em;color:var(--ac);}
-.sl{font-size:11px;font-weight:600;color:var(--ink3);line-height:1.4;letter-spacing:.02em;}
+.sl{font-size:12px;font-weight:600;color:var(--ink3);line-height:1.5;letter-spacing:.02em;}
 
 /* HERO RIGHT */
 .hr2{background:#0d0c0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 48px;}
-.hr2::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4.5s ease-in-out infinite;pointer-events:none;}
-@keyframes pglow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}}
-.vis{position:relative;width:340px;height:340px;}
-.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);}
-.r1{inset:0;animation:rs 24s linear infinite;}
-.r2{inset:24px;border-style:dashed;border-color:rgba(240,53,77,.15);animation:rs 16s linear infinite reverse;}
-.r3{inset:48px;border-color:rgba(255,255,255,.04);animation:rs 34s linear infinite;}
-@keyframes rs{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;}
-.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 64px rgba(240,53,77,.6),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.2s ease-in-out infinite;z-index:4;}
-@keyframes cp{0%,100%{box-shadow:0 0 48px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 96px rgba(240,53,77,.8),inset 0 1px 2px rgba(255,255,255,.4);}}
-.vcl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.04em;line-height:1;}
-.vcs{font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(240,53,77,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
-.on:hover{background:rgba(240,53,77,.15);border-color:rgba(240,53,77,.4);transform:scale(1.15) !important;}
-.ni{font-size:22px;margin-bottom:3px;line-height:1;}
-.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.7);line-height:1.3;letter-spacing:.02em;}
-.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3s ease-in-out infinite;}
-.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 3.4s ease-in-out infinite .4s;}
-.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 2.8s ease-in-out infinite .8s;}
-.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3.6s ease-in-out infinite 1.2s;}
-.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 3.2s ease-in-out infinite 1.6s;}
-.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 2.6s ease-in-out infinite 2s;}
-@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-.vb{position:absolute;background:rgba(255,255,255,.06);border:1.5px solid rgba(240,53,77,.2);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
-.vb:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.4);transform:translateY(-2px);}
-.vbn{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;}
-.vbn em{font-family:'Cormorant Garamond',serif;font-size:.75em;color:#ff6b85;font-style:italic;}
-.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.02em;}
-.vb1{top:16px;right:18px;animation:bob 4s ease-in-out infinite;}
-.vb2{bottom:20px;left:14px;animation:bob 3.5s ease-in-out infinite .7s;}
-.vb3{bottom:60px;right:12px;animation:bob 5s ease-in-out infinite 1.4s;}
+.hr2::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.12) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 5.2s ease-in-out infinite;pointer-events:none;}
+@keyframes pglow{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.18);}}
+.benefit-showcase{width:100%;max-width:380px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.05);position:relative;z-index:10;}
+.showcase-header{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
+.showcase-dot{width:6px;height:6px;background:var(--ac);border-radius:50%;animation:pulse-dot 1.5s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+.benefit-list{display:flex;flex-direction:column;gap:12px;position:relative;}
+.benefit-card{display:flex;align-items:flex-start;gap:14px;padding:14px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);border-radius:12px;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);opacity:0.25;transform:translateY(8px) scale(0.98);}
+.benefit-card.active{opacity:1;transform:translateY(0) scale(1);background:rgba(255,255,255,0.05);border-color:rgba(240,53,77,0.25);box-shadow:0 10px 30px rgba(240,53,77,0.08);}
+.benefit-icon{font-size:22px;line-height:1;}
+.benefit-info{display:flex;flex-direction:column;gap:3px;}
+.benefit-title{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;color:#fff;}
+.benefit-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;}
+
 
 /* TICKER */
-.ticker{background:var(--ac);padding:11px 0;overflow:hidden;display:flex;}
+.ticker{background:var(--ac);padding:14px 0;overflow:hidden;display:flex;}
 .tt{display:flex;animation:tk 28s linear infinite;white-space:nowrap;}
-.tt span{font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;color:#fff;padding:0 28px;display:flex;align-items:center;gap:18px;letter-spacing:.01em;}
-.tt span::after{content:'◆';font-size:5px;opacity:.5;}
+.tt span{font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;color:#fff;padding:0 32px;display:flex;align-items:center;gap:20px;letter-spacing:.02em;}
+.tt span::after{content:'◆';font-size:6px;opacity:.5;}
 @keyframes tk{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* SECTIONS */
-.sec{padding:96px 48px;transition:background .35s cubic-bezier(.4,.0,.2,1);max-width:1300px;margin:0 auto;}
+.sec{padding:128px 80px;transition:background .35s cubic-bezier(.4,.0,.2,1);}
 .sa{background:var(--bg2);}
-.stop{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:56px;}
-.ey{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:var(--tc);letter-spacing:.12em;text-transform:uppercase;margin-bottom:16px;}
-.ey::before{content:'';width:14px;height:1.5px;background:var(--ac);border-radius:1px;}
-.sh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(28px,2.8vw,44px);line-height:1.08;color:var(--ink);}
-.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;}
-.sd{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.65;letter-spacing:-.01em;}
+.stop{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:80px;}
+.ey{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;}
+.ey::before{content:'';width:18px;height:1.5px;background:var(--ac);border-radius:1px;}
+.sh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(34px,3.8vw,54px);line-height:1.05;color:var(--ink);}
+.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;animation:soft-float 3.2s ease-in-out infinite;}
+@keyframes soft-float{0%,100%{transform:translateY(0);opacity:.95;}50%{transform:translateY(-6px);opacity:1;}}
+.sd{font-size:16px;font-weight:500;color:var(--ink2);line-height:1.75;letter-spacing:-.01em;}
 .sd strong{color:var(--ink);font-weight:700;}
 
 /* CVF */
-.cvf{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--bd);border-radius:20px;overflow:hidden;}
-.cc{padding:40px;}
+.cvf{display:grid;grid-template-columns:1fr 1fr;border:1.5px solid var(--bd);border-radius:24px;overflow:hidden;}
+.cc{padding:56px;}
 .cc.com{background:#0d0c0a;border-right:1px solid rgba(255,255,255,.07);}
 .cc.fora{background:var(--surf);color:var(--ink);}
-.ct{font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:18px;display:flex;align-items:center;gap:8px;}
-.com .ct{color:#ff7a92;}.com .ct::before{content:'';width:14px;height:1.5px;background:#ff7a92;border-radius:1px;}
-.fora .ct{color:var(--ink3);}.fora .ct::before{content:'';width:14px;height:1.5px;background:var(--ink3);border-radius:1px;}
-.ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3vw,42px);letter-spacing:-.04em;line-height:1.05;margin-bottom:6px;}
+.ct{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;display:flex;align-items:center;gap:10px;}
+.com .ct{color:#ff7a92;}.com .ct::before{content:'';width:16px;height:1.5px;background:#ff7a92;border-radius:1px;}
+.fora .ct{color:var(--ink3);}.fora .ct::before{content:'';width:16px;height:1.5px;background:var(--ink3);border-radius:1px;}
+.ch{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(36px,4.2vw,56px);letter-spacing:-.04em;line-height:1;margin-bottom:8px;}
 .com .ch{color:#fff;}.fora .ch{color:var(--ink);}
 .ch .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;display:block;font-size:1.04em;}
 .com .ch .em{color:#ff7a92;}.fora .ch .em{color:var(--ink3);}
-.csub{font-size:13px;font-weight:500;line-height:1.6;margin-bottom:24px;}
+.csub{font-size:15px;font-weight:500;line-height:1.7;margin-bottom:32px;}
 .com .csub{color:rgba(255,255,255,.48);}.fora .csub{color:var(--ink2);}
-.clist{display:flex;flex-direction:column;gap:10px;}
-.ci{display:flex;align-items:flex-start;gap:12px;padding-bottom:10px;border-bottom:1px solid;font-size:13px;font-weight:600;line-height:1.5;}
+.clist{display:flex;flex-direction:column;gap:12px;}
+.ci{display:flex;align-items:flex-start;gap:14px;padding-bottom:12px;border-bottom:1px solid;font-size:14px;font-weight:600;line-height:1.6;}
 .ci:last-child{border-bottom:none;padding-bottom:0;}
 .com .ci{border-color:rgba(255,255,255,.07);color:rgba(255,255,255,.74);}
 .fora .ci{border-color:var(--bd);color:var(--ink2);}
-.cdot{width:6px;height:6px;border-radius:50%;margin-top:4px;flex-shrink:0;}
+.cdot{width:7px;height:7px;border-radius:50%;margin-top:5px;flex-shrink:0;}
 .com .cdot{background:#ff7a92;}.fora .cdot{background:var(--ink3);}
 
 /* PROBLEMS */
-.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--bd);background:var(--bd);border-radius:16px;overflow:hidden;}
-.pc{background:var(--bg);padding:32px 28px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;border:1px solid var(--bd);background:var(--bd);border-radius:20px;overflow:hidden;}
+.pc{background:var(--bg);padding:44px 36px;position:relative;overflow:hidden;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
 [data-theme="dark"] .pc{background:var(--bg2);}
-.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
+.pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
 .pc:hover{background:var(--surf);transform:translateY(-2px);}
 .pc:hover::after{transform:scaleX(1);}
-.pnum{font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:var(--ink3);letter-spacing:.08em;margin-bottom:18px;display:flex;justify-content:space-between;text-transform:uppercase;}
-.pio{font-size:20px;}
-.pti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:16px;letter-spacing:-.03em;color:var(--ink);margin-bottom:10px;line-height:1.1;}
-.pde{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.6;}
-.pal{margin-top:32px;background:#0d0c0a;border-radius:16px;padding:32px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
-.palq{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(17px,2vw,26px);color:#fff;line-height:1.35;max-width:500px;}
-.palq strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-style:normal;font-size:.88em;color:#ff7a92;}
-.palb{flex-shrink:0;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid rgba(255,107,133,.35);border-radius:100px;padding:9px 16px;white-space:nowrap;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.pnum{font-size:28px;margin-bottom:20px;display:flex;align-items:center;justify-content:flex-start;}
+.pio{font-size:28px;}
+.pti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;line-height:1.15;}
+.pde{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.7;}
+.pal{margin-top:40px;background:#0d0c0a;border-radius:20px;padding:44px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
+.palq{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(21px,2.6vw,32px);color:#fff;line-height:1.4;max-width:580px;}
+.palq strong{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-style:normal;font-size:.86em;color:#ff7a92;}
+.palb{flex-shrink:0;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.12em;text-transform:uppercase;border:1.5px solid rgba(255,107,133,.35);border-radius:100px;padding:11px 20px;white-space:nowrap;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
 .palb:hover{background:rgba(255,107,133,.1);transform:scale(1.05);}
 
 /* METHOD */
-.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;background:transparent;border:none;border-radius:0;overflow:visible;margin-bottom:0;}
-.mc{background:transparent;padding:32px 24px;position:relative;transition:all .3s cubic-bezier(.34,1.56,.64,1);border:none;display:flex;flex-direction:column;align-items:center;text-align:center;}
-[data-theme="dark"] .mc{background:transparent;}.mc:hover{background:transparent;transform:translateY(-2px);}
-.mle{position:relative;display:block;font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:72px;line-height:1;color:var(--ac);opacity:1;pointer-events:none;user-select:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:16px;}
-.mc:hover .mle{transform:scale(1.08);}
-.mtg{font-family:'Geist Mono',monospace;font-size:0;font-weight:700;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:0;display:none;}
-.mti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:24px;letter-spacing:-.03em;color:var(--ink);margin-bottom:8px;line-height:1.2;}
-.msu{font-size:12px;font-weight:600;color:var(--ac);margin-bottom:14px;letter-spacing:.03em;text-transform:uppercase;}
-.mde{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.65;}
+.mg{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--bd);border:1px solid var(--bd);border-radius:20px;overflow:hidden;}
+.mc{background:var(--bg);padding:52px 44px;position:relative;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+[data-theme="dark"] .mc{background:var(--bg2);}.mc:hover{background:var(--surf);transform:translateY(-3px);}
+.mle{position:absolute;top:36px;right:36px;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:96px;line-height:1;color:var(--ac);opacity:.08;pointer-events:none;user-select:none;transition:opacity .3s;}
+.mc:hover .mle{opacity:.12;}
+.mtg{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.1em;text-transform:uppercase;margin-bottom:28px;}
+.mti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:30px;letter-spacing:-.04em;color:var(--ink);margin-bottom:10px;}
+.msu{font-size:13px;font-weight:700;color:var(--ac);margin-bottom:18px;letter-spacing:.02em;}
+.mde{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.75;}
 
 /* SERVICES */
-.svg{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:56px;}
-.sv{border:1.5px solid var(--bd);border-radius:20px;overflow:hidden;background:var(--surf);transition:all .4s cubic-bezier(.34,1.56,.64,1);}
-.sv:hover{border-color:var(--ac);transform:translateY(-4px);box-shadow:var(--shadow-lg);}
-.svh{background:#0d0c0a;padding:32px;position:relative;overflow:hidden;}
-.svhg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:80px;color:rgba(255,255,255,.03);bottom:-8px;right:-8px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
-.svbd{display:inline-block;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.08em;text-transform:uppercase;border:1px solid rgba(255,107,133,.35);border-radius:100px;padding:6px 12px;margin-bottom:16px;}
-.svt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(22px,2.5vw,32px);color:#fff;line-height:1.1;letter-spacing:-.03em;margin-bottom:6px;}
-.svtg{font-size:12px;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.01em;}
-.svb{padding:28px 32px;}
-.svd{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.65;margin-bottom:20px;letter-spacing:-.01em;}
-.svil{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;}
-.svit{display:flex;align-items:flex-start;gap:12px;padding-bottom:8px;border-bottom:1px solid var(--bd2);font-size:13px;font-weight:600;color:var(--ink2);}
+.svg{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:64px;}
+.sv{border:1.5px solid var(--bd);border-radius:24px;overflow:hidden;background:var(--surf);transition:all .4s cubic-bezier(.34,1.56,.64,1);}
+.sv:hover{border-color:var(--ac);transform:translateY(-8px);box-shadow:var(--shadow-lg);}
+.svh{background:#0d0c0a;padding:48px;position:relative;overflow:hidden;}
+.svhg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:120px;color:rgba(255,255,255,.04);bottom:-12px;right:-12px;line-height:1;pointer-events:none;user-select:none;white-space:nowrap;}
+.svbd{display:inline-block;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.1em;text-transform:uppercase;border:1px solid rgba(255,107,133,.35);border-radius:100px;padding:7px 16px;margin-bottom:24px;}
+.svt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3vw,40px);color:#fff;line-height:1.05;letter-spacing:-.04em;margin-bottom:10px;}
+.svtg{font-size:14px;font-weight:500;color:rgba(255,255,255,.42);letter-spacing:.01em;}
+.svb{padding:44px;}
+.svd{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.75;margin-bottom:28px;letter-spacing:-.01em;}
+.svil{display:flex;flex-direction:column;gap:10px;margin-bottom:36px;}
+.svit{display:flex;align-items:flex-start;gap:14px;padding-bottom:10px;border-bottom:1px solid var(--bd2);font-size:14px;font-weight:600;color:var(--ink2);}
 .svit:last-child{border-bottom:none;padding-bottom:0;}
-.svdt{width:6px;height:6px;border-radius:50%;background:var(--ac);margin-top:4px;flex-shrink:0;}
-.svf{display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--bd);}
-.svpr{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.03em;color:var(--ink);}
-.svpr small{font-size:12px;color:var(--ink3);font-weight:600;}
-.bsv{display:inline-flex;align-items:center;gap:6px;font-family:'Bricolage Grotesque',sans-serif;font-size:12px;font-weight:700;letter-spacing:-.01em;padding:10px 18px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.svdt{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:5px;flex-shrink:0;}
+.svf{display:flex;align-items:center;justify-content:space-between;padding-top:28px;border-top:1px solid var(--bd);}
+.svpr{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:26px;letter-spacing:-.03em;color:var(--ink);}
+.svpr small{font-size:13px;color:var(--ink3);font-weight:600;}
+.bsv{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:13px;font-weight:700;letter-spacing:-.01em;padding:12px 22px;border:1.5px solid var(--ink);color:var(--ink);background:transparent;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
 .bsv:hover{background:var(--ink);color:var(--surf);transform:translateY(-2px);}
 
 /* COMP */
@@ -199,40 +179,40 @@ nav a:hover{color:var(--ac);}
 .cde{font-size:13px;font-weight:500;color:var(--ink2);line-height:1.65;}
 
 /* SOBRE */
-.sobre{padding:100px 80px;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;}
-.sob-img{width:100%;aspect-ratio:1;background:linear-gradient(135deg,rgba(240,53,77,.12),rgba(240,53,77,.06));border-radius:18px;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:70px;color:var(--ink3);}
-.sob-tx{display:flex;flex-direction:column;gap:16px;}
-.sob-tt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(28px,3.2vw,42px);letter-spacing:-.03em;color:var(--ink);line-height:1.15;margin-bottom:4px;}
-.sob-sub{font-size:12px;font-weight:700;color:var(--ac);letter-spacing:.08em;text-transform:uppercase;margin-bottom:12px;}
-.sob-main{font-size:15px;font-weight:500;color:var(--ink2);line-height:1.7;letter-spacing:-.005em;}
+.sobre{padding:128px 80px;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
+.sob-img{width:100%;aspect-ratio:1;background:linear-gradient(135deg,rgba(240,53,77,.12),rgba(240,53,77,.06));border-radius:20px;border:1.5px solid var(--bd);display:flex;align-items:center;justify-content:center;font-size:80px;color:var(--ink3);}
+.sob-tx{display:flex;flex-direction:column;gap:20px;}
+.sob-tt{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(32px,3.6vw,48px);letter-spacing:-.04em;color:var(--ink);line-height:1.1;margin-bottom:8px;}
+.sob-sub{font-size:13px;font-weight:700;color:var(--ac);letter-spacing:.1em;text-transform:uppercase;margin-bottom:16px;}
+.sob-main{font-size:16px;font-weight:500;color:var(--ink2);line-height:1.8;letter-spacing:-.01em;}
 .sob-main strong{color:var(--ink);font-weight:700;}
 
 /* CTA */
-.ctas{padding:100px 48px;background:#0d0c0a;position:relative;overflow:hidden;text-align:center;max-width:100%;}
+.ctas{padding:140px 80px;background:#0d0c0a;position:relative;overflow:hidden;text-align:center;}
 .ctas::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(240,53,77,.14) 0%,transparent 65%);pointer-events:none;}
-.ctabg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:240px;color:rgba(255,255,255,.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;}
-.ctai{position:relative;z-index:1;max-width:650px;margin:0 auto;}
-.ctae{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:'Geist Mono',monospace;font-size:9px;font-weight:700;color:#ff7a92;letter-spacing:.12em;text-transform:uppercase;margin-bottom:24px;}
-.ctae::before,.ctae::after{content:'';width:18px;height:1.5px;background:#ff7a92;opacity:.4;border-radius:1px;}
-.ctah{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(32px,4vw,56px);line-height:1.1;color:#fff;margin-bottom:8px;}
+.ctabg{position:absolute;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:320px;color:rgba(255,255,255,.02);top:50%;left:50%;transform:translate(-50%,-50%);white-space:nowrap;pointer-events:none;user-select:none;letter-spacing:-.05em;}
+.ctai{position:relative;z-index:1;max-width:720px;margin:0 auto;}
+.ctae{display:inline-flex;align-items:center;justify-content:center;gap:12px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:#ff7a92;letter-spacing:.14em;text-transform:uppercase;margin-bottom:32px;}
+.ctae::before,.ctae::after{content:'';width:24px;height:1.5px;background:#ff7a92;opacity:.4;border-radius:1px;}
+.ctah{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(40px,5.8vw,72px);line-height:1;color:#fff;margin-bottom:12px;}
 .ctah .em{display:block;font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.05em;color:#ff7a92;}
-.ctasub{font-size:14px;font-weight:500;color:rgba(255,255,255,.38);line-height:1.6;margin:24px 0 40px;letter-spacing:-.005em;}
-.bctam{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;padding:14px 36px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:20px;letter-spacing:.01em;}
-.bctam:hover{transform:translateY(-3px);box-shadow:0 20px 48px rgba(240,53,77,.4);opacity:.94;}
-.ctarl{display:flex;align-items:center;gap:16px;margin:24px 0;}
+.ctasub{font-size:17px;font-weight:500;color:rgba(255,255,255,.38);line-height:1.7;margin:30px 0 52px;letter-spacing:-.01em;}
+.bctam{display:inline-flex;align-items:center;gap:12px;font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;padding:18px 44px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);margin-bottom:24px;letter-spacing:.01em;}
+.bctam:hover{transform:translateY(-3px);box-shadow:0 24px 56px rgba(240,53,77,.45);opacity:.94;}
+.ctarl{display:flex;align-items:center;gap:20px;margin:32px 0;}
 .ctarl::before,.ctarl::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.07);}
-.ctarl span{font-family:'Geist Mono',monospace;font-size:9px;color:rgba(255,255,255,.2);letter-spacing:.08em;text-transform:uppercase;font-weight:700;}
-.ctalk{font-size:13px;font-weight:500;color:rgba(255,255,255,.3);}
-.ctalk a{color:rgba(255,255,255,.54);text-decoration:underline;text-underline-offset:3px;transition:color .2s;font-weight:600;}
+.ctarl span{font-family:'Geist Mono',monospace;font-size:10px;color:rgba(255,255,255,.2);letter-spacing:.1em;text-transform:uppercase;font-weight:700;}
+.ctalk{font-size:14px;font-weight:500;color:rgba(255,255,255,.3);}
+.ctalk a{color:rgba(255,255,255,.54);text-decoration:underline;text-underline-offset:4px;transition:color .2s;font-weight:600;}
 .ctalk a:hover{color:#ff7a92;}
 
 /* FOOTER */
-footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;max-width:1300px;margin:0 auto;}
-.fl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:15px;color:rgba(255,255,255,.35);letter-spacing:-.02em;}
-.fln{display:flex;gap:24px;flex-wrap:wrap;}
-.fln a{font-size:12px;font-weight:600;color:rgba(255,255,255,.24);text-decoration:none;transition:color .2s;letter-spacing:.005em;}
+footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40px 80px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;}
+.fl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:17px;color:rgba(255,255,255,.35);letter-spacing:-.02em;}
+.fln{display:flex;gap:28px;flex-wrap:wrap;}
+.fln a{font-size:13px;font-weight:600;color:rgba(255,255,255,.24);text-decoration:none;transition:color .2s;letter-spacing:.01em;}
 .fln a:hover{color:rgba(255,255,255,.65);}
-.fcp{font-family:'Geist Mono',monospace;font-size:10px;color:rgba(255,255,255,.18);letter-spacing:.01em;}
+.fcp{font-family:'Geist Mono',monospace;font-size:11px;color:rgba(255,255,255,.18);letter-spacing:.02em;}
 
 /* REVEAL */
 .rv{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.34,1.56,.64,1),transform .8s cubic-bezier(.34,1.56,.64,1);}
@@ -240,7 +220,7 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
 .d1{transition-delay:.08s;}.d2{transition-delay:.16s;}.d3{transition-delay:.24s;}.d4{transition-delay:.32s;}
 
 /* RESPONSIVE */
-@media(max-width:1100px){.hero{grid-template-columns:1fr;}.hr2{min-height:420px;}.sec{padding:96px 48px;}.stop{grid-template-columns:1fr;gap:48px;}.pg{grid-template-columns:1fr 1fr;}.mg{grid-template-columns:repeat(3,1fr);gap:12px;}.cvf{grid-template-columns:1fr;}.svg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr 1fr;}.ctas{padding:120px 48px;}.pal{flex-direction:column;text-align:center;padding:40px 36px;}.sobre{grid-template-columns:1fr;gap:48px;}}
+@media(max-width:1100px){.hero{grid-template-columns:1fr;}.hr2{min-height:420px;}.sec{padding:96px 48px;}.stop{grid-template-columns:1fr;gap:48px;}.pg{grid-template-columns:1fr 1fr;}.mg{grid-template-columns:1fr;}.cvf{grid-template-columns:1fr;}.svg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr 1fr;}.ctas{padding:120px 48px;}.pal{flex-direction:column;text-align:center;padding:40px 36px;}.sobre{grid-template-columns:1fr;gap:48px;}}
 @media(max-width:700px){header{padding:0 20px;height:64px;}nav{display:none;}.hl{padding:48px 24px;}.hr2{min-height:360px;}.stats{gap:28px;}.sec{padding:72px 24px;}.stop{gap:32px;margin-bottom:56px;}.pg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.cc{padding:40px 28px;}.ctas{padding:96px 24px;}footer{padding:28px 24px;flex-direction:column;text-align:center;}.btns{flex-direction:column;align-items:flex-start;width:100%;}.bp,.bg{width:100%;}.vis{width:280px;height:280px;}.sobre{padding:72px 24px;}}
 </style>
 </head>
@@ -248,19 +228,17 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
 <header id="hdr">
   <a href="#" class="logo"><div class="ldot"></div>KyB</a>
-  <nav><a href="#">Método</a><a href="#">Serviços</a><a href="#">Sobre</a></nav>
+  <nav><a href="#metodo">Método</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a></nav>
   <div class="hr">
-    <button class="mbtn" id="mb"><span id="mico">☀️</span><span id="mlbl">PIM</span></button>
-    <button class="bh">Conversa gratuita →</button>
+    <button class="mbtn" id="mb" aria-label="Alternar tema"><span id="mico">☀️</span></button>
   </div>
 </header>
 
 <section class="hero">
   <div class="hl">
     <div class="etag">Para quem quer vender mais no digital</div>
-    <h1 class="h1">Se não for<br><span class="h1-com">.com</span><br>será <span class="h1-fora">.fora.</span></h1>
-    <div class="rule"></div>
-    <p class="hsub">Vender mais, fechar mais clientes, ganhar mais dinheiro — tudo isso acontece quando você sabe <strong>o que postar, quando postar e por quê.</strong> O que falta não é esforço. É estratégia de conteúdo.</p>
+    <h1 class="h1">Deixe de ser invisível e transforme seu Instagram em uma máquina de imprimir dinheiro</h1>
+    <p class="hsub">Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.</p>
     <div class="reas">
       <div class="rea"><div class="rd"></div>Sem presença digital, você depende só de indicação — e indicação acaba.</div>
       <div class="rea"><div class="rd"></div>Quem não é autoridade aceita qualquer preço. Quem é <strong>dita o preço.</strong></div>
@@ -277,34 +255,56 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
     </div>
   </div>
   <div class="hr2">
-    <div class="vis">
-      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-      <svg class="vsvg" viewBox="0 0 320 320" fill="none">
-        <line x1="160" y1="160" x2="160" y2="5"   stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="295" y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="295" y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="160" y2="315" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="25"  y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="25"  y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-      </svg>
-      <div class="vc"><div class="vcl">KyB</div><div class="vcs">.com</div></div>
-      <div class="on n1"><div class="ni">💰</div><div class="nl">Venda<br>Mais</div></div>
-      <div class="on n2"><div class="ni">🎯</div><div class="nl">Cliente<br>Certo</div></div>
-      <div class="on n3"><div class="ni">📈</div><div class="nl">Preço<br>Justo</div></div>
-      <div class="on n4"><div class="ni">🔥</div><div class="nl">Feche<br>Contratos</div></div>
-      <div class="on n5"><div class="ni">🌐</div><div class="nl">Seja<br>Achado</div></div>
-      <div class="on n6"><div class="ni">⚡</div><div class="nl">Cresça<br>Rápido</div></div>
+    <div class="benefit-showcase">
+      <div class="showcase-header">
+        <div class="showcase-dot"></div>
+        <span>KyB • Resultados Reais</span>
+      </div>
+      <div class="benefit-list">
+        <div class="benefit-card active">
+          <span class="benefit-icon">🎯</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Clientes Qualificados</span>
+            <span class="benefit-desc">Eles vêm até você prontos para comprar, sem choro por descontos.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">💰</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Receita Crescendo</span>
+            <span class="benefit-desc">Ticket médio maior, mais contratos fechados e caixa previsível.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🎥</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Vídeos que Vendem</span>
+            <span class="benefit-desc">Formato estratégico para o Instagram focado em atração real.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">✨</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Posicionamento Único</span>
+            <span class="benefit-desc">Deixe de ser invisível para se tornar referência número um do nicho.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🤝</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Valorização de Marca</span>
+            <span class="benefit-desc">Cobre o preço justo pelo valor que você realmente entrega ao cliente.</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="vb vb1"><div class="vbn">3<em>×</em></div><div class="vbl">mais contratos</div></div>
-    <div class="vb vb2"><div class="vbn">+R$<em>k</em></div><div class="vbl">ticket médio</div></div>
-    <div class="vb vb3"><div class="vbn">30<em>d</em></div><div class="vbl">resultado</div></div>
   </div>
 </section>
 
 <div class="ticker">
   <div class="tt">
-    <span>Seja .COM</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado primeiro</span><span>Cobre o que vale</span><span>Pare de ser .FORA</span><span>Estratégia de conteúdo</span><span>UGC que converte</span><span>Resultado concreto</span>
-    <span>Seja .COM</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado primeiro</span><span>Cobre o que vale</span><span>Pare de ser .FORA</span><span>Estratégia de conteúdo</span><span>UGC que converte</span><span>Resultado concreto</span>
+    <span>Seja .com</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado</span><span>Cobre o que vale</span><span>Pare de ser .fora</span><span>Posicionamento real</span><span>Estratégia que vende</span><span>Resultado concreto</span>
+    <span>Seja .com</span><span>Venda mais</span><span>Feche mais contratos</span><span>Alcance mais clientes</span><span>Seja encontrado</span><span>Cobre o que vale</span><span>Pare de ser .fora</span><span>Posicionamento real</span><span>Estratégia que vende</span><span>Resultado concreto</span>
   </div>
 </div>
 
@@ -339,46 +339,46 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
 
 <section class="sec sa">
   <div class="stop rv">
-    <div><div class="ey">O diagnóstico sem filtro</div><h2 class="sh">Por que o conteúdo<br>não está vendendo</h2></div>
-    <p class="sd">A maioria posta. Poucos têm estratégia. <strong>Essa é a única diferença</strong> entre quem cresce e quem fica no lugar.</p>
+    <div><div class="ey">O diagnóstico sem filtro</div><h2 class="sh">Você está pagando caro<br>por <span class="em">não aparecer.</span></h2></div>
+    <p class="sd">Não é falta de talento. A diferença entre quem cobra R$500 e quem cobra R$5.000 <strong>raramente é técnica.</strong></p>
   </div>
   <div class="pg rv">
-    <div class="pc"><div class="pnum"><span>01</span><span class="pio">👻</span></div><div class="pti">Ninguém sabe o que você faz</div><div class="pde">Você tem talento, entrega bem — mas no digital, ninguém te encontra. Alguém com metade do seu nível mas com estratégia clara está faturando o que é seu.</div></div>
-    <div class="pc"><div class="pnum"><span>02</span><span class="pio">🌫️</span></div><div class="pti">Posta, posta e nada acontece</div><div class="pde">Conteúdo sem objetivo não converte. Sem saber o que postar, para quem e com qual intenção, cada publicação é esforço jogado fora.</div></div>
-    <div class="pc"><div class="pnum"><span>03</span><span class="pio">💸</span></div><div class="pti">Cobra menos do que deveria</div><div class="pde">Quando o cliente não te enxerga como referência, ele negocia. Posicionamento certo muda isso — e o cliente para de questionar o preço.</div></div>
-    <div class="pc"><div class="pnum"><span>04</span><span class="pio">🔄</span></div><div class="pti">Todo mês começa do zero</div><div class="pde">Sem audiência construída, sem conteúdo estratégico, cada mês é uma caça ao cliente do zero. O digital quebra esse ciclo — mas só com estratégia.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">👻</span></div><div class="pti">Ninguém sabe que você existe</div><div class="pde">Você faz trabalho excelente, mas o cliente que precisa não te encontra. Alguém com posicionamento está faturando o que é seu.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">🎬</span></div><div class="pti">Seu vídeo não tem o formato certo</div><div class="pde">Você grava, posta no Instagram — e nada acontece. Cada rede tem seu formato. Descobrir qual é o seu formato criativo é o segredo. Sem ele, o vídeo perfeito desaparece.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">💸</span></div><div class="pti">Cobrando metade do que vale</div><div class="pde">Você entrega R$5.000 e cobra R$1.500 — porque o cliente não enxerga o valor. Posicionamento resolve isso em 30 dias.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">⏳</span></div><div class="pti">Sem saber por onde começar</div><div class="pde">Sabe que precisa mudar. Mas trava. Essa paralisia custa contratos e dinheiro — todo dia que passa.</div></div>
   </div>
   <div class="pal rv">
-    <p class="palq">Enquanto você decide, alguém com a <strong>mesma profissão e menos talento</strong> está fechando o cliente que deveria ser seu. Só porque aparece mais.</p>
+    <p class="palq">Enquanto você lê isso, seu concorrente está fechando <strong>o cliente que deveria ser seu.</strong> Não amanhã. Agora.</p>
     <div class="palb">Realidade sem filtro</div>
   </div>
 </section>
 
-<section class="sec">
-  <div class="stop rv"><div><div class="ey">Como funciona</div><h2 class="sh">O método <span class="em">SER.COM</span></h2></div><p class="sd">Três pilares. Cada um existe para uma coisa só: <strong>fazer o conteúdo virar dinheiro.</strong></p></div>
+<section class="sec" id="metodo">
+  <div class="stop rv"><div><div class="ey">Como fazemos</div><h2 class="sh">O método <span class="em">SER.com</span></h2></div><p class="sd">Três pilares que transformam quem você é no digital em <strong>clientes, contratos e receita real.</strong></p></div>
   <div class="mg rv">
-    <div class="mc"><div class="mle">S</div><div class="mti">Sincero</div><div class="msu">Sem template, sem papo genérico</div><div class="mde">Ponto de partida é entender o que você vende, para quem vende e o que está travando a venda agora. Nada é copiado de outro caso.</div></div>
-    <div class="mc"><div class="mle">E</div><div class="mti">Estratégico</div><div class="msu">Plano que cabe na sua realidade</div><div class="mde">Um plano de conteúdo que funciona para o seu negócio, não para uma empresa inventada num slide de consultoria. Concreto. Executável. Agora.</div></div>
-    <div class="mc"><div class="mle">R</div><div class="mti">Rentável</div><div class="msu">Conteúdo que existe para vender</div><div class="mde">Cada publicação tem um objetivo: atrair, posicionar ou converter. Nada é postado por obrigação ou por seguir tendência. O conteúdo trabalha.</div></div>
+    <div class="mc"><div class="mle">S</div><div class="mtg">Pilar 01</div><div class="mti">Sincero</div><div class="msu">Sem roteiro engessado</div><div class="mde">Entendemos de verdade o que você faz. Quem é seu cliente que gera mais dinheiro. Onde você está perdendo venda. Quando você é sincero com seu público, a confiança e identificação vêm naturalmente.</div></div>
+    <div class="mc"><div class="mle">E</div><div class="mtg">Pilar 02</div><div class="mti">Estratégico</div><div class="msu">Plano que funciona</div><div class="mde">Construímos estratégia para sua realidade. Conteúdo que posiciona. Que atrai o cliente certo. Que converte. Uma estratégia bem feita faz o cliente certo vir até você.</div></div>
+    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Receita crescendo</div><div class="mde">Quando você mostra seu valor de forma estratégica e sincera, as pessoas procuram por você. A receita acompanha naturalmente.</div></div>
   </div>
 </section>
 
-<section class="sec sa">
+<section class="sec sa" id="servicos">
   <div class="stop rv"><div><div class="ey">Como podemos te ajudar</div><h2 class="sh">Dois caminhos para<br><span class="em">vender mais.</span></h2></div><p class="sd">Escolha onde você está agora. Os dois levam ao mesmo lugar: <strong>mais clientes, mais contratos, mais receita.</strong></p></div>
   <div class="svg">
     <div class="sv rv d1">
-      <div class="svh"><div class="svhg">Estratégia</div><div class="svbd">Posicionamento · SER.com</div><div class="svt">Estratégia de<br>Conteúdo</div><div class="svtg">Saber o que postar, para quem e com qual objetivo</div></div>
+      <div class="svh"><div class="svhg">Estratégia</div><div class="svbd">Posicionamento · SER.com</div><div class="svt">Estratégia +<br>Posicionamento</div><div class="svtg">Do invisível ao cliente fechando em 30 dias</div></div>
       <div class="svb">
-        <p class="svd">Saber o que postar não é sorte. É um plano. Você sai com o posicionamento claro, a linha editorial definida e as próximas semanas de conteúdo estruturadas. Só executar.</p>
-        <div class="svil"><div class="svit"><div class="svdt"></div>O que postar, quando postar e com qual objetivo em cada publicação</div><div class="svit"><div class="svdt"></div>Posicionamento: como aparecer diferente de todo mundo no seu nicho</div><div class="svit"><div class="svdt"></div>30 ideias de conteúdo prontas para as próximas 8 semanas</div><div class="svit"><div class="svdt"></div>3 roteiros prontos para gravar agora</div><div class="svit"><div class="svdt"></div>1 sessão ao vivo para alinhar e tirar dúvidas</div></div>
+        <p class="svd">Entendemos sua situação sem filtro. Você sai com posicionamento único, calendário editorial completo e conteúdo pronto para atrair o cliente certo amanhã.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>Diagnóstico: onde você está perdendo venda agora</div><div class="svit"><div class="svdt"></div>Posicionamento único — você vira referência no nicho</div><div class="svit"><div class="svdt"></div>Calendário 8 semanas — 30 ideias prontas para publicar</div><div class="svit"><div class="svdt"></div>3 roteiros prontos para gravar e publicar agora</div><div class="svit"><div class="svdt"></div>1 mentoria ao vivo para alinhar tudo</div></div>
         <div class="svf"><div class="svpr">R$ 997 <small>/ único</small></div><button class="bsv">Quero fechar mais →</button></div>
       </div>
     </div>
     <div class="sv rv d2">
-      <div class="svh" style="background:linear-gradient(145deg,#180810,#260f1c);"><div class="svhg">UGC</div><div class="svbd">UGC Manager · SER.com</div><div class="svt">UGC<br>Manager</div><div class="svtg">Criadores de conteúdo gerenciados para a sua marca</div></div>
+      <div class="svh" style="background:linear-gradient(145deg,#180810,#260f1c);"><div class="svhg">UGC</div><div class="svbd">Gestão Mensal · SER.com</div><div class="svt">Gestão de Criadores<br>e Estratégia UGC</div><div class="svtg">Crescimento guiado por influência e análise de dados</div></div>
       <div class="svb">
-        <p class="svd">Conteúdo de influência feito do jeito certo — com o creator certo, o roteiro certo e o objetivo certo. Cada vídeo publicado existe para gerar cliente, venda ou autoridade para a marca.</p>
-        <div class="svil"><div class="svit"><div class="svdt"></div>Seleção e gestão dos creators ideais para o seu público</div><div class="svit"><div class="svdt"></div>Roteiros alinhados com a identidade e objetivo da marca</div><div class="svit"><div class="svdt"></div>Supervisão de cada entrega — do briefing à publicação</div><div class="svit"><div class="svdt"></div>Análise de resultado e ajuste contínuo</div><div class="svit"><div class="svdt"></div>Relatório mensal com o que funcionou e o próximo passo</div></div>
+        <p class="svd">Não entregamos apenas vídeos, construímos o ecossistema de influência da sua marca. Analisamos o histórico e a identidade da sua empresa para criar a estratégia perfeita de conteúdo. A KyB gerencia toda a comunicação, roteirização e curadoria dos criadores ideais para falar com o seu público, garantindo que cada vídeo postado tenha um objetivo claro de conversão.</p>
+        <div class="svil"><div class="svit"><div class="svdt"></div>Auditoria de marca e análise de dados de campanhas anteriores</div><div class="svit"><div class="svdt"></div>Desenvolvimento da estratégia narrativa para formato UGC</div><div class="svit"><div class="svdt"></div>Curadoria, recrutamento e gestão completa dos influenciadores/creators</div><div class="svit"><div class="svdt"></div>Supervisão de roteiros para garantir alinhamento com a marca</div><div class="svit"><div class="svdt"></div>Análise de métricas contínua para otimização do conteúdo</div></div>
         <div class="svf"><div class="svpr">R$ 1.997 <small>/ mês</small></div><button class="bsv">Quero contratos com marcas →</button></div>
       </div>
     </div>
@@ -392,18 +392,19 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
   </div>
 </section>
 
-<section class="sobre rv">
+<section class="sobre rv" id="sobre">
   <div class="sob-img">📸</div>
   <div class="sob-tx">
     <div>
       <div class="sob-sub">Quem está por trás</div>
-      <h2 class="sob-tt">Karen Brasil</h2>
+      <h2 class="sob-tt">A mente por trás<br>da estratégia</h2>
     </div>
     <div class="sob-main">
-      <p style="margin-bottom:12px;">Meu trabalho começou entendo números. Dados, padrões, estatística — é como eu penso.</p>
-      <p style="margin-bottom:12px;">Mas também criei conteúdo. Entendo o que faz uma pessoa parar de scrollar. Entendo tendência, tom de voz, o que gruda nas redes.</p>
-      <p style="margin-bottom:12px;">Aí juntei as duas coisas na KyB. Inteligência de dados + criatividade. Sem fake, sem estratégia desconectada da realidade.</p>
-      <p><strong>Seu negócio cresce quando alguém consegue te encontrar. A gente faz isso acontecer.</strong></p>
+      <p style="margin-bottom:16px;"><strong>Muito prazer, sou a Karen Brasil.</strong></p>
+      <p style="margin-bottom:16px;">A KyB nasceu da união de dois mundos que, para a maioria das agências, andam separados: a precisão dos números e a criatividade da comunicação humana.</p>
+      <p style="margin-bottom:16px;">Minha base profissional é a <strong>Análise de Dados e Business Intelligence (BI)</strong>. Isso significa que eu não olho para o marketing da sua empresa apenas imaginando o que "pode ficar bonito". Eu olho para o histórico, entendo o que os dados dizem sobre o seu cliente e crio estratégias baseadas no que realmente funciona e converte.</p>
+      <p style="margin-bottom:16px;">Ao mesmo tempo, atuo nos bastidores da criação de conteúdo como <strong>UGC Creator</strong>, respirando as tendências e entendendo exatamente o que prende a atenção das pessoas nas redes.</p>
+      <p>Na KyB, meu papel é traduzir toda essa inteligência técnica em campanhas de marketing de influência que sejam fáceis de aplicar, impossíveis de ignorar e totalmente focadas em fazer o seu negócio crescer de forma estruturada. <strong>Sem achismos, apenas estratégia validada.</strong></p>
     </div>
   </div>
 </section>
@@ -427,14 +428,25 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:32p
 </footer>
 
 <script>
-const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico'),ml=document.getElementById('mlbl');
-function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';ml.textContent=d?'LUZ':'PIM';localStorage.setItem('kyb-t',d?'dark':'light');}
+const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico');
+function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';localStorage.setItem('kyb-t',d?'dark':'light');}
 if(localStorage.getItem('kyb-t')==='dark')st(true);
 mb.addEventListener('click',()=>st(html.getAttribute('data-theme')!=='dark'));
 const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>20),{passive:true});
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Benefit Card rotation
+const cards=document.querySelectorAll('.benefit-card');
+if(cards.length>0){
+  let cur=0;
+  setInterval(()=>{
+    cards[cur].classList.remove('active');
+    cur=(cur+1)%cards.length;
+    cards[cur].classList.add('active');
+  },4000);
+}
 </script>
 </body>
 </html>

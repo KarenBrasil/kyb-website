@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Título Final</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  background: #0a0908;
+  color: #f2ede6;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 60px 40px;
+}
+
+.container { max-width: 1100px; margin: 0 auto; }
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.intro {
+  background: rgba(240, 53, 77, 0.08);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 1.7;
+  font-style: italic;
+}
+
+.opcoes {
+  display: grid;
+  gap: 60px;
+  margin-bottom: 80px;
+}
+
+.card-titulo {
+  background: linear-gradient(135deg, rgba(240,53,77,0.08) 0%, rgba(240,53,77,0.02) 100%);
+  border: 1.5px solid rgba(240, 53, 77, 0.2);
+  padding: 52px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.card-titulo:hover {
+  border-color: rgba(240, 53, 77, 0.5);
+  background: linear-gradient(135deg, rgba(240,53,77,0.12) 0%, rgba(240,53,77,0.04) 100%);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px rgba(240, 53, 77, 0.2);
+}
+
+.card-numero {
+  font-family: 'Geist Mono', monospace;
+  font-size: 10px;
+  font-weight: 700;
+  color: #ff6b85;
+  letter-spacing: 0.1em;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.titulo-grande {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: clamp(40px, 4.2vw, 60px);
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  color: #f2ede6;
+  word-spacing: 0.1em;
+  margin-bottom: 32px;
+}
+
+.titulo-grande .destaque {
+  color: #ff6b85;
+}
+
+.subtitulo-card {
+  font-size: 16px;
+  color: #a89f96;
+  line-height: 1.9;
+  font-weight: 500;
+}
+
+.subtitulo-card .troco {
+  color: #ff6b85;
+  font-weight: 700;
+}
+
+.subtitulo-card .complemento {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(240, 53, 77, 0.15);
+  color: #a89f96;
+}
+
+.marca-favorito {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  background: #ff6b85;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 700;
+  opacity: 0;
+  transition: opacity 0.3s;
+  cursor: pointer;
+}
+
+.card-titulo:hover .marca-favorito {
+  opacity: 1;
+}
+
+.resumo {
+  background: rgba(240, 53, 77, 0.12);
+  border: 2px solid rgba(240, 53, 77, 0.3);
+  padding: 48px;
+  border-radius: 16px;
+  margin-top: 80px;
+  text-align: center;
+}
+
+.resumo h2 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #f2ede6;
+}
+
+.resumo p {
+  font-size: 16px;
+  color: #a89f96;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.resumo strong {
+  color: #ff6b85;
+}
+
+@media(max-width: 700px) {
+  body { padding: 40px 20px; }
+  .container { padding: 0; }
+  .card-titulo { padding: 36px; }
+  .titulo-grande { font-size: clamp(32px, 4.5vw, 44px); }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Opções de Títulos Finais</h1>
+
+  <div class="intro">
+    ✅ Título: "não ser invisível" + "máquina de imprimir dinheiro" ✅ Subtítulo: "Se não for. em breve será .fora." + complemento
+  </div>
+
+  <div class="opcoes">
+
+    <div class="card-titulo">
+      <div class="marca-favorito">★</div>
+      <div class="card-numero">Opção A</div>
+      <div class="titulo-grande">
+        Deixe de ser <span class="destaque">invisível</span> e transforme seu Instagram em uma <span class="destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">Enquanto você fica invisível, seu cliente está comprando de quem aparece. E seu Instagram poderia estar gerando faturamento todos os dias.</div>
+      </div>
+    </div>
+
+    <div class="card-titulo">
+      <div class="card-numero">Opção B</div>
+      <div class="titulo-grande">
+        Seu Instagram é uma <span class="destaque">máquina de imprimir dinheiro</span>. Você só precisa parar de ser <span class="destaque">invisível</span>.
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">A máquina está lá. O público está lá. O que falta é você aparecer. Porque invisibilidade não vende. Visibilidade vende.</div>
+      </div>
+    </div>
+
+    <div class="card-titulo">
+      <div class="card-numero">Opção C</div>
+      <div class="titulo-grande">
+        Pare de ser <span class="destaque">invisível</span>. Transforme sua rede social em uma <span class="destaque">máquina de imprimir dinheiro</span>.
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">Não é futuro. É agora. Cada dia que você fica invisível é um cliente que virou para concorrência. Uma venda que não vai acontecer.</div>
+      </div>
+    </div>
+
+    <div class="card-titulo">
+      <div class="card-numero">Opção D</div>
+      <div class="titulo-grande">
+        Se você não for <span class="destaque">visível</span>, seu Instagram nunca vira uma <span class="destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">Invisibilidade é a morte silenciosa do seu negócio. Você não vê acontecendo. Mas está. Todo dia um cliente a menos. Toda semana menos faturamento.</div>
+      </div>
+    </div>
+
+    <div class="card-titulo">
+      <div class="card-numero">Opção E</div>
+      <div class="titulo-grande">
+        Você pode construir uma <span class="destaque">máquina de imprimir dinheiro</span> no Instagram. Mas não enquanto for <span class="destaque">invisível</span>.
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">A realidade é brutal: ou você aparece e lucra, ou fica invisível e desaparece do mercado. Não há terceira opção. Não há meio termo.</div>
+      </div>
+    </div>
+
+    <div class="card-titulo">
+      <div class="card-numero">Opção F</div>
+      <div class="titulo-grande">
+        Seja uma <span class="destaque">máquina de imprimir dinheiro</span> nas redes. Ou seja <span class="destaque">invisível</span> para sempre.
+      </div>
+      <div class="subtitulo-card">
+        <span class="troco">Se não for.</span> em breve será <span class="troco">.fora.</span>
+        <div class="complemento">Essa é a escolha real. Não é hobby. É negócio. Ou você investe em aparecer e construir sua máquina, ou você some do jogo completamente.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="resumo">
+    <h2>✅ Qual é seu favorito?</h2>
+    <p>Escolha de A a F. Qual título imprime aquele desejo absurdo de agir?</p>
+    <p style="margin-top: 20px;">Me avisa: <strong>qual opção (A, B, C, D, E ou F)?</strong> e <strong>qual fonte?</strong> (Playfair / Fraunces / Instrument)</p>
+  </div>
+
+</div>
+
+</body>
+</html>

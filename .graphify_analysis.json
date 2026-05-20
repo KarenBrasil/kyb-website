@@ -1,0 +1,128 @@
+{
+  "communities": {
+    "0": [
+      "positioning_authority",
+      "problem_invisibility",
+      "problem_low_price",
+      "problem_no_results",
+      "section_problems",
+      "value_3x_clients"
+    ],
+    "1": [
+      "audience_entrepreneurs",
+      "method_sincero",
+      "section_services",
+      "service_estrategia",
+      "service_ugc"
+    ],
+    "2": [
+      "animation_reveal",
+      "method_estrategico",
+      "method_rentavel",
+      "section_method"
+    ],
+    "3": [
+      "founder_karen",
+      "kyb_brand",
+      "tagline_dot_com"
+    ],
+    "4": [
+      "section_hero"
+    ],
+    "5": [
+      "section_about"
+    ],
+    "6": [
+      "section_cta"
+    ],
+    "7": [
+      "service_audiovisual"
+    ],
+    "8": [
+      "service_traffic"
+    ],
+    "9": [
+      "design_color_red"
+    ],
+    "10": [
+      "design_dark_mode"
+    ],
+    "11": [
+      "font_bricolage"
+    ],
+    "12": [
+      "font_cormorant"
+    ],
+    "13": [
+      "value_30_days"
+    ]
+  },
+  "cohesion": {
+    "0": 0.33,
+    "1": 0.5,
+    "2": 0.5,
+    "3": 0.67,
+    "4": 1.0,
+    "5": 1.0,
+    "6": 1.0,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0
+  },
+  "gods": [
+    {
+      "id": "section_method",
+      "label": "Method Section: SER.COM",
+      "edges": 4
+    },
+    {
+      "id": "service_estrategia",
+      "label": "Estrat\u00c3\u00a9gia de Conte\u00c3\u00bado (R$ 997)",
+      "edges": 4
+    },
+    {
+      "id": "section_problems",
+      "label": "Problems Section: 4 Key Challenges",
+      "edges": 3
+    },
+    {
+      "id": "service_ugc",
+      "label": "UGC Manager (R$ 1.997/month)",
+      "edges": 3
+    },
+    {
+      "id": "method_sincero",
+      "label": "SER.COM Pilar 1: Sincero",
+      "edges": 3
+    },
+    {
+      "id": "kyb_brand",
+      "label": "KyB Brand",
+      "edges": 2
+    },
+    {
+      "id": "section_services",
+      "label": "Services Section",
+      "edges": 2
+    },
+    {
+      "id": "value_3x_clients",
+      "label": "Value Prop: 3x more clients",
+      "edges": 2
+    },
+    {
+      "id": "positioning_authority",
+      "label": "Positioning: Authority > Price",
+      "edges": 2
+    },
+    {
+      "id": "problem_invisibility",
+      "label": "Problem 1: Invisibility",
+      "edges": 2
+    }
+  ]
+}

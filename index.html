@@ -5,7 +5,7 @@
 <title>KyB — Se não for .com, será .fora</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300;1,400&family=Bricolage+Grotesque:wght@500;700;800&family=Geist+Mono:wght@400;500&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 [data-theme="light"]{--bg:#faf9f7;--bg2:#f2f0ec;--surf:#ffffff;--ink:#0d0c0a;--ink2:#3e3c36;--ink3:#8a8276;--ac:#d82b50;--acl:#ff5f7e;--bd:rgba(13,12,10,0.08);--bd2:rgba(13,12,10,0.04);--tc:#d82b50;--shadow-sm:0 2px 8px rgba(13,12,10,0.06);--shadow-md:0 12px 32px rgba(13,12,10,0.08);--shadow-lg:0 20px 48px rgba(216,43,80,0.15);}
@@ -28,22 +28,19 @@ nav a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1.5p
 nav a:hover::after{width:100%;}
 nav a:hover{color:var(--ac);}
 .hr{display:flex;align-items:center;gap:16px;}
-.mbtn{display:flex;align-items:center;gap:8px;background:var(--bg2);border:1.5px solid var(--bd);border-radius:100px;padding:8px 16px 8px 10px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:11px;font-weight:700;color:var(--ink2);letter-spacing:.08em;text-transform:uppercase;font-family:'Geist Mono',monospace;}
-.mbtn:hover{border-color:var(--ac);color:var(--ac);background:rgba(216,43,80,.06);}
-.bh{font-size:13px;font-weight:700;padding:11px 26px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);letter-spacing:.02em;}
-.bh:hover{opacity:.92;transform:translateY(-2px);box-shadow:var(--shadow-lg);}
+.mbtn{display:flex;align-items:center;justify-content:center;background:var(--bg2);border:1.5px solid var(--bd);border-radius:50%;width:38px;height:38px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);font-size:16px;}
+.mbtn:hover{border-color:var(--ac);background:rgba(216,43,80,.06);transform:scale(1.08);}
+
 
 /* HERO */
 .hero{min-height:100vh;padding-top:72px;display:grid;grid-template-columns:52% 48%;}
 .hl{padding:72px 56px 72px 80px;display:flex;flex-direction:column;justify-content:center;}
 .etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:36px;}
 .etag::before{content:'';width:20px;height:1.5px;background:var(--ac);border-radius:1px;}
-.h1{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:clamp(44px,5.2vw,72px);line-height:1;letter-spacing:-.04em;color:var(--ink);word-spacing:.1em;}
-.h1-com{color:var(--ac);transition:color .3s;}
-.h1-fora{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;color:var(--ink3);transition:color .3s;}
-.rule{width:48px;height:2.5px;background:linear-gradient(90deg,var(--ac),var(--ac) 60%,transparent);margin:32px 0;border-radius:1px;}
-.hsub{font-size:17px;font-weight:500;color:var(--ink2);max-width:490px;line-height:1.75;margin-bottom:24px;letter-spacing:-.01em;}
-.hsub strong{color:var(--ink);font-weight:700;}
+.h1{font-family:'Merriweather',serif;font-weight:400;font-size:clamp(32px,4vw,56px);line-height:1.25;letter-spacing:-.01em;color:var(--ink);margin:0 0 24px 0;}
+.hsub{font-family:'Merriweather',serif;font-weight:400;font-size:16px;line-height:1.8;color:var(--ink2);max-width:540px;margin-bottom:32px;}
+.highlight{color:var(--ac);font-weight:700;}
+.rule{display:none;}
 .reas{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;}
 .rea{display:flex;align-items:flex-start;gap:14px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.6;}
 .rd{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:6px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
@@ -69,37 +66,18 @@ nav a:hover{color:var(--ac);}
 .hr2{background:#0d0c0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 48px;}
 .hr2::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.12) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 5.2s ease-in-out infinite;pointer-events:none;}
 @keyframes pglow{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.18);}}
-.vis{position:relative;width:340px;height:340px;}
-.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.04);}
-.r1{inset:0;animation:rs 26s linear infinite;}
-.r2{display:none;}
-.r3{inset:48px;border-color:rgba(255,255,255,.02);animation:rs 38s linear infinite;}
-@keyframes rs{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:.4;}
-.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 52px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.6s ease-in-out infinite;z-index:4;}
-@keyframes cp{0%,100%{box-shadow:0 0 40px rgba(240,53,77,.45),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 80px rgba(240,53,77,.7),inset 0 1px 2px rgba(255,255,255,.4);}}
-.vcl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.04em;line-height:1;}
-.vcs{font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.03);border:1.5px solid rgba(240,53,77,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
-.on:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.35);transform:scale(1.12) !important;}
-.ni{font-size:22px;margin-bottom:3px;line-height:1;}
-.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.65);line-height:1.3;letter-spacing:.02em;}
-.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:drift 4s ease-in-out infinite;}
-.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:drift 4.4s ease-in-out infinite .3s;}
-.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:drift 3.8s ease-in-out infinite .6s;}
-.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:drift 4.2s ease-in-out infinite .9s;}
-.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:drift 3.6s ease-in-out infinite 1.2s;}
-.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:drift 3.2s ease-in-out infinite 1.5s;}
-@keyframes drift{0%,100%{transform:translate(0,0);opacity:.7;}50%{transform:translate(6px,-8px);opacity:.95;}}
-.vb{position:absolute;background:rgba(255,255,255,.04);border:1.5px solid rgba(240,53,77,.15);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
-.vb:hover{background:rgba(240,53,77,.1);border-color:rgba(240,53,77,.3);transform:translateY(-2px);}
-.vbn{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;}
-.vbn em{font-family:'Cormorant Garamond',serif;font-size:.75em;color:#ff6b85;font-style:italic;}
-.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.02em;}
-.vb1{top:16px;right:18px;animation:gentle-bob 4.5s ease-in-out infinite;}
-.vb2{bottom:20px;left:14px;animation:gentle-bob 3.8s ease-in-out infinite .6s;}
-.vb3{bottom:60px;right:12px;animation:gentle-bob 5.2s ease-in-out infinite 1.2s;}
-@keyframes gentle-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
+.benefit-showcase{width:100%;max-width:380px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06);border-radius:20px;padding:24px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 30px 60px rgba(0,0,0,0.4),inset 0 1px 0 rgba(255,255,255,0.05);position:relative;z-index:10;}
+.showcase-header{display:flex;align-items:center;gap:8px;margin-bottom:20px;font-family:'Geist Mono',monospace;font-size:11px;text-transform:uppercase;color:rgba(255,255,255,0.4);letter-spacing:0.1em;}
+.showcase-dot{width:6px;height:6px;background:var(--ac);border-radius:50%;animation:pulse-dot 1.5s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
+.benefit-list{display:flex;flex-direction:column;gap:12px;position:relative;}
+.benefit-card{display:flex;align-items:flex-start;gap:14px;padding:14px;background:rgba(255,255,255,0.01);border:1px solid rgba(255,255,255,0.02);border-radius:12px;transition:all 0.5s cubic-bezier(0.4,0,0.2,1);opacity:0.25;transform:translateY(8px) scale(0.98);}
+.benefit-card.active{opacity:1;transform:translateY(0) scale(1);background:rgba(255,255,255,0.05);border-color:rgba(240,53,77,0.25);box-shadow:0 10px 30px rgba(240,53,77,0.08);}
+.benefit-icon{font-size:22px;line-height:1;}
+.benefit-info{display:flex;flex-direction:column;gap:3px;}
+.benefit-title{font-family:'Bricolage Grotesque',sans-serif;font-size:15px;font-weight:700;color:#fff;}
+.benefit-desc{font-size:12px;color:rgba(255,255,255,0.55);line-height:1.4;}
+
 
 /* TICKER */
 .ticker{background:var(--ac);padding:14px 0;overflow:hidden;display:flex;}
@@ -250,19 +228,17 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
 
 <header id="hdr">
   <a href="#" class="logo"><div class="ldot"></div>KyB</a>
-  <nav><a href="#">Método</a><a href="#">Serviços</a><a href="#">Sobre</a></nav>
+  <nav><a href="#metodo">Método</a><a href="#servicos">Serviços</a><a href="#sobre">Sobre</a></nav>
   <div class="hr">
-    <button class="mbtn" id="mb"><span id="mico">☀️</span><span id="mlbl">PIM</span></button>
-    <button class="bh">Conversa gratuita →</button>
+    <button class="mbtn" id="mb" aria-label="Alternar tema"><span id="mico">☀️</span></button>
   </div>
 </header>
 
 <section class="hero">
   <div class="hl">
     <div class="etag">Para quem quer vender mais no digital</div>
-    <h1 class="h1">Se não for<br><span class="h1-com">.com</span><br>será <span class="h1-fora">.fora.</span></h1>
-    <div class="rule"></div>
-    <p class="hsub">No digital, quem não aparece <strong>não vende.</strong> Seu cliente está online agora — a questão é se vai te encontrar ou ao seu concorrente.</p>
+    <h1 class="h1">Deixe de ser invisível e transforme seu Instagram em uma máquina de imprimir dinheiro</h1>
+    <p class="hsub">Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.</p>
     <div class="reas">
       <div class="rea"><div class="rd"></div>Sem presença digital, você depende só de indicação — e indicação acaba.</div>
       <div class="rea"><div class="rd"></div>Quem não é autoridade aceita qualquer preço. Quem é <strong>dita o preço.</strong></div>
@@ -279,27 +255,49 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
     </div>
   </div>
   <div class="hr2">
-    <div class="vis">
-      <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-      <svg class="vsvg" viewBox="0 0 320 320" fill="none">
-        <line x1="160" y1="160" x2="160" y2="5"   stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="295" y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="295" y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="160" y2="315" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="25"  y2="238" stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-        <line x1="160" y1="160" x2="25"  y2="82"  stroke="rgba(240,53,77,.18)" stroke-width="1" stroke-dasharray="4 4"/>
-      </svg>
-      <div class="vc"><div class="vcl">KyB</div><div class="vcs">.com</div></div>
-      <div class="on n1"><div class="ni">💰</div><div class="nl">Venda<br>Mais</div></div>
-      <div class="on n2"><div class="ni">🎯</div><div class="nl">Cliente<br>Certo</div></div>
-      <div class="on n3"><div class="ni">📈</div><div class="nl">Preço<br>Justo</div></div>
-      <div class="on n4"><div class="ni">🔥</div><div class="nl">Feche<br>Contratos</div></div>
-      <div class="on n5"><div class="ni">🌐</div><div class="nl">Seja<br>Achado</div></div>
-      <div class="on n6"><div class="ni">⚡</div><div class="nl">Cresça<br>Rápido</div></div>
+    <div class="benefit-showcase">
+      <div class="showcase-header">
+        <div class="showcase-dot"></div>
+        <span>KyB • Resultados Reais</span>
+      </div>
+      <div class="benefit-list">
+        <div class="benefit-card active">
+          <span class="benefit-icon">🎯</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Clientes Qualificados</span>
+            <span class="benefit-desc">Eles vêm até você prontos para comprar, sem choro por descontos.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">💰</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Receita Crescendo</span>
+            <span class="benefit-desc">Ticket médio maior, mais contratos fechados e caixa previsível.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🎥</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Vídeos que Vendem</span>
+            <span class="benefit-desc">Formato estratégico para o Instagram focado em atração real.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">✨</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Posicionamento Único</span>
+            <span class="benefit-desc">Deixe de ser invisível para se tornar referência número um do nicho.</span>
+          </div>
+        </div>
+        <div class="benefit-card">
+          <span class="benefit-icon">🤝</span>
+          <div class="benefit-info">
+            <span class="benefit-title">Valorização de Marca</span>
+            <span class="benefit-desc">Cobre o preço justo pelo valor que você realmente entrega ao cliente.</span>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="vb vb1"><div class="vbn">3<em>×</em></div><div class="vbl">mais contratos</div></div>
-    <div class="vb vb2"><div class="vbn">+R$<em>k</em></div><div class="vbl">ticket médio</div></div>
-    <div class="vb vb3"><div class="vbn">30<em>d</em></div><div class="vbl">resultado</div></div>
   </div>
 </section>
 
@@ -361,7 +359,7 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
   <div class="mg rv">
     <div class="mc"><div class="mle">S</div><div class="mtg">Pilar 01</div><div class="mti">Sincero</div><div class="msu">Sem roteiro engessado</div><div class="mde">Entendemos de verdade o que você faz. Quem é seu cliente que gera mais dinheiro. Onde você está perdendo venda. Quando você é sincero com seu público, a confiança e identificação vêm naturalmente.</div></div>
     <div class="mc"><div class="mle">E</div><div class="mtg">Pilar 02</div><div class="mti">Estratégico</div><div class="msu">Plano que funciona</div><div class="mde">Construímos estratégia para sua realidade. Conteúdo que posiciona. Que atrai o cliente certo. Que converte. Uma estratégia bem feita faz o cliente certo vir até você.</div></div>
-    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Receita crescendo</div><div class="mde">Mais faturamento, mais clientes, ticket maior, mais contratos. Porque quando você mostra seu valor de forma estratégica e sincera, as pessoas procuram por você.</div></div>
+    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Receita crescendo</div><div class="mde">Quando você mostra seu valor de forma estratégica e sincera, as pessoas procuram por você. A receita acompanha naturalmente.</div></div>
   </div>
 </section>
 
@@ -430,14 +428,25 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
 </footer>
 
 <script>
-const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico'),ml=document.getElementById('mlbl');
-function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';ml.textContent=d?'LUZ':'PIM';localStorage.setItem('kyb-t',d?'dark':'light');}
+const html=document.documentElement,mb=document.getElementById('mb'),mi=document.getElementById('mico');
+function st(d){html.setAttribute('data-theme',d?'dark':'light');mi.textContent=d?'🌙':'☀️';localStorage.setItem('kyb-t',d?'dark':'light');}
 if(localStorage.getItem('kyb-t')==='dark')st(true);
 mb.addEventListener('click',()=>st(html.getAttribute('data-theme')!=='dark'));
 const hdr=document.getElementById('hdr');
 window.addEventListener('scroll',()=>hdr.classList.toggle('sc',scrollY>20),{passive:true});
 const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');obs.unobserve(x.target);}});},{threshold:.1,rootMargin:'0px 0px -40px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+// Benefit Card rotation
+const cards=document.querySelectorAll('.benefit-card');
+if(cards.length>0){
+  let cur=0;
+  setInterval(()=>{
+    cards[cur].classList.remove('active');
+    cur=(cur+1)%cards.length;
+    cards[cur].classList.add('active');
+  },4000);
+}
 </script>
 </body>
 </html>

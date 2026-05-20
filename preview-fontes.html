@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Escolha a Fonte</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@800&family=Playfair+Display:ital,wght@0,700;1,700&family=Fraunces:opsz,wght@9..144,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #fff;
+  color: #0d0c0a;
+  padding: 40px 20px;
+  font-family: system-ui;
+}
+.container { max-width: 1400px; margin: 0 auto; }
+h1 { text-align: center; margin-bottom: 40px; font-size: 28px; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 60px;
+}
+.card {
+  border: 3px solid #ddd;
+  padding: 40px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: #fafafa;
+}
+.card:hover {
+  border-color: #d82b50;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(216, 43, 80, 0.1);
+}
+.card.selecionada {
+  border-color: #d82b50;
+  background: #fff;
+  box-shadow: 0 12px 32px rgba(216, 43, 80, 0.2);
+}
+.nome-fonte { font-size: 12px; font-weight: 700; color: #d82b50; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 24px; }
+.descricao { font-size: 13px; color: #666; margin-bottom: 32px; line-height: 1.6; }
+
+/* COMPARAÇÃO LADO A LADO */
+.sample {
+  margin-bottom: 32px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #eee;
+}
+.sample-label { font-size: 10px; color: #999; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; font-weight: 600; }
+
+/* GRANDE TITULO */
+.bricolage-titulo {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  color: #0d0c0a;
+}
+
+.playfair-highlight {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 48px;
+  color: #d82b50;
+}
+.fraunces-highlight {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-style: italic;
+  font-size: 48px;
+  color: #d82b50;
+}
+.instrument-highlight {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 500;
+  font-style: italic;
+  font-size: 48px;
+  color: #d82b50;
+}
+
+/* SUBTÍTULO PEQUENO */
+.subtitulo {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #666;
+  line-height: 1.5;
+}
+.playfair-sub { font-family: 'Playfair Display', serif; font-style: italic; font-weight: 400; }
+.fraunces-sub { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; }
+.instrument-sub { font-family: 'Instrument Serif', serif; font-style: italic; font-weight: 400; }
+
+/* PARÁGRAFO */
+.paragrafo {
+  font-size: 15px;
+  line-height: 1.8;
+  color: #555;
+}
+.playfair-para { font-family: 'Playfair Display', serif; font-weight: 400; }
+.fraunces-para { font-family: 'Fraunces', serif; font-weight: 400; }
+.instrument-para { font-family: 'Instrument Serif', serif; font-weight: 400; }
+
+.btn-selecionar {
+  display: inline-block;
+  background: #d82b50;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s;
+}
+.btn-selecionar:hover { transform: translateY(-2px); opacity: 0.9; }
+.card.selecionada .btn-selecionar {
+  background: #2ecc71;
+}
+
+.instrucoes {
+  background: #f0f4ff;
+  padding: 24px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.resultado {
+  text-align: center;
+  margin-top: 60px;
+  padding: 40px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  font-size: 16px;
+}
+.resultado strong { color: #d82b50; font-size: 18px; }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Escolha a Fonte para substituir a Cormorant Garamond</h1>
+
+  <div class="instrucoes">
+    👉 Clique em qualquer card para selecionar. A <strong>Bricolage Grotesque (gorda)</strong> mantém em todas. Só vai mudar a fonte dos destaques em rosa e dos textos em itálico.
+  </div>
+
+  <div class="grid">
+    <!-- PLAYFAIR -->
+    <div class="card" onclick="selecionar(this, 'playfair')">
+      <div class="nome-fonte">Opção 1: Playfair Display</div>
+      <div class="descricao">Elegante e sofisticada. Premium, editorial, muito clássica. Fica linda em itálico.</div>
+
+      <div class="sample">
+        <div class="sample-label">Título com destaque em rosa</div>
+        <div class="bricolage-titulo">Enquanto você<br><span class="playfair-highlight">.com</span></div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Subtítulo (tipo tagline)</div>
+        <div class="subtitulo playfair-sub">"Se não for", em breve serão</div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Descrição de método (cara-a-cara)</div>
+        <div class="paragrafo playfair-para">
+          Entendemos de verdade o que você faz, quem é o cliente que te gera mais dinheiro e onde você está perdendo venda por falta de posicionamento.
+        </div>
+      </div>
+
+      <button class="btn-selecionar" onclick="event.stopPropagation()">Escolher esta</button>
+    </div>
+
+    <!-- FRAUNCES -->
+    <div class="card" onclick="selecionar(this, 'fraunces')">
+      <div class="nome-fonte">Opção 2: Fraunces</div>
+      <div class="descricao">Moderna e expressiva. Criativa e dinâmica. Personalidade forte. Ótima para marcas que querem se destacar.</div>
+
+      <div class="sample">
+        <div class="sample-label">Título com destaque em rosa</div>
+        <div class="bricolage-titulo">Enquanto você<br><span class="fraunces-highlight">.com</span></div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Subtítulo (tipo tagline)</div>
+        <div class="subtitulo fraunces-sub">"Se não for", em breve serão</div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Descrição de método (cara-a-cara)</div>
+        <div class="paragrafo fraunces-para">
+          Entendemos de verdade o que você faz, quem é o cliente que te gera mais dinheiro e onde você está perdendo venda por falta de posicionamento.
+        </div>
+      </div>
+
+      <button class="btn-selecionar" onclick="event.stopPropagation()">Escolher esta</button>
+    </div>
+
+    <!-- INSTRUMENT SERIF -->
+    <div class="card" onclick="selecionar(this, 'instrument')">
+      <div class="nome-fonte">Opção 3: Instrument Serif</div>
+      <div class="descricao">Clean e minimalista. Contemporânea e sofisticada. Não chama muita atenção, deixa a Bricolage ser a estrela.</div>
+
+      <div class="sample">
+        <div class="sample-label">Título com destaque em rosa</div>
+        <div class="bricolage-titulo">Enquanto você<br><span class="instrument-highlight">.com</span></div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Subtítulo (tipo tagline)</div>
+        <div class="subtitulo instrument-sub">"Se não for", em breve serão</div>
+      </div>
+
+      <div class="sample">
+        <div class="sample-label">Descrição de método (cara-a-cara)</div>
+        <div class="paragrafo instrument-para">
+          Entendemos de verdade o que você faz, quem é o cliente que te gera mais dinheiro e onde você está perdendo venda por falta de posicionamento.
+        </div>
+      </div>
+
+      <button class="btn-selecionar" onclick="event.stopPropagation()">Escolher esta</button>
+    </div>
+  </div>
+
+  <div class="resultado">
+    Você escolheu: <strong id="escolhida">nenhuma</strong>
+  </div>
+</div>
+
+<script>
+function selecionar(element, fonte) {
+  document.querySelectorAll('.card').forEach(el => el.classList.remove('selecionada'));
+  element.classList.add('selecionada');
+
+  const nomes = { 'playfair': 'Playfair Display', 'fraunces': 'Fraunces', 'instrument': 'Instrument Serif' };
+  document.getElementById('escolhida').textContent = nomes[fonte];
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Prévia de Copy Reformulada</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  background: #faf9f7;
+  color: #0d0c0a;
+  font-family: 'Bricolage Grotesque', system-ui, sans-serif;
+  padding: 60px 40px;
+  line-height: 1.6;
+}
+.container { max-width: 1000px; margin: 0 auto; }
+h1 { font-size: 36px; margin-bottom: 12px; font-weight: 800; }
+.instrucoes {
+  background: #f2f0ec;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 40px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.secao {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  margin-bottom: 32px;
+  border-left: 4px solid #d82b50;
+}
+.secao-titulo {
+  font-size: 13px;
+  font-weight: 700;
+  color: #d82b50;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.opcao {
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid #f2f0ec;
+}
+.opcao:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+
+.opcao-numero {
+  font-size: 12px;
+  color: #8a8276;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.opcao-texto {
+  font-size: 16px;
+  color: #0d0c0a;
+  line-height: 1.8;
+  font-weight: 500;
+}
+
+.destaque { color: #d82b50; font-weight: 700; }
+
+.tab {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+.tab-btn {
+  padding: 10px 20px;
+  border: 2px solid #d82b50;
+  background: white;
+  color: #d82b50;
+  border-radius: 100px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  transition: all 0.3s;
+  font-family: 'Bricolage Grotesque', sans-serif;
+}
+.tab-btn:hover, .tab-btn.ativo {
+  background: #d82b50;
+  color: white;
+}
+
+.tab-content { display: none; }
+.tab-content.ativo { display: block; }
+
+@media(max-width: 700px) {
+  .container { padding: 0 20px; }
+  .secao { padding: 24px; }
+  body { padding: 30px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Revisão de Copy Reformulada</h1>
+  <div class="instrucoes">
+    📋 Veja as opções de copy que vou usar na página. Se alguma coisa não estiver certa, você me avisa. O objetivo é sair de um texto genérico e corporativo para algo real, conversacional e que toca nas dores verdadeiras.
+  </div>
+
+  <!-- TÍTULO PRINCIPAL -->
+  <div class="secao">
+    <div class="secao-titulo">1. Título Principal da Hero</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      Quer algo impactante que fale sobre a dor real: você posta mas não vende, seu concorrente vende o dobro, precisa aparecer no digital.
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção A</div>
+      <div class="opcao-texto">
+        Você posta todo dia mas o dinheiro não aparece?
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção B</div>
+      <div class="opcao-texto">
+        Seu concorrente com metade do seu talento está faturando o dobro.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção C</div>
+      <div class="opcao-texto">
+        Enquanto você trava, seu cliente está sendo fechado por quem aparece.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção D</div>
+      <div class="opcao-texto">
+        O dinheiro que você merecia já passou para quem soube aparecer.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Qual você quer?</div>
+      <input type="text" placeholder="Digite aqui ou me diga qual opção você prefere" style="width: 100%; padding: 12px; border: 1px solid #d82b50; border-radius: 8px; font-family: inherit; font-size: 14px;">
+    </div>
+  </div>
+
+  <!-- SUBTÍTULO -->
+  <div class="secao">
+    <div class="secao-titulo">2. Subtítulo (com a brincadeira do método)</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      É o trocadilho/brincadeira do seu método "Ser.com" — você tem que ser.com (estar online com força) ou vai ser.fora (ficar fora do mercado).
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção A</div>
+      <div class="opcao-texto">
+        <span class="destaque">"Se não for"</span>, em breve será.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção B</div>
+      <div class="opcao-texto">
+        Você é <span class="destaque">.com</span> ou você é <span class="destaque">.fora?</span>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção C</div>
+      <div class="opcao-texto">
+        Quem não é <span class="destaque">.com</span> vira <span class="destaque">.fora</span> muito rápido.
+      </div>
+    </div>
+  </div>
+
+  <!-- ESTATÍSTICAS / MÉTRICAS -->
+  <div class="secao">
+    <div class="secao-titulo">3. As 3 Estatísticas/Métricas</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      Sobre: faturamento, autoridade/clientes, Instagram como máquina de dinheiro. Podem ser números, podem ser frases poderosas.
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Métrica 1 — Faturamento</div>
+      <div class="opcao-texto">
+        Aumente seu faturamento em até <span class="destaque">3×</span><br>
+        <em style="font-size: 14px; color: #8a8276;">Com posicionamento certo, você cobra o que merece.</em>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Métrica 2 — Autoridade/Clientes</div>
+      <div class="opcao-texto">
+        <span class="destaque">30 dias</span> para virar referência no seu nicho<br>
+        <em style="font-size: 14px; color: #8a8276;">Do invisível ao cliente que bate na sua porta.</em>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Métrica 3 — Instagram/Conteúdo</div>
+      <div class="opcao-texto">
+        Sua rede social vira uma <span class="destaque">máquina de dinheiro</span><br>
+        <em style="font-size: 14px; color: #8a8276;">Conteúdo que posiciona, atrai e vende.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- TICKER (Faixa que passa) -->
+  <div class="secao">
+    <div class="secao-titulo">4. Ticker — Palavras-Chave (faixa que passa)</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      Palavras específicas sobre postar conteúdo e ganhar dinheiro. Sem genéricos tipo "Feche" ou "Escale".
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção A (Ação + Resultado)</div>
+      <div class="opcao-texto">
+        Poste · Venda · Apareça · Fature · Domine · Lidere · Converta · Cresça · Gere Demanda · Monetize
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção B (Mais Específico)</div>
+      <div class="opcao-texto">
+        Seu Conteúdo · Vire Referência · Atraia Clientes · Feche Contratos · Gere Faturamento · Seja Encontrado · Domine o Nicho · Cobre o Que Vale
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Opção C (Bem Objetivo)</div>
+      <div class="opcao-texto">
+        Poste · Venda · Fature · Cresça · Domine · Apareça · Converta · Gere Demanda
+      </div>
+    </div>
+  </div>
+
+  <!-- OS 4 PROBLEMAS -->
+  <div class="secao">
+    <div class="secao-titulo">5. Os 4 Problemas/Dores (Nova versão)</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      Muito específico nas dores reais. Como alguém falando com um amigo. Sem ícone emoji genérico.
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Problema 1</div>
+      <div class="opcao-texto">
+        <span class="destaque">Você posta mas o cliente não vem</span><br>
+        <em style="font-size: 14px; color: #8a8276; margin-top: 8px; display: block;">Cria conteúdo, publica, espera. Nada acontece. Sem estratégia, conteúdo é só barulho. Não gera cliente, não gera venda nenhuma.</em>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Problema 2</div>
+      <div class="opcao-texto">
+        <span class="destaque">Atrai seguidores, mas atrai o cliente ERRADO</span><br>
+        <em style="font-size: 14px; color: #8a8276; margin-top: 8px; display: block;">Cresce em seguidores mas eles só querem desconto. Ninguém paga o que você realmente vale. Quanto mais cresce, mais precisa brigar por preço.</em>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Problema 3</div>
+      <div class="opcao-texto">
+        <span class="destaque">Trabalha de graça praticamente</span><br>
+        <em style="font-size: 14px; color: #8a8276; margin-top: 8px; display: block;">Entrega muito, cobra pouco. Você sabe que merecia mais, mas sem posicionamento não consegue cobrar mais. Resultado: trabalha cada vez mais para ganhar a mesma coisa.</em>
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">Problema 4</div>
+      <div class="opcao-texto">
+        <span class="destaque">Trava na paralisia por não saber por onde começa</span><br>
+        <em style="font-size: 14px; color: #8a8276; margin-top: 8px; display: block;">Sabe que precisa mudar mas trava em "por onde começo?". Fica adiando, perdendo cliente todo dia. Essa indecisão custa mais dinheiro do que qualquer estratégia que você pudesse implementar agora.</em>
+      </div>
+    </div>
+  </div>
+
+  <!-- MÉTODO SER.COM -->
+  <div class="secao">
+    <div class="secao-titulo">6. Método SER.COM — Descrições S, E, R (Conversacional)</div>
+    <div class="instrucoes" style="background: #fff3f6; margin-bottom: 24px;">
+      Cara-a-cara, como falando com uma amiga. Bem específico. Nada corporativo.
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">S — Sincero</div>
+      <div class="opcao-texto">
+        A gente entende de verdade o que você faz, quem é o cliente que te gera mais dinheiro e exatamente onde você está perdendo venda porque não tem posicionamento. Sem template, sem papo genérico. A gente olha para a sua realidade e fala a verdade.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">E — Estratégico</div>
+      <div class="opcao-texto">
+        Criamos uma estratégia que cabe na sua vida real — não consultoria cara que fica bonita no papel. Conteúdo que posiciona, que atrai o cliente certo e que converte. Sem dependência de sorte, sem achismo. Tudo validado.
+      </div>
+    </div>
+
+    <div class="opcao">
+      <div class="opcao-numero">R — Rentável</div>
+      <div class="opcao-texto">
+        Tudo que fazemos aponta para um número só: sua receita crescendo. Cliente certo, preço justo, contrato fechado. Esse é o único resultado que importa. A gente não quer saber de vanity metrics, a gente quer saber do seu faturamento.
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUMO -->
+  <div class="instrucoes" style="background: #fff3f6; padding: 30px; border-radius: 12px; margin-top: 60px;">
+    <strong>Próximo passo:</strong> Você me avisa qual opção gostou de cada seção e eu implemento tudo na página real. Se alguma coisa não estiver boa, você me diz e a gente ajusta antes de implementar.
+  </div>
+</div>
+
+</body>
+</html>

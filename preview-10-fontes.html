@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — 10 Opções de Fontes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Crimson+Text:ital@0;1&family=Lora:ital@0;1&family=Libre+Baskerville:ital@0;1&family=DM+Serif+Display:ital@0;1&family=EB+Garamond:ital@0;1&family=Merriweather:ital@0;1&family=Noticia+Text:ital@0;1&family=Volkhov:ital@0;1&family=Aleo:ital@0;1&family=Noto+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  background: #0a0908;
+  color: #f2ede6;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 60px 40px;
+}
+
+.container { max-width: 1300px; margin: 0 auto; }
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.intro {
+  background: rgba(240, 53, 77, 0.08);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.grid-fontes {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  margin-bottom: 80px;
+}
+
+.font-card {
+  background: linear-gradient(135deg, rgba(240,53,77,0.06) 0%, rgba(240,53,77,0.01) 100%);
+  border: 1.5px solid rgba(240, 53, 77, 0.15);
+  padding: 48px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+  position: relative;
+}
+
+.font-card:hover {
+  border-color: rgba(240, 53, 77, 0.4);
+  background: linear-gradient(135deg, rgba(240,53,77,0.1) 0%, rgba(240,53,77,0.02) 100%);
+  transform: translateY(-3px);
+}
+
+.font-card.selecionada {
+  border-color: #ff6b85;
+  background: linear-gradient(135deg, rgba(240,53,77,0.15) 0%, rgba(240,53,77,0.05) 100%);
+  box-shadow: 0 0 25px rgba(240, 53, 77, 0.25);
+}
+
+.font-numero {
+  font-size: 11px;
+  font-weight: 700;
+  color: #ff6b85;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.font-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #f2ede6;
+  margin-bottom: 32px;
+}
+
+.font-preview-title {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: 800;
+  font-size: 52px;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: #f2ede6;
+  margin-bottom: 28px;
+  word-spacing: 0.1em;
+}
+
+.font-preview-destaque {
+  font-style: italic;
+  color: #ff6b85;
+}
+
+.font-preview-subtitle {
+  font-size: 16px;
+  color: #a89f96;
+  line-height: 1.85;
+  max-width: 900px;
+}
+
+.font-preview-subtitle .destaque-com {
+  color: #ff6b85;
+  font-weight: 700;
+}
+
+.font-preview-subtitle .destaque-fora {
+  color: #ff6b85;
+  font-weight: 700;
+}
+
+/* ESTILOS PARA CADA FONTE */
+.font1 .font-preview-destaque { font-family: 'Crimson Text', serif; }
+.font1 .font-preview-subtitle { font-family: 'Crimson Text', serif; }
+
+.font2 .font-preview-destaque { font-family: 'Lora', serif; }
+.font2 .font-preview-subtitle { font-family: 'Lora', serif; }
+
+.font3 .font-preview-destaque { font-family: 'Libre Baskerville', serif; }
+.font3 .font-preview-subtitle { font-family: 'Libre Baskerville', serif; }
+
+.font4 .font-preview-destaque { font-family: 'DM Serif Display', serif; }
+.font4 .font-preview-subtitle { font-family: 'DM Serif Display', serif; }
+
+.font5 .font-preview-destaque { font-family: 'EB Garamond', serif; }
+.font5 .font-preview-subtitle { font-family: 'EB Garamond', serif; }
+
+.font6 .font-preview-destaque { font-family: 'Merriweather', serif; }
+.font6 .font-preview-subtitle { font-family: 'Merriweather', serif; }
+
+.font7 .font-preview-destaque { font-family: 'Noticia Text', serif; }
+.font7 .font-preview-subtitle { font-family: 'Noticia Text', serif; }
+
+.font8 .font-preview-destaque { font-family: 'Volkhov', serif; }
+.font8 .font-preview-subtitle { font-family: 'Volkhov', serif; }
+
+.font9 .font-preview-destaque { font-family: 'Aleo', serif; }
+.font9 .font-preview-subtitle { font-family: 'Aleo', serif; }
+
+.font10 .font-preview-destaque { font-family: 'Noto Serif', serif; }
+.font10 .font-preview-subtitle { font-family: 'Noto Serif', serif; }
+
+.star-icon {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  font-size: 24px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.font-card:hover .star-icon {
+  opacity: 1;
+}
+
+.resumo {
+  background: rgba(240, 53, 77, 0.1);
+  border: 1px solid rgba(240, 53, 77, 0.2);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.resumo p {
+  font-size: 15px;
+  color: #a89f96;
+  margin-bottom: 12px;
+}
+
+.resumo strong {
+  color: #ff6b85;
+}
+
+.escolhida-display {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #f2ede6;
+  font-weight: 700;
+}
+
+@media(max-width: 700px) {
+  body { padding: 40px 20px; }
+  .font-card { padding: 36px; }
+  .font-preview-title { font-size: 36px; }
+  .font-preview-subtitle { font-size: 14px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>10 Opções de Fontes — Texto Completo</h1>
+
+  <div class="intro">
+    👇 Clique em cada uma para selecionar. Você vê o TEXTO COMPLETO em cada fonte.
+  </div>
+
+  <div class="grid-fontes">
+
+    <!-- 1. CRIMSON TEXT -->
+    <div class="font-card font1" onclick="selecionarFonte(this, 'Crimson Text')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 1</div>
+      <div class="font-name">Crimson Text</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 2. LORA -->
+    <div class="font-card font2" onclick="selecionarFonte(this, 'Lora')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 2</div>
+      <div class="font-name">Lora</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 3. LIBRE BASKERVILLE -->
+    <div class="font-card font3" onclick="selecionarFonte(this, 'Libre Baskerville')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 3</div>
+      <div class="font-name">Libre Baskerville</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 4. DM SERIF DISPLAY -->
+    <div class="font-card font4" onclick="selecionarFonte(this, 'DM Serif Display')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 4</div>
+      <div class="font-name">DM Serif Display</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 5. EB GARAMOND -->
+    <div class="font-card font5" onclick="selecionarFonte(this, 'EB Garamond')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 5</div>
+      <div class="font-name">EB Garamond</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 6. MERRIWEATHER -->
+    <div class="font-card font6" onclick="selecionarFonte(this, 'Merriweather')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 6</div>
+      <div class="font-name">Merriweather</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 7. NOTICIA TEXT -->
+    <div class="font-card font7" onclick="selecionarFonte(this, 'Noticia Text')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 7</div>
+      <div class="font-name">Noticia Text</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 8. VOLKHOV -->
+    <div class="font-card font8" onclick="selecionarFonte(this, 'Volkhov')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 8</div>
+      <div class="font-name">Volkhov</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 9. ALEO -->
+    <div class="font-card font9" onclick="selecionarFonte(this, 'Aleo')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 9</div>
+      <div class="font-name">Aleo</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- 10. NOTO SERIF -->
+    <div class="font-card font10" onclick="selecionarFonte(this, 'Noto Serif')">
+      <div class="star-icon">★</div>
+      <div class="font-numero">Opção 10</div>
+      <div class="font-name">Noto Serif</div>
+      <div class="font-preview-title">
+        Deixe de ser <span class="font-preview-destaque">invisível</span> e transforme seu Instagram em uma <span class="font-preview-destaque">máquina de imprimir dinheiro</span>
+      </div>
+      <div class="font-preview-subtitle">
+        <span class="destaque-com">Se não for .com.</span> <span class="destaque-fora">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="resumo">
+    <p>Você selecionou:</p>
+    <div class="escolhida-display" id="escolhida">nenhuma</div>
+    <p style="margin-top: 20px; font-size: 13px;">Quando escolher uma, me avisa o número (1-10) ou o nome da fonte! 🚀</p>
+  </div>
+
+</div>
+
+<script>
+function selecionarFonte(element, nome) {
+  document.querySelectorAll('.font-card').forEach(el => el.classList.remove('selecionada'));
+  element.classList.add('selecionada');
+  document.getElementById('escolhida').textContent = nome;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>KyB — Título Final com Fontes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Playfair+Display:ital,wght@0,700;1,700&family=Fraunces:opsz,wght@9..144,700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+body {
+  background: #0a0908;
+  color: #f2ede6;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  padding: 60px 40px;
+}
+
+.container { max-width: 1200px; margin: 0 auto; }
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+
+.intro {
+  background: rgba(240, 53, 77, 0.08);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  padding: 24px;
+  border-radius: 16px;
+  margin-bottom: 60px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* COMPARAÇÃO DE FONTES */
+.comparacao-fontes {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 80px;
+}
+
+.font-option {
+  background: linear-gradient(135deg, rgba(240,53,77,0.08) 0%, rgba(240,53,77,0.02) 100%);
+  border: 2px solid rgba(240, 53, 77, 0.2);
+  padding: 48px 40px;
+  border-radius: 16px;
+  transition: all 0.3s;
+  cursor: pointer;
+  text-align: center;
+}
+
+.font-option:hover {
+  border-color: rgba(240, 53, 77, 0.5);
+  background: linear-gradient(135deg, rgba(240,53,77,0.12) 0%, rgba(240,53,77,0.04) 100%);
+  transform: translateY(-4px);
+}
+
+.font-option.selecionada {
+  border-color: #ff6b85;
+  background: linear-gradient(135deg, rgba(240,53,77,0.15) 0%, rgba(240,53,77,0.06) 100%);
+  box-shadow: 0 0 30px rgba(240, 53, 77, 0.3);
+}
+
+.font-name {
+  font-size: 12px;
+  font-weight: 700;
+  color: #ff6b85;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 28px;
+}
+
+.font-preview-title {
+  font-weight: 800;
+  font-size: 42px;
+  line-height: 1.25;
+  letter-spacing: -0.04em;
+  word-spacing: 0.1em;
+  margin-bottom: 20px;
+}
+
+.font-preview-subtitle {
+  font-size: 15px;
+  color: #a89f96;
+  line-height: 1.8;
+}
+
+.font-preview-subtitle .destaque {
+  color: #ff6b85;
+  font-weight: 700;
+}
+
+/* VARIAÇÕES DE FONTE */
+.playfair-title { font-family: 'Bricolage Grotesque', sans-serif; }
+.playfair-title .destaque-italic { font-family: 'Playfair Display', serif; font-style: italic; }
+
+.fraunces-title { font-family: 'Bricolage Grotesque', sans-serif; }
+.fraunces-title .destaque-italic { font-family: 'Fraunces', serif; font-style: italic; }
+
+.instrument-title { font-family: 'Bricolage Grotesque', sans-serif; }
+.instrument-title .destaque-italic { font-family: 'Instrument Serif', serif; font-style: italic; }
+
+/* INFORMAÇÃO */
+.info-texto {
+  background: rgba(240, 53, 77, 0.08);
+  border: 1px solid rgba(240, 53, 77, 0.15);
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.info-texto p {
+  font-size: 15px;
+  color: #a89f96;
+  line-height: 1.8;
+}
+
+.info-texto strong {
+  color: #ff6b85;
+}
+
+.qual-escolheu {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  color: #6a6258;
+  margin-top: 40px;
+}
+
+.qual-escolheu strong {
+  color: #ff6b85;
+  font-size: 16px;
+}
+
+@media(max-width: 1100px) {
+  .comparacao-fontes { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 700px) {
+  body { padding: 40px 20px; }
+  .font-option { padding: 36px 28px; }
+  .font-preview-title { font-size: 32px; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Escolha a Fonte — Compare as 3 Opções</h1>
+
+  <div class="intro">
+    👇 Clique em cada opção para ver como fica. As 3 fontes são bem diferentes visualmente. Compare lado a lado.
+  </div>
+
+  <!-- COMPARAÇÃO DE FONTES -->
+  <div class="comparacao-fontes">
+
+    <!-- PLAYFAIR -->
+    <div class="font-option" onclick="selecionarFonte(this, 'playfair')">
+      <div class="font-name">Opção 1: Playfair Display</div>
+
+      <div class="font-preview-title playfair-title">
+        Deixe de ser <span class="destaque-italic" style="color: #ff6b85;">invisível</span> e transforme seu Instagram em uma <span class="destaque-italic" style="color: #ff6b85;">máquina de imprimir dinheiro</span>
+      </div>
+
+      <div class="font-preview-subtitle">
+        <span class="destaque">Se não for .com. Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- FRAUNCES -->
+    <div class="font-option" onclick="selecionarFonte(this, 'fraunces')">
+      <div class="font-name">Opção 2: Fraunces</div>
+
+      <div class="font-preview-title fraunces-title">
+        Deixe de ser <span class="destaque-italic" style="color: #ff6b85;">invisível</span> e transforme seu Instagram em uma <span class="destaque-italic" style="color: #ff6b85;">máquina de imprimir dinheiro</span>
+      </div>
+
+      <div class="font-preview-subtitle">
+        <span class="destaque">Se não for .com. Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+    <!-- INSTRUMENT SERIF -->
+    <div class="font-option" onclick="selecionarFonte(this, 'instrument')">
+      <div class="font-name">Opção 3: Instrument Serif</div>
+
+      <div class="font-preview-title instrument-title">
+        Deixe de ser <span class="destaque-italic" style="color: #ff6b85;">invisível</span> e transforme seu Instagram em uma <span class="destaque-italic" style="color: #ff6b85;">máquina de imprimir dinheiro</span>
+      </div>
+
+      <div class="font-preview-subtitle">
+        <span class="destaque">Se não for .com. Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.
+      </div>
+    </div>
+
+  </div>
+
+  <div class="info-texto">
+    <p>⭐ As palavras em <strong>rosa itálico</strong> são onde a fonte fina (Playfair / Fraunces / Instrument) aparece. As outras em <strong>Bricolage Grotesque</strong> (gorda).</p>
+  </div>
+
+  <div class="qual-escolheu">
+    <p>Você escolheu: <strong id="escolhida">nenhuma</strong></p>
+  </div>
+
+</div>
+
+<script>
+function selecionarFonte(element, fonte) {
+  document.querySelectorAll('.font-option').forEach(el => el.classList.remove('selecionada'));
+  element.classList.add('selecionada');
+
+  const nomes = {
+    'playfair': 'Playfair Display ✨',
+    'fraunces': 'Fraunces 🎨',
+    'instrument': 'Instrument Serif 🎯'
+  };
+
+  document.getElementById('escolhida').textContent = nomes[fonte];
+}
+</script>
+
+</body>
+</html>
