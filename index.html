@@ -67,38 +67,39 @@ nav a:hover{color:var(--ac);}
 
 /* HERO RIGHT */
 .hr2{background:#0d0c0a;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:60px 48px;}
-.hr2::before{content:'';position:absolute;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.18) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 4.5s ease-in-out infinite;pointer-events:none;}
-@keyframes pglow{0%,100%{opacity:.7;transform:translate(-50%,-50%) scale(1);}50%{opacity:1;transform:translate(-50%,-50%) scale(1.15);}}
+.hr2::before{content:'';position:absolute;width:420px;height:420px;border-radius:50%;background:radial-gradient(circle,rgba(240,53,77,.12) 0%,transparent 68%);top:50%;left:50%;transform:translate(-50%,-50%);animation:pglow 5.2s ease-in-out infinite;pointer-events:none;}
+@keyframes pglow{0%,100%{opacity:.6;transform:translate(-50%,-50%) scale(1);}50%{opacity:.85;transform:translate(-50%,-50%) scale(1.18);}}
 .vis{position:relative;width:340px;height:340px;}
-.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.06);}
-.r1{inset:0;animation:rs 24s linear infinite;}
-.r2{inset:24px;border-style:dashed;border-color:rgba(240,53,77,.15);animation:rs 16s linear infinite reverse;}
-.r3{inset:48px;border-color:rgba(255,255,255,.04);animation:rs 34s linear infinite;}
+.ring{position:absolute;border-radius:50%;border:1px solid rgba(255,255,255,.04);}
+.r1{inset:0;animation:rs 26s linear infinite;}
+.r2{display:none;}
+.r3{inset:48px;border-color:rgba(255,255,255,.02);animation:rs 38s linear infinite;}
 @keyframes rs{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
-.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;}
-.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 64px rgba(240,53,77,.6),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.2s ease-in-out infinite;z-index:4;}
-@keyframes cp{0%,100%{box-shadow:0 0 48px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 96px rgba(240,53,77,.8),inset 0 1px 2px rgba(255,255,255,.4);}}
+.vsvg{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:.4;}
+.vc{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:120px;height:120px;border-radius:50%;background:var(--ac);display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 0 52px rgba(240,53,77,.5),inset 0 1px 2px rgba(255,255,255,.3);animation:cp 3.6s ease-in-out infinite;z-index:4;}
+@keyframes cp{0%,100%{box-shadow:0 0 40px rgba(240,53,77,.45),inset 0 1px 2px rgba(255,255,255,.3);}50%{box-shadow:0 0 80px rgba(240,53,77,.7),inset 0 1px 2px rgba(255,255,255,.4);}}
 .vcl{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:22px;color:#fff;letter-spacing:-.04em;line-height:1;}
 .vcs{font-family:'Geist Mono',monospace;font-size:9px;font-weight:600;color:rgba(255,255,255,.6);letter-spacing:.12em;text-transform:uppercase;margin-top:2px;}
-.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.05);border:1.5px solid rgba(240,53,77,.2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
-.on:hover{background:rgba(240,53,77,.15);border-color:rgba(240,53,77,.4);transform:scale(1.15) !important;}
+.on{position:absolute;width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.03);border:1.5px solid rgba(240,53,77,.18);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:8px;z-index:3;transition:all .3s cubic-bezier(.34,1.56,.64,1);cursor:default;}
+.on:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.35);transform:scale(1.12) !important;}
 .ni{font-size:22px;margin-bottom:3px;line-height:1;}
-.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.7);line-height:1.3;letter-spacing:.02em;}
-.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3s ease-in-out infinite;}
-.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 3.4s ease-in-out infinite .4s;}
-.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:bob 2.8s ease-in-out infinite .8s;}
-.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:bob 3.6s ease-in-out infinite 1.2s;}
-.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 3.2s ease-in-out infinite 1.6s;}
-.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:bob 2.6s ease-in-out infinite 2s;}
-@keyframes bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
-.vb{position:absolute;background:rgba(255,255,255,.06);border:1.5px solid rgba(240,53,77,.2);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
-.vb:hover{background:rgba(240,53,77,.12);border-color:rgba(240,53,77,.4);transform:translateY(-2px);}
+.nl{font-family:'Bricolage Grotesque',sans-serif;font-size:9px;font-weight:700;color:rgba(255,255,255,.65);line-height:1.3;letter-spacing:.02em;}
+.n1{top:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:drift 4s ease-in-out infinite;}
+.n2{top:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:drift 4.4s ease-in-out infinite .3s;}
+.n3{bottom:calc(50% - 120px - 44px);right:calc(50% - 210px - 44px);animation:drift 3.8s ease-in-out infinite .6s;}
+.n4{bottom:calc(50% - 165px - 44px);left:calc(50% - 44px);animation:drift 4.2s ease-in-out infinite .9s;}
+.n5{bottom:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:drift 3.6s ease-in-out infinite 1.2s;}
+.n6{top:calc(50% - 120px - 44px);left:calc(50% - 210px - 44px);animation:drift 3.2s ease-in-out infinite 1.5s;}
+@keyframes drift{0%,100%{transform:translate(0,0);opacity:.7;}50%{transform:translate(6px,-8px);opacity:.95;}}
+.vb{position:absolute;background:rgba(255,255,255,.04);border:1.5px solid rgba(240,53,77,.15);border-radius:14px;padding:12px 18px;font-family:'Bricolage Grotesque',sans-serif;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);z-index:5;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
+.vb:hover{background:rgba(240,53,77,.1);border-color:rgba(240,53,77,.3);transform:translateY(-2px);}
 .vbn{font-size:20px;font-weight:800;color:#fff;letter-spacing:-.03em;line-height:1;}
 .vbn em{font-family:'Cormorant Garamond',serif;font-size:.75em;color:#ff6b85;font-style:italic;}
-.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.4);margin-top:3px;letter-spacing:.02em;}
-.vb1{top:16px;right:18px;animation:bob 4s ease-in-out infinite;}
-.vb2{bottom:20px;left:14px;animation:bob 3.5s ease-in-out infinite .7s;}
-.vb3{bottom:60px;right:12px;animation:bob 5s ease-in-out infinite 1.4s;}
+.vbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.35);margin-top:3px;letter-spacing:.02em;}
+.vb1{top:16px;right:18px;animation:gentle-bob 4.5s ease-in-out infinite;}
+.vb2{bottom:20px;left:14px;animation:gentle-bob 3.8s ease-in-out infinite .6s;}
+.vb3{bottom:60px;right:12px;animation:gentle-bob 5.2s ease-in-out infinite 1.2s;}
+@keyframes gentle-bob{0%,100%{transform:translateY(0);}50%{transform:translateY(-5px);}}
 
 /* TICKER */
 .ticker{background:var(--ac);padding:14px 0;overflow:hidden;display:flex;}
@@ -114,7 +115,8 @@ nav a:hover{color:var(--ac);}
 .ey{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:20px;}
 .ey::before{content:'';width:18px;height:1.5px;background:var(--ac);border-radius:1px;}
 .sh{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;letter-spacing:-.04em;font-size:clamp(34px,3.8vw,54px);line-height:1.05;color:var(--ink);}
-.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;}
+.sh .em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:1.08em;color:var(--ac);letter-spacing:-.02em;animation:soft-float 3.2s ease-in-out infinite;}
+@keyframes soft-float{0%,100%{transform:translateY(0);opacity:.95;}50%{transform:translateY(-6px);opacity:1;}}
 .sd{font-size:16px;font-weight:500;color:var(--ink2);line-height:1.75;letter-spacing:-.01em;}
 .sd strong{color:var(--ink);font-weight:700;}
 
@@ -147,8 +149,8 @@ nav a:hover{color:var(--ac);}
 .pc::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--ac);transform:scaleX(0);transform-origin:left;transition:transform .4s cubic-bezier(.34,1.56,.64,1);}
 .pc:hover{background:var(--surf);transform:translateY(-2px);}
 .pc:hover::after{transform:scaleX(1);}
-.pnum{font-family:'Geist Mono',monospace;font-size:10px;font-weight:700;color:var(--ink3);letter-spacing:.1em;margin-bottom:26px;display:flex;justify-content:space-between;text-transform:uppercase;}
-.pio{font-size:24px;}
+.pnum{font-size:28px;margin-bottom:20px;display:flex;align-items:center;justify-content:flex-start;}
+.pio{display:none;}
 .pti{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:20px;letter-spacing:-.03em;color:var(--ink);margin-bottom:14px;line-height:1.15;}
 .pde{font-size:14px;font-weight:500;color:var(--ink2);line-height:1.7;}
 .pal{margin-top:40px;background:#0d0c0a;border-radius:20px;padding:44px 56px;display:flex;align-items:center;justify-content:space-between;gap:32px;}
@@ -343,10 +345,10 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
     <p class="sd">Não é falta de talento. A diferença entre quem cobra R$500 e quem cobra R$5.000 <strong>raramente é técnica.</strong></p>
   </div>
   <div class="pg rv">
-    <div class="pc"><div class="pnum"><span>01</span><span class="pio">👻</span></div><div class="pti">Ninguém sabe que você existe</div><div class="pde">Você faz trabalho excelente, mas o cliente que precisa não te encontra. Alguém medíocre com posicionamento claro está faturando o que é seu.</div></div>
-    <div class="pc"><div class="pnum"><span>02</span><span class="pio">🌫️</span></div><div class="pti">Posta mas não vende nada</div><div class="pde">Você cria conteúdo, posta, espera — e nada acontece. Sem estratégia editorial, conteúdo é só barulho. Não gera cliente, não gera venda.</div></div>
-    <div class="pc"><div class="pnum"><span>03</span><span class="pio">💸</span></div><div class="pti">Cobrando metade do que vale</div><div class="pde">Você entrega R$5.000 e cobra R$1.500 — porque o cliente não enxerga o valor. Posicionamento certo resolve isso em 30 dias.</div></div>
-    <div class="pc"><div class="pnum"><span>04</span><span class="pio">⏳</span></div><div class="pti">Travado no ponto zero</div><div class="pde">Sabe que precisa mudar mas trava em "por onde começo?". Essa paralisia custa contratos e dinheiro — todo dia que passa.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">👻</span></div><div class="pti">Ninguém sabe que você existe</div><div class="pde">Você faz trabalho excelente, mas o cliente que precisa não te encontra. Alguém com posicionamento está faturando o que é seu.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">🎬</span></div><div class="pti">Seu vídeo não tem o formato certo</div><div class="pde">Você grava, posta no Instagram — e nada acontece. Cada rede tem seu formato. Descobrir qual é o seu formato criativo é o segredo. Sem ele, o vídeo perfeito desaparece.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">💸</span></div><div class="pti">Cobrando metade do que vale</div><div class="pde">Você entrega R$5.000 e cobra R$1.500 — porque o cliente não enxerga o valor. Posicionamento resolve isso em 30 dias.</div></div>
+    <div class="pc"><div class="pnum"><span class="pio">⏳</span></div><div class="pti">Sem saber por onde começar</div><div class="pde">Sabe que precisa mudar. Mas trava. Essa paralisia custa contratos e dinheiro — todo dia que passa.</div></div>
   </div>
   <div class="pal rv">
     <p class="palq">Enquanto você lê isso, seu concorrente está fechando <strong>o cliente que deveria ser seu.</strong> Não amanhã. Agora.</p>
@@ -357,9 +359,9 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
 <section class="sec">
   <div class="stop rv"><div><div class="ey">Como fazemos</div><h2 class="sh">O método <span class="em">SER.com</span></h2></div><p class="sd">Três pilares que transformam quem você é no digital em <strong>clientes, contratos e receita real.</strong></p></div>
   <div class="mg rv">
-    <div class="mc"><div class="mle">S</div><div class="mtg">Pilar 01</div><div class="mti">Sincero</div><div class="msu">Sem template, sem papo genérico</div><div class="mde">Entendemos de verdade o que você faz, quem é o cliente que te gera mais dinheiro e onde você está perdendo venda por falta de posicionamento.</div></div>
-    <div class="mc"><div class="mle">E</div><div class="mtg">Pilar 02</div><div class="mti">Estratégico</div><div class="msu">Plano real, não consultoria cara</div><div class="mde">Construímos uma estratégia que cabe na sua realidade — conteúdo que posiciona, atrai o cliente certo e converte sem depender de sorte.</div></div>
-    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Venda mais, feche mais, cresça</div><div class="mde">Tudo que fazemos aponta para um número: sua receita crescendo. Cliente certo, preço justo, contratos fechados. Esse é o único resultado que importa.</div></div>
+    <div class="mc"><div class="mle">S</div><div class="mtg">Pilar 01</div><div class="mti">Sincero</div><div class="msu">Sem roteiro engessado</div><div class="mde">Entendemos de verdade o que você faz. Quem é seu cliente que gera mais dinheiro. Onde você está perdendo venda. Você vai alcançar autoridade porque você é verdadeiro.</div></div>
+    <div class="mc"><div class="mle">E</div><div class="mtg">Pilar 02</div><div class="mti">Estratégico</div><div class="msu">Plano que funciona</div><div class="mde">Construímos estratégia para sua realidade. Conteúdo que posiciona. Que atrai o cliente certo. Que converte. Você vai alcançar clientes que procuram por você.</div></div>
+    <div class="mc"><div class="mle">R</div><div class="mtg">Pilar 03</div><div class="mti">Rentável</div><div class="msu">Receita crescendo</div><div class="mde">Tudo aponta para um número: sua receita. Cliente certo, preço justo, contratos fechados todo mês. Você vai alcançar o resultado que importa.</div></div>
   </div>
 </section>
 
