@@ -37,15 +37,11 @@ nav a:hover{color:var(--ac);}
 .hl{padding:72px 56px 72px 80px;display:flex;flex-direction:column;justify-content:center;}
 .etag{display:inline-flex;align-items:center;gap:10px;font-family:'Geist Mono',monospace;font-size:10px;font-weight:600;color:var(--tc);letter-spacing:.14em;text-transform:uppercase;margin-bottom:36px;}
 .etag::before{content:'';width:20px;height:1.5px;background:var(--ac);border-radius:1px;}
-.h1{font-family:'Merriweather',serif;font-weight:400;font-size:clamp(44px,5.2vw,72px);line-height:1.2;letter-spacing:-.02em;color:var(--ink);word-spacing:.1em;margin:0 0 24px 0;}
+.h1{font-family:'Merriweather',serif;font-weight:400;font-size:clamp(44px,5.2vw,72px);line-height:1.3;letter-spacing:-.02em;color:var(--ink);margin:0 0 24px 0;}
 .hsub{font-family:'Merriweather',serif;font-size:17px;font-weight:400;color:var(--ink2);max-width:490px;line-height:1.75;margin-bottom:24px;letter-spacing:-.01em;}
 .highlight{color:var(--ac);font-weight:700;}
 .rule{display:none;}
-.reas{display:flex;flex-direction:column;gap:12px;margin-bottom:48px;}
-.rea{display:flex;align-items:flex-start;gap:14px;font-size:14px;font-weight:600;color:var(--ink2);letter-spacing:-.01em;line-height:1.6;}
-.rd{width:7px;height:7px;border-radius:50%;background:var(--ac);margin-top:6px;flex-shrink:0;transition:transform .3s cubic-bezier(.34,1.56,.64,1);}
-.rea:hover .rd{transform:scale(1.3);}
-.rea strong{color:var(--ink);}
+.reas{display:none;}
 .btns{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-bottom:56px;}
 .bp{display:inline-flex;align-items:center;gap:10px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:15px 34px;background:var(--ac);color:#fff;border:none;border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);position:relative;overflow:hidden;}
 .bp::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,transparent,rgba(255,255,255,.2),transparent);transform:translateX(-100%);transition:transform .5s;}
@@ -54,9 +50,8 @@ nav a:hover{color:var(--ac);}
 .bp:active{transform:translateY(0);}
 .bp .ar{transition:transform .3s cubic-bezier(.34,1.56,.64,1);display:inline-block;}
 .bp:hover .ar{transform:translateX(5px);}
-.bg{display:inline-flex;align-items:center;gap:8px;font-family:'Bricolage Grotesque',sans-serif;font-size:14px;font-weight:700;letter-spacing:-.01em;padding:14px 28px;background:transparent;color:var(--ink);border:1.5px solid var(--bd);border-radius:8px;cursor:pointer;transition:all .3s cubic-bezier(.34,1.56,.64,1);}
-.bg:hover{border-color:var(--ac);background:rgba(216,43,80,.05);color:var(--ac);}
-.stats{padding-top:48px;border-top:1px solid var(--bd);display:flex;gap:48px;flex-wrap:wrap;}
+.bg{display:none;}
+.stats{display:none;}
 .sn{font-family:'Bricolage Grotesque',sans-serif;font-weight:800;font-size:40px;letter-spacing:-.04em;color:var(--ink);line-height:1;margin-bottom:6px;transition:transform .3s;}
 .sn:hover{transform:translateY(-2px);}
 .sn em{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:.7em;color:var(--ac);}
@@ -236,8 +231,8 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:40p
 
 <section class="hero">
   <div class="hl">
-    <h1 class="h1">Deixe de ser invisível e transforme seu Instagram em uma máquina de imprimir dinheiro</h1>
-    <p class="hsub">Se não for <span class="highlight">.com</span>. Em breve será <span class="highlight">.fora</span>. Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.</p>
+    <h1 class="h1">Deixe de ser <span class="highlight">invisível</span> e transforme seu Instagram em uma <span class="highlight">máquina de imprimir dinheiro</span></h1>
+    <p class="hsub"><span class="highlight">Se não for .com.</span> <span class="highlight">Em breve será .fora.</span> Enquanto você não aparece na sua rede social, seu cliente está comprando de quem aparece.</p>
     <div class="btns">
       <button class="bp">Quero ser .com agora <span class="ar">→</span></button>
     </div>
