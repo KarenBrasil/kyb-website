@@ -230,6 +230,14 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:2.5
 /* RESPONSIVE */
 @media(max-width:1200px){.hero{padding-left:2.5rem;padding-right:2.5rem;}.hr2{padding:0 2.5rem 3.5rem;}.sec{padding:4rem 2.5rem;}.stop{grid-template-columns:1fr;gap:2.5rem;}.pg{grid-template-columns:1fr 1fr;}.mg{grid-template-columns:1fr;}.cvf{grid-template-columns:1fr;}.svg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr 1fr;}.ctas{padding:6rem 2.5rem;}.pal{flex-direction:column;text-align:center;padding:2.5rem;}.sobre{padding:4rem 2.5rem;}.sob-grid{grid-template-columns:1fr;gap:2rem;padding:0;}}
 @media(max-width:700px){header{padding:0 1.25rem;height:4rem;}nav{display:none;}.hero{padding-left:1.25rem;padding-right:1.25rem;}.hl{padding:3rem 0 2rem;}.hr2{padding:0 0 3rem;}.sec{padding:4rem 1.25rem;}.stop{gap:2rem;margin-bottom:3.5rem;}.pg{grid-template-columns:1fr;}.cg{grid-template-columns:1fr;}.cc{padding:2.5rem 1.75rem;}.mc{padding:2.25rem 1.75rem;}.svh{padding:2rem;}.svb{padding:1.75rem;}.ctas{padding:4.5rem 1.25rem;}footer{padding:1.75rem 0;}.footer-wrap{flex-direction:column;justify-content:center;flex-direction:column;text-align:center;padding:0 1.25rem;}.btns{justify-content:center;width:100%;}.bp{width:100%;max-width:21.25rem;}.sobre{padding:4rem 1.25rem;}.sob-grid{padding:0;}}
+
+/* CONTACT LINKS */
+.contact-link { display: flex; align-items: center; gap: 1rem; color: rgba(255,255,255,0.7); text-decoration: none; transition: all 0.3s; width: 100%; max-width: 350px; margin-bottom: 0.5rem; }
+.contact-link:hover { color: #fff; }
+.contact-icon { display: flex; align-items: center; justify-content: center; width: 3rem; height: 3rem; border-radius: 50%; border: 1px solid rgba(255,255,255,0.15); background: transparent; transition: all 0.3s; flex-shrink: 0; }
+.contact-link:hover .contact-icon { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.4); transform: translateY(-2px); }
+.contact-icon svg { width: 1.25rem; height: 1.25rem; fill: currentColor; }
+.contact-text { font-size: 1rem; font-weight: 600; font-family: 'Bricolage Grotesque', sans-serif; letter-spacing: -0.01em; }
 </style>
 </head>
 <body>
@@ -407,10 +415,19 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:2.5
     <div class="ctae">Próximo passo</div>
     <h2 class="ctah">Transforme sua audiência em<br><span class="em">.contratos fechados.</span></h2>
     <p class="ctasub" style="margin-bottom: 3rem;">Vamos conversar sobre como fazer você vender mais agora.</p>
-    <div class="fln" style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
-      <a href="https://instagram.com/karenbrasil.co" target="_blank" class="fbtn" style="padding: 1rem 2rem; font-size: 1rem; border-color: rgba(255,255,255,0.3); width: 100%; max-width: 350px;">Instagram: Karen Brasil</a>
-      <a href="https://wa.me/5585998370928?text=Oi%20Karen%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20KyB" target="_blank" class="fbtn" style="padding: 1rem 2rem; font-size: 1rem; border-color: rgba(255,255,255,0.3); width: 100%; max-width: 350px;">WhatsApp</a>
-      <button onclick="navigator.clipboard.writeText('karenbrasilcreator@gmail.com'); this.innerHTML='E-mail copiado! ✅'; setTimeout(() => this.innerHTML='karenbrasilcreator@gmail.com', 2000);" class="fbtn" style="padding: 1rem 2rem; font-size: 1rem; border-color: rgba(255,255,255,0.3); cursor: pointer; width: 100%; max-width: 350px; font-family: inherit;">karenbrasilcreator@gmail.com</button>
+    <div class="fln" style="display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-start; max-width: 350px; margin: 0 auto;">
+      <a href="https://instagram.com/karenbrasil.co" target="_blank" class="contact-link">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></div>
+        <span class="contact-text">Karen Brasil</span>
+      </a>
+      <a href="https://wa.me/5585998370928?text=Oi%20Karen%2C%20gostaria%20de%20saber%20mais%20sobre%20a%20KyB" target="_blank" class="contact-link">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 00-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></div>
+        <span class="contact-text">WhatsApp</span>
+      </a>
+      <button onclick="navigator.clipboard.writeText('karenbrasilcreator@gmail.com'); this.querySelector('.contact-text').innerHTML='E-mail copiado! ✅'; setTimeout(() => this.querySelector('.contact-text').innerHTML='karenbrasilcreator@gmail.com', 2000);" class="contact-link" style="background: transparent; border: none; cursor: pointer; text-align: left; padding: 0;">
+        <div class="contact-icon"><svg viewBox="0 0 24 24"><path d="M20 4H4C2.9 4 2.01 4.9 2.01 6L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/></svg></div>
+        <span class="contact-text" style="font-family: inherit;">karenbrasilcreator@gmail.com</span>
+      </button>
     </div>
   </div>
 </section>
