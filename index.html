@@ -63,7 +63,7 @@ nav a:hover{color:var(--ac);}
 .showcase-header{display:flex;align-items:center;gap:.5rem;margin-bottom:1.25rem;font-family:'Geist Mono',monospace;font-size:.6875rem;text-transform:uppercase;color:var(--ink3);letter-spacing:0.1em;}
 .showcase-dot{width:.375rem;height:.375rem;background:var(--ac);border-radius:50%;animation:pulse-dot 1.5s ease-in-out infinite;}
 @keyframes pulse-dot{0%,100%{opacity:0.5;transform:scale(1);}50%{opacity:1;transform:scale(1.3);}}
-.benefit-list{position:relative;height:14rem;width:100%;overflow:hidden;border:1px solid var(--bd);border-radius:1.25rem;background:var(--surf);box-shadow:var(--shadow-md);}
+.benefit-list{position:relative;height:14rem;width:100%;overflow:hidden;background:transparent;}
 .benefit-card{position:absolute;top:50%;left:0;right:0;margin-top:-2.5rem;height:5rem;display:flex;align-items:center;justify-content:center;gap:.875rem;padding:0 1.5rem;background:transparent;transition:all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);transform:translateY(240%) scale(0.8);opacity:0;pointer-events:none;}
 .benefit-card.hidden-top{transform:translateY(-240%) scale(0.8);opacity:0;}
 .benefit-card.hidden-bottom{transform:translateY(240%) scale(0.8);opacity:0;}
@@ -336,8 +336,7 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:2.5
     <div class="pc"><div class="pnum"><span class="pio">⏳</span></div><div class="pti">Sem saber por onde começar</div><div class="pde">Sabe que precisa mudar. Mas trava. Essa paralisia custa contratos e dinheiro todo dia que passa.</div></div>
   </div>
   <div class="pal rv">
-    <p class="palq">Enquanto você lê isso, seu concorrente está fechando <span class="em-quote">o cliente que deveria ser seu.</span> Não amanhã. Agora.</p>
-    <div class="palb">Realidade sem filtro</div>
+    <p class="palq">Enquanto você lê isso, seu concorrente está fechando <span class="em-quote">o cliente que deveria ser seu.</span></p>
   </div>
 </section>
 
@@ -378,14 +377,14 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:2.5
 </section>
 
 <section class="sec sa">
-  <div class="stop rv"><div><div class="ey">Como podemos te ajudar</div><h2 class="sh">Dois caminhos para<br><span class="em">vender mais.</span></h2></div><p class="sd">Escolha onde você está agora. Os dois levam ao mesmo lugar: <strong>mais clientes, mais contratos, mais receita.</strong></p></div>
+  <div class="stop rv"><div><h2 class="sh">Dois caminhos para<br><span class="em">vender mais.</span></h2></div><p class="sd">Escolha onde você está agora. Os dois levam ao mesmo lugar: <strong>mais clientes, mais contratos, mais receita.</strong></p></div>
   <div class="svg">
     <div class="sv rv d1">
       <div class="svh"><div class="svhg">Estratégia</div><div class="svt">Estratégia +<br>Posicionamento</div></div>
       <div class="svb">
         <p class="svd">Entendemos sua situação sem filtro. Você sai com posicionamento único, calendário editorial completo e conteúdo pronto para atrair o cliente certo amanhã.</p>
         <div class="svil"><div class="svit"><div class="svdt"></div>Diagnóstico: onde você está perdendo venda agora</div><div class="svit"><div class="svdt"></div>Posicionamento único você vira referência no nicho</div><div class="svit"><div class="svdt"></div>Calendário 8 semanas 30 ideias prontas para publicar</div><div class="svit"><div class="svdt"></div>3 roteiros prontos para gravar e publicar agora</div><div class="svit"><div class="svdt"></div>1 mentoria ao vivo para alinhar tudo</div></div>
-        <div class="svf"><div class="svpr">R$ 997 <small>/ único</small></div><button class="bsv">Quero fechar mais →</button></div>
+        <div class="svf"><div class="svpr">R$ 997 <small>/ único</small></div><button class="bsv">Criar minha estratégia</button></div>
       </div>
     </div>
     <div class="sv rv d2">
@@ -396,6 +395,13 @@ footer{background:#0a0908;border-top:1px solid rgba(255,255,255,.06);padding:2.5
         <div class="svf"><div class="svpr">R$ 1.997 <small>/ mês</small></div><button class="bsv">Escalar com UGC →</button></div>
       </div>
     </div>
+
+  </div>
+  <div class="cg" style="margin-top: 4rem;">
+    <div class="cp2 rv d1"><span class="cico">🎥</span><div class="cti">Captação</div><div class="csu">Conteúdo que posiciona</div><div class="cde" style="text-align: left;">Produção profissional que eleva sua marca — roteiro, gravação e edição com identidade.</div></div>
+    <div class="cp2 rv d2"><span class="cico">💰</span><div class="cti">Tráfego Pago</div><div class="csu">Mais clientes todo dia</div><div class="cde" style="text-align: left;">Meta Ads e Google Ads que trazem o cliente certo — não só cliques que não convertem.</div></div>
+    <div class="cp2 rv d3"><span class="cico">🌐</span><div class="cti">Sites</div><div class="csu">Que fecham contratos</div><div class="cde" style="text-align: left;">Sites que transformam visitantes em clientes pagantes — design a serviço da venda.</div></div>
+    <div class="cp2 rv d4"><span class="cico">✉️</span><div class="cti">Email Marketing</div><div class="csu">Base que vira receita</div><div class="cde" style="text-align: left;">Sua lista se transforma em faturamento — estratégias que fidelizam e vendem.</div></div>
   </div>
 </section>
 
